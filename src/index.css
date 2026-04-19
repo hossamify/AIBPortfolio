@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", "Segoe UI Web (West European)", -apple-system,
+    BlinkMacSystemFont, "Helvetica Neue", "Roboto", system-ui, sans-serif;
+  --font-serif: "Segoe UI", "Segoe UI Web (West European)", -apple-system,
+    BlinkMacSystemFont, "Helvetica Neue", "Roboto", system-ui, sans-serif;
+  --font-mono: "Cascadia Code", "Cascadia Mono", "Consolas",
+    "Segoe UI Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html,
+body {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system,
+    BlinkMacSystemFont, "Helvetica Neue", "Roboto", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Map Tailwind's font-weight utilities to the Segoe UI family variants.
+   Windows resolves these weights to the matching installed face:
+     300 -> Segoe UI Semilight
+     600 -> Segoe UI Semibold
+   On non-Windows systems the fallback stack is used.
+
+   Per design rule: never render real Bold (700+). Anything that would be
+   bold/extrabold/black is clamped to 600 (Segoe UI Semibold). */
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold,
+.font-bold,
+.font-extrabold,
+.font-black {
+  font-weight: 600;
+}
+
+/* Browser defaults that would otherwise render as bold (700). */
+b,
+strong,
+th,
+h1, h2, h3, h4, h5, h6,
+optgroup {
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}
