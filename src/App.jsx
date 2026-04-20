@@ -212,10 +212,10 @@ export default function App() {
                                 value={lang}
                                 onChange={onLangChange}
                                 aria-label={getUI('aria_languageSelect', lang)}
-                                className="bg-transparent border-none text-xs font-normal text-slate-700 dark:text-slate-200 focus:ring-0 cursor-pointer outline-none appearance-none pr-1"
+                                className="bg-transparent border-none text-xs font-normal text-slate-700 dark:text-slate-200 focus:ring-0 cursor-pointer outline-none appearance-none pr-1 dark:[color-scheme:dark]"
                             >
                                 {languageOptionsList.map((lng) => (
-                                    <option key={lng.code} value={lng.code}>{lng.label}</option>
+                                    <option key={lng.code} value={lng.code} className="bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-100">{lng.label}</option>
                                 ))}
                             </select>
                         </div>

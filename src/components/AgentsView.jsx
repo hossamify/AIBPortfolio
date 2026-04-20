@@ -16,7 +16,7 @@ const FEATURED_VIDEO_ID = '4Z6GYYoBm98';
 // Use the privacy-enhanced (no-cookie) host. It also avoids the noisy
 // "Failed to execute 'query' on 'Permissions': Illegal invocation" log
 // that the standard YouTube player triggers in Chromium browsers.
-const FEATURED_VIDEO_EMBED = `https://www.youtube-nocookie.com/embed/${FEATURED_VIDEO_ID}?si=uNUjXc5FG6GsZ8GF&controls=0&autoplay=1`;
+const FEATURED_VIDEO_EMBED = `https://www.youtube-nocookie.com/embed/${FEATURED_VIDEO_ID}?si=uNUjXc5FG6GsZ8GF&autoplay=1`;
 // Lightweight poster served by YouTube's CDN — used to defer loading the
 // ~1 MB player bundle until the user actually clicks play.
 const FEATURED_VIDEO_POSTER = `https://i.ytimg.com/vi/${FEATURED_VIDEO_ID}/hqdefault.jpg`;
