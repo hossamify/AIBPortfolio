@@ -14,7 +14,13 @@ import SearchResults from './components/SearchResults.jsx';
 import AgentsView from './components/AgentsView.jsx';
 
 export default function App() {
-    const [lang, setLang] = useState('en');
+    const [lang, setLang] = useState(() => {
+        if (typeof window === 'undefined') return 'en';
+        const stored = window.localStorage.getItem('lang');
+        // Only honour stored value if it matches one of the supported language codes.
+        if (stored && languageOptionsList.some((l) => l.code === stored)) return stored;
+        return 'en';
+    });
     const [activeCategory, setActiveCategory] = useState(null);
     const [activeProduct, setActiveProduct] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
@@ -39,6 +45,7 @@ export default function App() {
     useEffect(() => {
         document.documentElement.lang = lang;
         document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+        try { window.localStorage.setItem('lang', lang); } catch { /* ignore */ }
     }, [lang, isRtl]);
 
     // Apply dark class on <html> and persist preference.
