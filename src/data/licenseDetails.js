@@ -449,3 +449,46 @@ export const LICENSE_DETAILS = {
         }
     ]
 };
+
+// Per-language override maps. Each file exports a structure mirroring
+// LICENSE_DETAILS but only carries translated `label` and `features` fields
+// (tier names, SKUs and acronyms remain English on purpose).
+import { LICENSE_DETAILS_FR } from './licenseDetails.fr.js';
+import { LICENSE_DETAILS_ES } from './licenseDetails.es.js';
+import { LICENSE_DETAILS_DE } from './licenseDetails.de.js';
+import { LICENSE_DETAILS_IT } from './licenseDetails.it.js';
+import { LICENSE_DETAILS_NL } from './licenseDetails.nl.js';
+import { LICENSE_DETAILS_AR } from './licenseDetails.ar.js';
+
+const LOCALE_OVERRIDES = {
+    fr: LICENSE_DETAILS_FR,
+    es: LICENSE_DETAILS_ES,
+    de: LICENSE_DETAILS_DE,
+    it: LICENSE_DETAILS_IT,
+    nl: LICENSE_DETAILS_NL,
+    ar: LICENSE_DETAILS_AR,
+};
+
+// Returns the license tier list for a product in the requested language.
+// Per-tier behavior:
+//   - tier name: always taken from English (intentional — official SKU name).
+//   - label & features: taken from the locale override when present,
+//     otherwise fall back to English so partial translations stay safe.
+export function getLicenseDetails(productId, lang) {
+    const base = LICENSE_DETAILS[productId];
+    if (!base) return undefined;
+    if (lang === 'en') return base;
+    const overrides = LOCALE_OVERRIDES[lang]?.[productId];
+    if (!overrides) return base;
+    return base.map((tier, i) => {
+        const o = overrides[i];
+        if (!o) return tier;
+        return {
+            ...tier,
+            label: o.label ?? tier.label,
+            features: Array.isArray(o.features) && o.features.length === tier.features.length
+                ? o.features.map((f, fi) => f ?? tier.features[fi])
+                : tier.features,
+        };
+    });
+}

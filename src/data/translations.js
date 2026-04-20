@@ -6,6 +6,17 @@
 // Languages: en, fr, de, es, it, ar, nl, pt, pt-BR, tr, pl, sv, da, fi, no, ja, ko, zh, hi, id, th, ms
 
 export const D = {
+    // --- AUTONOMOUS AGENTS ---
+    cat_agents: {
+        en: ["AI Capabilities", "AI agents and Copilot capabilities embedded across the business applications stack."],
+        "en-GB": ["AI Capabilities", "AI agents and Copilot capabilities embedded across the business applications stack."],
+        fr: ["Capacités d'IA", "Agents IA et capacités Copilot intégrés dans toute la suite d'applications métier."],
+        de: ["KI-Funktionen", "KI-Agenten und Copilot-Funktionen, eingebettet in den gesamten Stack der Geschäftsanwendungen."],
+        es: ["Capacidades de IA", "Agentes de IA y capacidades de Copilot integradas en toda la pila de aplicaciones empresariales."],
+        it: ["Funzionalità IA", "Agenti IA e funzionalità Copilot integrati nell'intero stack delle applicazioni aziendali."],
+        ar: ["قدرات الذكاء الاصطناعي", "وكلاء الذكاء الاصطناعي وقدرات Copilot المدمجة عبر منظومة تطبيقات الأعمال بالكامل."],
+        nl: ["AI-mogelijkheden", "AI-agents en Copilot-functionaliteit ingebed in de volledige stack van bedrijfsapplicaties."]
+    },
     // --- ARCHITECTURE ---
     cat_arch: {
         en: ["Architectural Foundations", "Shared data structures and security models."], fr: ["Fondations Architecturales", "Structures de données et modèles de sécurité."], de: ["Architektonische Grundlagen", "Datenstrukturen und Sicherheitsmodelle."], es: ["Fundamentos Arquitectónicos", "Estructuras de datos y modelos de seguridad."], it: ["Fondamenti Architettonici", "Strutture dati e modelli di sicurezza."], ar: ["الأسس المعمارية", "هياكل البيانات والنماذج الأمنية المشتركة."], nl: ["Architectonische Fundamenten", "Gedeelde datastructuren en beveiliging."]
@@ -73,6 +84,11 @@ export const D = {
     // --- BACK OFFICE ---
     cat_erp: {
         en: ["ERP & Back Office", "Systems for core global financial management, supply chain, and human resources."],
+        fr: ["ERP & Back Office", "Systèmes pour la gestion financière globale, la chaîne d'approvisionnement et les ressources humaines."],
+        de: ["ERP & Backoffice", "Systeme für globales Finanzmanagement, Lieferkette und Personalwesen."],
+        es: ["ERP y Back Office", "Sistemas para la gestión financiera global, la cadena de suministro y los recursos humanos."],
+        it: ["ERP e Back Office", "Sistemi per la gestione finanziaria globale, la supply chain e le risorse umane."],
+        nl: ["ERP & Backoffice", "Systemen voor wereldwijd financieel beheer, supply chain en human resources."],
         ar: ["حلول تخطيط موارد المؤسسة والمكاتب الخلفية", "أنظمة لإدارة الشؤون المالية العالمية الأساسية وسلسلة التوريد والموارد البشرية."]
     },
     prod_finance: {
@@ -124,6 +140,11 @@ export const D = {
     // --- SMB ---
     cat_smb: {
         en: ["SMB Solutions", "Integrated ERP solutions tailored for small and mid-sized businesses."],
+        fr: ["Solutions PME", "Solutions ERP intégrées conçues pour les petites et moyennes entreprises."],
+        de: ["KMU-Lösungen", "Integrierte ERP-Lösungen, zugeschnitten auf kleine und mittlere Unternehmen."],
+        es: ["Soluciones para Pymes", "Soluciones ERP integradas diseñadas para pequeñas y medianas empresas."],
+        it: ["Soluzioni PMI", "Soluzioni ERP integrate pensate per piccole e medie imprese."],
+        nl: ["MKB-oplossingen", "Geïntegreerde ERP-oplossingen op maat van het midden- en kleinbedrijf."],
         ar: ["الشركات الصغيرة والمتوسطة", "حلول ERP متكاملة للشركات الصغيرة والمتوسطة."]
     },
     prod_bc: {
@@ -139,6 +160,11 @@ export const D = {
     // --- POWER PLATFORM ---
     cat_pp: {
         en: ["Power Platform", "Low-code application development, automation, and AI."],
+        fr: ["Power Platform", "Développement d'applications low-code, automatisation et IA."],
+        de: ["Power Platform", "Low-Code-Anwendungsentwicklung, Automatisierung und KI."],
+        es: ["Power Platform", "Desarrollo de aplicaciones low-code, automatización e IA."],
+        it: ["Power Platform", "Sviluppo di applicazioni low-code, automazione e IA."],
+        nl: ["Power Platform", "Low-code applicatieontwikkeling, automatisering en AI."],
         ar: ["Power Platform", "تطوير التطبيقات منخفض الكود والأتمتة والذكاء الاصطناعي."]
     },
     prod_apps: {
@@ -180,6 +206,11 @@ export const D = {
     // --- SUSTAINABILITY ---
     cat_sust: {
         en: ["Sustainability & Governance", "Advanced tracking of environmental indicators and corporate governance (ESG)."],
+        fr: ["Durabilité & Gouvernance", "Suivi avancé des indicateurs environnementaux et de la gouvernance d'entreprise (ESG)."],
+        de: ["Nachhaltigkeit & Governance", "Erweiterte Nachverfolgung von Umweltkennzahlen und Corporate Governance (ESG)."],
+        es: ["Sostenibilidad y Gobernanza", "Seguimiento avanzado de indicadores ambientales y gobernanza corporativa (ESG)."],
+        it: ["Sostenibilità e Governance", "Monitoraggio avanzato degli indicatori ambientali e della corporate governance (ESG)."],
+        nl: ["Duurzaamheid & Governance", "Geavanceerde monitoring van milieu-indicatoren en corporate governance (ESG)."],
         ar: ["الاستدامة والحوكمة", "تتبع متقدم للمؤشرات البيئية وحوكمة الشركات (ESG)."]
     },
     prod_emissions: {
@@ -222,6 +253,11 @@ export const D = {
     // --- INDUSTRY CLOUDS ---
     cat_ind: {
         en: ["Industry Clouds", "Cloud bundles tailored to specific sectors and industries."],
+        fr: ["Clouds Sectoriels", "Offres cloud adaptées à des secteurs et industries spécifiques."],
+        de: ["Branchen-Clouds", "Cloud-Pakete, zugeschnitten auf bestimmte Branchen und Sektoren."],
+        es: ["Nubes Sectoriales", "Paquetes en la nube adaptados a sectores e industrias específicos."],
+        it: ["Cloud di Settore", "Bundle cloud su misura per settori e industrie specifici."],
+        nl: ["Industry Clouds", "Cloudbundels op maat van specifieke sectoren en branches."],
         ar: ["سحابات الصناعات", "حزم سحابية مخصصة لقطاعات وصناعات محددة."]
     },
     prod_ind: {

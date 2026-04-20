@@ -1,0 +1,416 @@
+// German overrides for LICENSE_DETAILS.
+// Only `label` and `features` are translated. `tier` stays English (official SKU name).
+// Array order and length must match licenseDetails.js exactly.
+
+export const LICENSE_DETAILS_DE = {
+    'd365-sales': [
+        {
+            label: 'Basisstufe',
+            features: [
+                "Wesentliche Vertriebsautomatisierung (SFA) für Organisationen ohne komplexe Vertriebsprozesse.",
+                "Konten, Kontakte und Leads erstellen, lesen, aktualisieren und löschen.",
+                "Rechnungen, Aufträge, Angebote und Preislisten verwalten.",
+                "Marketingkampagnen und Marketinglisten.",
+                "Bis zu 15 benutzerdefinierte Tabellen für die Anwendungsanpassung.",
+                "Gemäß Microsoft Dynamics 365 Lizenzleitfaden: Kunden, die Sales Professional verwenden, können Sales Premium, Sales Enterprise oder Sales Insights nicht innerhalb derselben Umgebungsinstanz kombinieren."
+            ]
+        },
+        {
+            label: '+ Ergänzt Professional',
+            features: [
+                "Uneingeschränkte Anpassung — entfernt das Limit von 15 benutzerdefinierten Tabellen.",
+                "Eingebettete Intelligenz und manuelle Prognosen.",
+                "Sales-Premium-Funktionen mit begrenzter Kapazität: Conversation Intelligence, Sales Accelerator (1.500 Datensätze/Umgebung/Monat), Lead- und Opportunity-Scoring.",
+                "Copilot in Dynamics 365 Sales.",
+                "2.000 Customer Voice-Antworten pro Tenant/Monat."
+            ]
+        },
+        {
+            label: '+ Ergänzt Enterprise',
+            features: [
+                "Vollständiger, uneingeschränkter Zugriff auf alle Sales-Insights-Automatisierungen und KI-Funktionen.",
+                "Predictive Forecasting, Relationship Analytics, Pipeline Intelligence.",
+                "Assistant Studio, Connection Insights und Notes Analysis.",
+                "Visitenkartenleser (200 Scans/Benutzer/Monat).",
+                "1.000 Copilot Credits pro Benutzer/Monat für KI-Agenten."
+            ]
+        }
+    ],
+    'd365-cs': [
+        {
+            label: 'Basisstufe',
+            features: [
+                "Schlanke Ressourcen für Agenten, die weniger komplexe Szenarien bearbeiten.",
+                "Grundlegende Fallverwaltung und Agent-zu-Team-Chat.",
+                "Self-Service-Website und Wissensdatenbank für Kunden.",
+                "Bis zu 15 benutzerdefinierte Tabellen für die Anpassung."
+            ]
+        },
+        {
+            label: '+ Ergänzt Professional',
+            features: [
+                "Erweiterte Planung, Disposition, Teamerstellung und Ressourcenverwaltung über die Integration mit Field Service & Project Operations.",
+                "Intelligentes Unified Routing (50 Datensatz-Routen/Benutzer/Monat).",
+                "Customer Service Insights: KI-gestützte Analytik, Themen-Clustering und Sentimentanalyse.",
+                "Hebt das Limit für benutzerdefinierte Tabellen für eine vollständige Dataverse-Anpassung auf.",
+                "2.000 Customer Voice-Antworten pro Benutzer/Monat."
+            ]
+        },
+        {
+            label: '+ Ergänzt Enterprise',
+            features: [
+                "Integrierte Copilot-first-Contact-Center- und CRM-Lösung, basierend auf generativer KI.",
+                "Umfassende Contact-Center-Funktionalitäten (Digital + Voice).",
+                "1.000 Copilot Credits pro Benutzer/Monat.",
+                "Hinweis: Das Upgrade auf Premium entfernt die in Enterprise enthaltene Customer Voice-Berechtigung."
+            ]
+        },
+        {
+            label: 'Eigenständige Lizenz',
+            features: [
+                "All-in-one-Contact-Center mit digitalen und Sprachkanälen — kein Customer-Service-CRM erforderlich.",
+                "Digitale Interaktion: Live-Chat, SMS, E-Mail, soziale Medien (Facebook, WhatsApp, LINE, Apple Messages for Business) und Microsoft Teams.",
+                "Native Sprachkommunikation auf Basis von Azure Communication Services (Carrier-/ACS-Nutzung wird separat abgerechnet); unterstützt Azure Direct Routing für bestehende Carrier.",
+                "KI-first-Routing: intelligentes Unified Routing, fertigkeitsbasierte Zuweisung und Workforce-Management-Insights.",
+                "Copilot-unterstützter Agenten-Desktop mit Echtzeit-Zusammenfassungen, Next-Best-Action-Vorschlägen und Conversation Insights.",
+                "Self-Service: IVR, Voicebots und durch generative KI betriebene virtuelle Agenten, erstellt in Copilot Studio.",
+                "Offen und erweiterbar — integriert sich in bestehende CRMs über APIs und Adapter.",
+                "Erfordert Copilot Credits (separat verkauft) für generative KI-Szenarien; jährliche Abrechnung."
+            ]
+        },
+        {
+            label: 'Eigenständige Lizenz',
+            features: [
+                "Rein digitales Contact Center — Messaging- und Chat-Kanäle ohne native Sprachkommunikation.",
+                "Live-Chat, SMS, E-Mail, soziale Medien (Facebook, WhatsApp, LINE, Apple Messages for Business) und Microsoft-Teams-Kanäle.",
+                "KI-first Unified Routing mit 50 Datensatz-Routen/Benutzer/Monat (ohne Chats, Anrufe und SMS); fertigkeitsbasierte Zuweisung über digitale Kanäle.",
+                "Copilot-unterstützter Agenten-Desktop mit Conversation-Zusammenfassungen und Next-Best-Action-Vorschlägen.",
+                "Self-Service-Chatbots und virtuelle Agenten, erstellt in Copilot Studio.",
+                "Nachrichtenkapazität wird separat über Microsoft Copilot Studio erworben.",
+                "Offen und erweiterbar — integriert sich in bestehende CRMs über APIs und Adapter."
+            ]
+        },
+        {
+            label: 'Eigenständige Lizenz',
+            features: [
+                "Reines Sprach-Contact-Center — native eingehende und ausgehende Sprachkommunikation ohne digitale Messaging-Kanäle.",
+                "Native Sprachkommunikation auf Basis von Azure Communication Services (Carrier-/ACS-Nutzung wird separat abgerechnet); unterstützt Azure Direct Routing für bestehende Carrier.",
+                "Kapazitätsberechtigungen: 2.000 Intelligent-Voicebot-Minuten (IVR)/Benutzer/Monat, 6.000 Call-Intelligence-Minuten/Benutzer/Monat und 35 GB Dataverse-Dateispeicher.",
+                "KI-first-Routing, fertigkeitsbasierte Zuweisung und Workforce-Management-Insights für Sprach-Workloads.",
+                "Copilot-unterstützter Agenten-Desktop mit Echtzeit-Transkription, Anrufzusammenfassungen und Next-Best-Action-Vorschlägen.",
+                "Self-Service-IVR und Voicebots, erstellt in Copilot Studio.",
+                "Offen und erweiterbar — integriert sich in bestehende CRMs über APIs und Adapter."
+            ]
+        }
+    ],
+    'd365-field': [
+        {
+            label: 'Hauptlizenz',
+            features: [
+                "Vollzeit-Disponenten, Planer und Außendiensttechniker.",
+                "Vollständiger Auftragslebenszyklus: Erstellung, Planung, Disposition, Bestand und Retouren.",
+                "Plantafel, Resource-Scheduling-Optimization-Bereitschaft und Routenplanung.",
+                "Enge Integration mit der Customer-Service-Fallverwaltung.",
+                "Beinhaltet die neueste Field Service Mobile-Anwendung.",
+                "Bing Maps Developer-Lizenz inklusive mit Einschränkungen bei abrechenbaren Transaktionen (siehe Microsoft Bing Maps-Lizenzierung).",
+                "Beinhaltet Dynamics 365 Guides und Remote Assist (bis 31. Dezember 2026).",
+                "2.000 Customer Voice-Antworten pro Tenant/Monat."
+            ]
+        },
+        {
+            label: 'Add-on-Lizenz',
+            features: [
+                "Für Drittanbieter-/Teilzeit-Techniker — bietet wesentliche Auftragsverwaltungsfunktionalität zur Skalierung der Außendienstoperationen.",
+                "Bereits zugewiesene Aufträge ausführen und aktualisieren; Fälle mit eingeschränkter Bearbeitungsfähigkeit erstellen (keine SLAs/Berechtigungen/Fall-Routing).",
+                "Kundenanlagen einsehen, eigene Ressourcen verwalten und selbst planen (nur eigene Ressourcen und manuelle Planung).",
+                "Beinhaltet die neueste Field Service Mobile-Anwendung.",
+                "Beinhaltet weder Disposition, Planungsadministration noch Bestandsverwaltung.",
+                "Gemäß Microsoft Dynamics 365 Lizenzleitfaden: Organisationen müssen bereits eine Field-Service-Lizenz besitzen, bevor sie Field-Service-Contractor-Lizenzen erwerben können.",
+                "Field-Service-Contractor-SLs beinhalten keine Dataverse-Kapazitätsberechtigungen."
+            ]
+        }
+    ],
+    'd365-ci': [
+        {
+            label: 'Tenant-Lizenz',
+            features: [
+                "Lizenzierung pro Tenant; beinhaltet Rechte zur Installation von Customer Insights – Journeys (ehemals Marketing) und Customer Insights – Data (ehemals Customer Insights) in einer unbegrenzten Anzahl von Produktions- oder Sandbox-Umgebungen.",
+                "Customer Insights – Journeys: personalisierte Customer Journeys über E-Mail, SMS, Push-Benachrichtigungen und mehr erstellen und ausführen.",
+                "Customer Insights – Data: Kundendaten mit der Customer Data Platform (CDP) vereinheitlichen und anreichern für tiefe Einblicke in Kundenverhalten, -präferenzen und -interaktionen.",
+                "Kernkapazitäten: 10.000 Interacted People (Journeys) und 100.000 Unified People (Data) pro Tenant/Monat.",
+                "Skalieren Sie jeden Zähler unabhängig mit Interacted-People- und Unified-People-Add-on-Paketen (Volumenstufen T1/T2/T3).",
+                "Der Attach-Preis erfordert mindestens 10 qualifizierte Dynamics-365-Basislizenzen: Customer Service, Sales, Field Service, Finance, Supply Chain Management oder Commerce."
+            ]
+        }
+    ],
+    'd365-finance': [
+        {
+            label: 'Basisstufe',
+            features: [
+                "Intelligentes, automatisiertes und vertrauenswürdiges zentrales Finanzmanagement mit tiefer Daten- und Prozessintegration über Dynamics 365, Microsoft 365 und Partneranwendungen hinweg.",
+                "Hauptbuch, Kreditoren-/Debitorenbuchhaltung, Anlagevermögen, Budgetierung, globale Kostenrechnung und Steuer-Engine.",
+                "Mehrgesellschafts-, mehrwährungs- und mehrsprachige Konsolidierungen mit länderspezifischen Lokalisierungen.",
+                "Lesezugriff auf Business-Performance-Planung (Erstellen von Plänen/Budgets/Prognosen erfordert Finance Premium).",
+                "Copilot-Unterstützung für Finanz-Insights, Lieferantenrechnungsverarbeitung und Mahnworkflows.",
+                "Beinhaltet 100 elektronische Rechnungen und 100 Rechnungserfassungstransaktionen pro Tenant/Monat."
+            ]
+        },
+        {
+            label: '+ Ergänzt Finance',
+            features: [
+                "Erweiterte Business-Performance-Management-Arbeitsbereiche für Planung, Budgetierung und Prognose.",
+                "Erforderliche Lizenz für Benutzer, die nativ Pläne, Budgets, Prognosen oder Finanzanalyseberichte erstellen müssen.",
+                "Abonnementabrechnung mit wiederkehrenden Umsatzmodellen und Umsatzrealisierung gemäß IFRS 15 / ASC 606.",
+                "Erweiterte KI-Szenarien wie Copilot-unterstützte Abweichungsanalyse und Cashflow-Prognose.",
+                "Verdoppelt die Kapazität auf 200 elektronische Rechnungen und 200 Rechnungserfassungstransaktionen pro Tenant/Monat.",
+                "1.000 Copilot Credits pro Benutzer/Monat."
+            ]
+        }
+    ],
+    'd365-scm': [
+        {
+            label: 'Basisstufe',
+            features: [
+                "Echtzeit-Sichtbarkeit und Intelligenz für Hersteller, Distributoren und Einzelhändler — proaktive Operationen über Auftragsabwicklung, Planung, Beschaffung, Produktion, Bestand, Lagerhaltung und Transport.",
+                "Erweiterte Module: Anlagenverwaltung, Kostenrechnung, Engineering Change Management und Manufacturing Execution.",
+                "Diskrete, prozessorientierte, Lean- und projektbezogene Fertigungsmodi mit integriertem Qualitätsmanagement.",
+                "Warehouse-Management-Mobile-App mit Handheld-Scanning, Wave-/Pack-/Load-Verarbeitung und Bestandsverfolgung per Kennzeichen.",
+                "Copilot-Unterstützung für Beschaffungsentscheidungen, Bedarfsprognose-Insights und Ausnahmebehandlung in der Lieferkette.",
+                "Standard-Tenant-Kapazitäten: 100 Anlagen, 100 elektronische Rechnungstransaktionen, 100 Rechnungserfassungstransaktionen und 1.000 Auftragspositionen pro Tenant/Monat."
+            ]
+        },
+        {
+            label: '+ Ergänzt SCM',
+            features: [
+                "Demand Planning mit Copilot-gestützter Prognoseerstellung, Segmentierung und Ausnahmemanagement.",
+                "Erforderliche Lizenz für Benutzer, die nativ Pläne, Budgets, Prognosen oder Bedarfsanalyseberichte erstellen müssen.",
+                "Erweiterte Bestands- und Wiederbeschaffungsoptimierung mit Multi-Echelon-Planung über Standorte und Lager hinweg.",
+                "Eingebettete Szenariosimulation und What-if-Analyse für die Angebots-/Nachfrageabstimmung.",
+                "Verdoppelt die Rechnungskapazität auf 200 elektronische Rechnungen und 200 Rechnungserfassungstransaktionen pro Tenant/Monat (Anlagen- und Auftragspositionskapazitäten bleiben bei 100 und 1.000).",
+                "1.000 Copilot Credits pro Benutzer/Monat."
+            ]
+        }
+    ],
+    'd365-hr': [
+        {
+            label: 'Hauptlizenz',
+            features: [
+                "Vollständige Vergütung, Leistungen, Urlaubs-/Abwesenheitsverfolgung, regulatorische Compliance und Leistungsfeedback.",
+                "Verwaltung standardisierter Schulungsprogramme mit Kurskatalogen, Anmeldungen und Abschlüssen.",
+                "Organisationsverwaltung: Positionshierarchien, Stellen, Abteilungen und Mitarbeiter-Lebenszyklus-Workflows (Hire-to-Retire).",
+                "Zentralisierte Personendaten, erweiterbar über Dataverse und Power Platform; integriert sich mit Lohnabrechnungs-Partnerlösungen.",
+                "Copilot-Unterstützung für Mitarbeiteranfragen, Dokumentenerstellung und HR-Analytik.",
+                "2.000 Customer Voice-Antworten pro Tenant/Monat."
+            ]
+        },
+        {
+            label: 'Eigenständige Lizenz',
+            features: [
+                "Mitarbeiter-Self-Service: persönliche Informationen aktualisieren, Krankmeldung melden, Leistungen einsehen, Urlaubsanträge stellen und Gehaltsabrechnungen herunterladen.",
+                "Manager-Self-Service: Urlaubsanträge von Mitarbeitern genehmigen, Team-Reporting-Informationen einsehen und auf grundlegende Team-Analytik zugreifen.",
+                "Mobil-optimierter Zugriff über die Dynamics-365-/Power-Apps-Begleitanwendungen.",
+                "Gemäß Microsoft Dynamics 365 Lizenzleitfaden: gewährt nur Zugriff auf Human Resources, nicht auf andere Dynamics-365-Produkte.",
+                "Beinhaltet keine vollständigen HR-Benutzerrechte — bietet nur die Self-Service-Funktionalität, die Mitarbeiter und Manager üblicherweise benötigen.",
+                "Konzipiert für die breite Mitarbeiterbasis; vollständige HR-Spezialisten müssen mit Human Resources lizenziert werden."
+            ]
+        }
+    ],
+    'd365-commerce': [
+        {
+            label: 'Basisstufe',
+            features: [
+                "Vereinheitlichtes Filialgeschäft, Backoffice und Callcenter in einer durchgängigen Einzelhandelsplattform.",
+                "Modernes Point-of-Sale (POS) auf Windows, iOS und Android mit Offline-Unterstützung und Clienteling-Tools.",
+                "Intelligente Prognose, KI-gestützte Produktempfehlungen und personalisierte Treueprogramme.",
+                "Filialoperationen, Kataloge, Merchandising-Strategie, Preis-/Rabatt-Engine und Abonnementabrechnung.",
+                "Omnichannel-Auftragsverwaltung: BOPIS (Online kaufen, im Geschäft abholen), Endless Aisle und Versand aus dem Geschäft.",
+                "1.000 Auftragspositionen pro Tenant/Monat."
+            ]
+        },
+        {
+            label: '+ Ergänzt Commerce',
+            features: [
+                "Tenant-basierte Stufen zur vollständigen Unterstützung von B2B- und B2C-E-Commerce-Storefronts mit AOV-basierten Kapazitätsbändern.",
+                "Commerce Scale Unit – Cloud für geschäftskritische Spitzenlast-Verarbeitung.",
+                "API-gesteuerte Headless-Commerce-Engine für aufkommende Kanäle (soziale Medien, Marktplätze, IoT).",
+                "Eingebautes CMS mit Drag-and-Drop-Authoring, A/B-Tests und SEO-Optimierung.",
+                "Native Integrationen mit Zahlungsanbietern, Steuerdiensten und Bewertungs-/Rezensionsanbietern.",
+                "Gemäß Microsoft Dynamics 365 Lizenzleitfaden: jede zusätzliche E-Commerce-Umgebung erfordert eine zusätzliche e-Commerce-Tier-Lizenz."
+            ]
+        }
+    ],
+    'd365-po': [
+        {
+            label: 'Vollständige Lizenz',
+            features: [
+                "Vereinheitlichte Plattform, die Vertrieb, Ressourcenmanagement, Projektmanagement und Finanzwesen in einem einzigen Produkt verbindet.",
+                "Opportunity-to-Cash: projektbasierte Angebote mit Projektstrukturplan (WBS), Verträgen und Festpreis-/Time-and-Materials-/Meilenstein-Abrechnung.",
+                "Projektplanung, Terminierung und Ressourcenmanagement: Gantt, Abhängigkeiten, Baselines, fertigkeitsbasierte Ressourcenanforderungen und Kapazitätsplanung.",
+                "Zeit-, Spesen- und Subunternehmer-Management mit richtliniengesteuerten Genehmigungs-Workflows und Dreiwege-Abgleich gegen Projektbudgets.",
+                "Projektrechnungswesen: Kostensätze, konzerninterne Verrechnungspreise und Umsatzrealisierung (Percent-Complete / As-Invoiced) gemäß IFRS 15 / ASC 606.",
+                "Multi-Projekt-Portfolio-Dashboards mit Earned Value (EV), CPI/SPI, Margenanalyse und Copilot-Unterstützung für Statuszusammenfassungen und Risikoidentifikation."
+            ]
+        }
+    ],
+    'd365-bc': [
+        {
+            label: 'Basisstufe',
+            features: [
+                "Finanzmanagement: KI-gestützte Prognosen, Bankabstimmung, Abgrenzungen und mehrere Währungen.",
+                "Lieferkette: grundlegender Bestand, Streckengeschäft, Verkaufs-/Einkaufsauftragsverwaltung und Lagerdatenerfassung.",
+                "CRM-Kampagnen, grundlegende Personalverwaltung und Projektmanagement-Tools.",
+                "Breites Spektrum operativer und administrativer Funktionen, zugeschnitten auf KMUs."
+            ]
+        },
+        {
+            label: '+ Ergänzt Essentials',
+            features: [
+                "Service Order Management: Planung, Disposition und Service-Vertragsverwaltung.",
+                "Fertigung: agile Fertigung, grundlegende Kapazitätsplanung, Maschinenzentren und Produktions-Stücklisten."
+            ]
+        }
+    ],
+    'power-apps': [
+        {
+            label: 'Vollständige Lizenz',
+            features: [
+                "Unbegrenzte benutzerdefinierte Anwendungen erstellen und ausführen sowie unbegrenzte Power-Pages-Websites erstellen und darauf zugreifen.",
+                "Vollständiger Dataverse-Zugriff mit unbegrenzter Erstellung und Zugriff auf benutzerdefinierte Tabellen.",
+                "Standard-, Premium- und benutzerdefinierte Konnektoren sowie Datentransfer zu lokalen und Cloud-Diensten.",
+                "Dedizierte Dataverse-Kapazität: 250 MB Datenbank und 2 GB Datei, kumuliert pro Benutzer (auf Tenant-Ebene).",
+                "Power-Automate-Nutzungsrechte für Cloud-Flows im App-Kontext (RPA erfordert einen separaten Power-Automate-Premium-Erwerb).",
+                "Managed Environments für Verwaltung und Governance im großen Maßstab.",
+                "Gemäß Power Platform Licensing Guide April 2026: 20 USD pro Benutzer/Monat, jährliche Abrechnung."
+            ]
+        },
+        {
+            label: 'Volumenlizenz',
+            features: [
+                "Gleiche Power-Apps-Premium-Berechtigungen wie die Standard-SKU für 20 USD/Benutzer/Monat.",
+                "Gemäß Power Platform Licensing Guide April 2026: 12 USD pro Benutzer/Monat bei mehr als 2.000 neuen Lizenzen, jährliche Abrechnung.",
+                "Zielt auf Großeinführungen ab, die Power Apps für Tausende von Benutzern standardisieren.",
+                "Beschaffung über Ihr Microsoft-Account-Team oder einen Enterprise-Agreement-Zusatz.",
+                "Alle anderen Funktionen (Dataverse-Kapazität, Premium-Konnektoren, Managed Environments) sind identisch mit der Standard-Premium-SKU."
+            ]
+        }
+    ],
+    'power-automate': [
+        {
+            label: 'Hauptlizenz',
+            features: [
+                "Moderne Anwendungen mit API-basierter digitaler Prozessautomatisierung automatisieren (Cloud-Flows: automatisiert, sofort, geplant).",
+                "Legacy-Anwendungen mit UI-basierter robotergesteuerter Prozessautomatisierung automatisieren (Attended Desktop Flows / RPA).",
+                "Geschäftsprozessflüsse für strukturierte, zustandsbehaftete, menschlich-interaktive Workflows.",
+                "Process Mining: Prozesse visualisieren und analysieren (zusätzliche Process-Mining-Kapazität als 100-GB/Tenant/Monat-Add-on verfügbar).",
+                "Standard-, Premium- und benutzerdefinierte Konnektoren sowie Datentransfer zu lokalen und Cloud-Diensten.",
+                "Dataverse-Nutzungsrechte: 250 MB Datenbank und 2 GB Datei, kumuliert pro Benutzer (auf Tenant-Ebene).",
+                "Managed Environments für Verwaltung und Governance im großen Maßstab.",
+                "Gemäß Power Platform Licensing Guide April 2026: 15 USD pro Benutzer/Monat, jährliche Abrechnung; eine Lizenz erlaubt dem Benutzer (oder der Kapazität), Power Automate in jeder Umgebung des Tenants zu nutzen."
+            ]
+        },
+        {
+            label: 'Eigenständige Lizenz',
+            features: [
+                "Lizenziert einen einzelnen „Automatisierungs“-Bot für unbeaufsichtigte robotergesteuerte Prozessautomatisierung (läuft unabhängig von einem Benutzer) oder einen kritischen Geschäftsprozess über UI-basierte digitale Prozessautomatisierung.",
+                "Kann alternativ einen zentralen, übergeordneten Geschäftsprozess (z. B. HR-Onboarding) für organisationsweiten Zugriff ohne Lizenzierung pro Benutzer lizenzieren.",
+                "Gemäß Power Platform Licensing Guide April 2026: 150 USD pro Bot/Monat (jährliche Abrechnung) — pro Umgebung/Monat; eine Lizenz erlaubt die Nutzung des Bots oder Prozesses in einer einzigen Umgebung, und eine zusätzliche Lizenz ist erforderlich, wenn derselbe Bot oder Prozess in einer anderen Umgebung bereitgestellt wird.",
+                "Beinhaltet Dataverse-Nutzungsrechte: 50 MB Datenbank und 200 MB Datei, kumuliert pro Lizenz."
+            ]
+        }
+    ],
+    'power-pages': [
+        {
+            label: 'Einstiegsstufe',
+            features: [
+                "Lizenziert authentifizierte Besucher, die sich über einen Identitätsanbieter anmelden (Microsoft Entra ID, soziale Anbieter, B2C, SAML, OpenID oder benutzerdefiniert).",
+                "Jedes Paket deckt 100 angemeldete Benutzer pro Site pro Monat ab.",
+                "Einstiegsstufe — kein Mindestabnahmevolumen.",
+                "Uneingeschränkte Nutzung von Standard-, Premium- und benutzerdefinierten Konnektoren.",
+                "Vollständiger Dataverse-Zugriff (einschließlich benutzerdefinierter und komplexer Tabellen); kumuliert 2 GB Datenbank + 16 GB Dateikapazität pro Paket.",
+                "Managed Environments für Verwaltung und Governance im großen Maßstab."
+            ]
+        },
+        {
+            label: 'Volumenstufe',
+            features: [
+                "Gleiche Berechtigungen wie Authenticated T1 (100 angemeldete Benutzer/Site/Monat pro Paket) zu einem reduzierten Preis pro Paket.",
+                "Mindestkauf: 100 Pakete (= 10.000 authentifizierte Benutzer/Site/Monat).",
+                "Zielanwendungsfall: mittelgroße bis große externe Portale mit konstantem authentifiziertem Verkehr."
+            ]
+        },
+        {
+            label: 'Hochvolumenstufe',
+            features: [
+                "Gleiche Berechtigungen wie Authenticated T1 zum niedrigsten Preis pro Paket.",
+                "Mindestkauf: 1.000 Pakete (= 100.000 authentifizierte Benutzer/Site/Monat).",
+                "Zielanwendungsfall: externe Portale auf Unternehmensebene, Partner-/Kunden-Communities und B2B-Marktplätze."
+            ]
+        },
+        {
+            label: 'Einstiegsstufe',
+            features: [
+                "Lizenziert anonyme Besucher, die ohne Anmeldung auf Sites zugreifen.",
+                "Jedes Paket deckt 500 anonyme Benutzer pro Site pro Monat ab.",
+                "Einstiegsstufe — kein Mindestabnahmevolumen.",
+                "Uneingeschränkte Nutzung von Standard-, Premium- und benutzerdefinierten Konnektoren.",
+                "Vollständiger Dataverse-Zugriff (einschließlich benutzerdefinierter und komplexer Tabellen); kumuliert 500 MB Datenbank + 4 GB Dateikapazität pro Paket.",
+                "Managed Environments für Verwaltung und Governance im großen Maßstab."
+            ]
+        },
+        {
+            label: 'Volumenstufe',
+            features: [
+                "Gleiche Berechtigungen wie Anonymous T1 (500 anonyme Benutzer/Site/Monat pro Paket) zu einem reduzierten Preis pro Paket.",
+                "Mindestkauf: 20 Pakete (= 10.000 anonyme Benutzer/Site/Monat).",
+                "Zielanwendungsfall: Marketing-Sites, Wissensdatenbanken und öffentliche Portale mit moderatem Verkehr."
+            ]
+        },
+        {
+            label: 'Hochvolumenstufe',
+            features: [
+                "Gleiche Berechtigungen wie Anonymous T1 zum niedrigsten Preis pro Paket.",
+                "Mindestkauf: 200 Pakete (= 100.000 anonyme Benutzer/Site/Monat).",
+                "Zielanwendungsfall: stark frequentierte öffentliche Websites, Self-Service-Portale und große externe Landing Pages."
+            ]
+        }
+    ],
+    'copilot-studio': [
+        {
+            label: 'Tenant-Lizenz',
+            features: [
+                "Tenant-weite Lizenz, verkauft in Kapazitätspaketen von 25.000 Copilot Credits zu 200 USD/Paket/Monat.",
+                "Jede Agentenaktion oder -antwort verbraucht eine variable Anzahl von Copilot Credits, abhängig vom Vorgang.",
+                "Verfügbar in zwei Abrechnungsmodellen mit identischen Produktfunktionen: Pre-Purchase Plan (vorausbezahlte Copilot-Credit-Commit-Units im Voraus gewählt, bis zu 20 % Ersparnis gegenüber Pay-as-you-go, automatischer Pay-as-you-go-Fallback, wenn vorausbezahlte Credits aufgebraucht sind) und Pay-as-you-go (keine Vorabverpflichtung, monatlich nach tatsächlichem Verbrauch abgerechnet).",
+                "Azure-Abonnement erforderlich, um die Umgebung mit der Abrechnung zu verknüpfen (insbesondere für Pay-as-you-go).",
+                "Vollständige Rechte zum Erstellen intelligenter Agenten und Bots mit grafischer Low-Code-Authoring; Veröffentlichung auf externen Kanälen (Websites, Apps, soziale Plattformen) und Nutzung durch nicht lizenzierte Benutzer.",
+                "Beinhaltet Power-Automate-Cloud-Flows (automatisiert, sofort, geplant) mit bis zu 250.000 Power-Platform-Anfragen pro Tag auf Tenant-Ebene.",
+                "Cloud-Flows verbrauchen keine primäre Copilot-Studio-Nachrichten-/Credit-Kapazität.",
+                "Vollständiger Zugriff auf Standard-, Premium- und benutzerdefinierte Konnektoren; Datentransfer zu lokalen und Cloud-Diensten.",
+                "Vollständige Dataverse-Nutzungsrechte: 250 MB Datenbank und 2 GB Dateikapazität pro Lizenz.",
+                "Managed Environments für umfassende Verwaltung und Governance im großen Maßstab."
+            ]
+        }
+    ],
+    'sust-emissions': [
+        {
+            label: 'Basisstufe',
+            features: [
+                "Grundlegende Verfolgung von Kohlenstoff (Scope 1 & 2), Wasser und Abfall mit vorgefertigten Datenmodellen.",
+                "Aktivitätsdaten aus On-Premises-, Cloud- und IoT-Quellen über sofort einsatzbereite Konnektoren erfassen.",
+                "Eingebaute Emissionsfaktor-Bibliotheken und automatisierte Berechnungen gemäß GHG Protocol.",
+                "Interaktive Analytik, Scorecards und ESG-Reporting-Dashboards.",
+                "Zielsetzung und Fortschrittsverfolgung gegenüber Nachhaltigkeitszielen."
+            ]
+        },
+        {
+            label: '+ Ergänzt Essentials',
+            features: [
+                "Erweiterte Scope-3-Emissionsverfolgung über die gesamte Wertschöpfungskette (vorgelagerte und nachgelagerte Kategorien).",
+                "Berechnung des Product Carbon Footprint (PCF) und Teilen mit Lieferanten und Kunden.",
+                "Copilot in Sustainability Manager für Insights in natürlicher Sprache, Reporting und Datenqualitätsprüfungen.",
+                "ESG-Wertschöpfungsketten-Management und Lieferanten-Engagement-Workflows.",
+                "Erweiterte Datenerfassungskapazität und fortgeschrittene Analytik für komplexe ESG-Reporting-Vorgaben."
+            ]
+        }
+    ]
+};
