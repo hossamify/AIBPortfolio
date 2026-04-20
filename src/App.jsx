@@ -103,6 +103,21 @@ export default function App() {
     // Memoize portfolio tree to avoid rebuilding it on every render; only rebuild when language changes.
     const mappedPortfolio = useMemo(() => getPortfolioData(lang), [lang]);
 
+    // When the language changes, re-resolve the active category/product from the freshly built tree.
+    // Each portfolio node only carries `locales` for the current language, so the previously-stored
+    // references would still hold strings in the old language and never re-localize.
+    useEffect(() => {
+        if (!activeCategory) return;
+        const freshCategory = mappedPortfolio.find((c) => c.id === activeCategory.id);
+        if (!freshCategory) return;
+        if (freshCategory !== activeCategory) setActiveCategory(freshCategory);
+        if (activeProduct) {
+            const freshProduct = freshCategory.products?.find((p) => p.id === activeProduct.id);
+            if (freshProduct && freshProduct !== activeProduct) setActiveProduct(freshProduct);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mappedPortfolio]);
+
     const handleBack = useCallback(() => {
         if (activeProduct) { setActiveProduct(null); setSelectedTier(null); }
         else if (activeCategory) setActiveCategory(null);
