@@ -1,81 +1,70 @@
-import React from 'react';
-import { Users, Link as LinkIcon, CheckCircle, DollarSign, Tag, Info, ExternalLink, PlayCircle } from 'lucide-react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { Users, Link as LinkIcon, CheckCircle, DollarSign, Tag, Info, ExternalLink, PlayCircle, Quote } from 'lucide-react';
 import { getUI } from '../i18n/ui.js';
 import { PRICING, getLocalizedPrice } from '../data/pricing.js';
-import { getLicenseDetails } from '../data/licenseDetails.js';
+import { getLicenseDetails, loadLicenseLanguage, isLicenseLanguageLoaded } from '../data/licenseDetails.js';
+import { getProductLinks } from '../data/productLinks.js';
 import CdmSchemaVisual from './CdmSchemaVisual.jsx';
+import Spinner from './Spinner.jsx';
 
-// Official Microsoft product page per product id. Used to make the product icon
-// and title in the header act as deep links to the corresponding microsoft.com page.
-const PRODUCT_URLS = {
-    'dataverse-cdm': 'https://www.microsoft.com/en-us/power-platform/dataverse',
-    'd365-sales': 'https://www.microsoft.com/en-us/dynamics-365/products/sales',
-    'd365-cs': 'https://www.microsoft.com/en-us/dynamics-365/products/customer-service',
-    'd365-ci': 'https://www.microsoft.com/en-us/dynamics-365/products/customer-insights',
-    'd365-field': 'https://www.microsoft.com/en-us/dynamics-365/products/field-service',
-    'd365-finance': 'https://www.microsoft.com/en-us/dynamics-365/products/finance',
-    'd365-scm': 'https://www.microsoft.com/en-us/dynamics-365/products/supply-chain-management',
-    'd365-po': 'https://www.microsoft.com/en-us/dynamics-365/products/project-operations',
-    'd365-hr': 'https://www.microsoft.com/en-us/dynamics-365/products/human-resources',
-    'd365-commerce': 'https://www.microsoft.com/en-us/dynamics-365/products/commerce',
-    'd365-bc': 'https://www.microsoft.com/en-us/dynamics-365/products/business-central',
-    'copilot-studio': 'https://www.microsoft.com/en-us/microsoft-365-copilot/microsoft-copilot-studio',
-    'power-apps': 'https://www.microsoft.com/en-us/power-platform/products/power-apps',
-    'power-automate': 'https://www.microsoft.com/en-us/power-platform/products/power-automate',
-    'power-pages': 'https://www.microsoft.com/en-us/power-platform/products/power-pages',
-    // All Microsoft Sustainability Manager modules link to the MSM product page.
-    'sust-emissions': 'https://www.microsoft.com/en-us/sustainability/microsoft-sustainability-manager',
-    'esg-social': 'https://www.microsoft.com/en-us/sustainability/microsoft-sustainability-manager',
-    'sust-ingestion': 'https://www.microsoft.com/en-us/sustainability/microsoft-sustainability-manager',
-    'esg-fabric': 'https://www.microsoft.com/en-us/sustainability/microsoft-sustainability-manager',
+// Registry of per-product Business Value components. A product appears in the
+// tabs UI (Features & Pricing / Business Value) only if it has an entry here.
+// Each entry is code-split via React.lazy so the ~50 KB module is only fetched
+// when the user actually opens that product, instead of all 17 being shipped
+// in the initial bundle.
+const BUSINESS_VALUE_COMPONENTS = {
+    'd365-sales': lazy(() => import('./BusinessValueSales.jsx')),
+    'd365-cs': lazy(() => import('./BusinessValueCustomerService.jsx')),
+    'd365-ci': lazy(() => import('./BusinessValueCustomerInsights.jsx')),
+    'd365-field': lazy(() => import('./BusinessValueFieldService.jsx')),
+    'd365-finance': lazy(() => import('./BusinessValueFinance.jsx')),
+    'd365-scm': lazy(() => import('./BusinessValueSupplyChain.jsx')),
+    'd365-po': lazy(() => import('./BusinessValueProjectOperations.jsx')),
+    'd365-hr': lazy(() => import('./BusinessValueHumanResources.jsx')),
+    'd365-commerce': lazy(() => import('./BusinessValueCommerce.jsx')),
+    'd365-bc': lazy(() => import('./BusinessValueBusinessCentral.jsx')),
+    'copilot-studio': lazy(() => import('./BusinessValueCopilotStudio.jsx')),
+    'power-apps': lazy(() => import('./BusinessValuePowerApps.jsx')),
+    'power-automate': lazy(() => import('./BusinessValuePowerAutomate.jsx')),
+    'power-pages': lazy(() => import('./BusinessValuePowerPages.jsx')),
+    'sust-emissions': lazy(() => import('./BusinessValueSustainabilityManager.jsx')),
+    'dataverse-cdm': lazy(() => import('./BusinessValueDataverse.jsx')),
+    'enterprise-security': lazy(() => import('./BusinessValueEnterpriseSecurity.jsx')),
 };
 
-// Microsoft guided/click-through tour path segments per product id. The full
-// URL is composed at render time from the active language so the user lands on
-// the localized walkthrough when one is published. Italian falls back to en-us
-// because Microsoft does not publish an it-it variant for these tours.
-const DEMO_PATHS = {
-    'd365-sales': 'dynamics/sales-acceleration',
-    'd365-cs': 'dynamics/customer-service',
-    'd365-ci': 'dynamics/customer-insights',
-    'd365-field': 'dynamics/field-service',
-    'd365-finance': 'dynamics/finance-modernization',
-    'd365-scm': 'dynamics/supply-chain-modernization',
-    'd365-po': 'dynamics/project-operations',
-    'd365-hr': 'dynamics/human-resources',
-    'd365-bc': 'dynamics/business-central',
-    'power-apps': 'power-platform/power-apps',
-    'power-automate': 'power-platform/power-automate',
-};
+export default function ProductView({ lang, isRtl, activeCategory, activeProduct, selectedTier, setSelectedTier }) {
+        // Products that present their content under tabs (Features & Pricing vs Business Value).
+        const BusinessValueComponent = BUSINESS_VALUE_COMPONENTS[activeProduct?.id];
+        const hasTabs = Boolean(BusinessValueComponent);
+        // Architectural Foundations (Dataverse & CDM, Enterprise Security) are platform-level
+        // capabilities with no standalone pricing; surface only "Product Features" on the second tab
+        // and suppress the pricing section entirely.
+        const isArchitecturalFoundation = activeCategory?.id === 'architecture';
+        // App.jsx renders <ProductView key={activeProduct.id} ... /> so React unmounts/remounts
+        // this component when the user navigates to a different product. That makes a plain
+        // useState the correct way to default the tab — no setState-in-render gymnastics needed.
+        const [activeTab, setActiveTab] = useState('business-value');
+        // The license-detail slices for non-English locales are code-split (~30 KB each)
+        // and loaded on demand via loadLicenseLanguage. We bump a tick when the slice
+        // resolves so the component re-renders and getLicenseDetails returns the
+        // localized version instead of the English fallback.
+        const [, setLicenseTick] = useState(0);
+        useEffect(() => {
+            if (isLicenseLanguageLoaded(lang)) return undefined;
+            let cancelled = false;
+            loadLicenseLanguage(lang).then(() => { if (!cancelled) setLicenseTick((t) => t + 1); });
+            return () => { cancelled = true; };
+        }, [lang]);
 
-const DEMO_LOCALES = {
-    en: 'en-us',
-    fr: 'fr-fr',
-    es: 'es-es',
-    de: 'de-de',
-    nl: 'nl-nl',
-    ar: 'ar-sa',
-};
-
-const buildDemoUrl = (productId, lang) => {
-    const path = DEMO_PATHS[productId];
-    if (!path) return null;
-    const locale = DEMO_LOCALES[lang] || 'en-us';
-    return `https://guidedtour.microsoft.com/${locale}/guidedtour/${path}/1/1`;
-};
-
-export default function ProductView({ lang, isRtl, activeCategory, activeProduct, mappedPortfolio, selectedTier, setSelectedTier }) {
         if (!activeProduct || !activeCategory) return null;
-        const catData = mappedPortfolio.find(c => c.id === activeCategory.id);
-        const prodData = catData.products.find(p => p.id === activeProduct.id);
+        // activeCategory and activeProduct come from mappedPortfolio (App.jsx derives them
+        // synchronously from the current language) and now expose flat localized fields.
+        const catData = activeCategory;
+        const prodData = activeProduct;
         const ProductIcon = prodData.icon;
-        const localeProd = prodData.locales[lang];
-        const localeCat = catData.locales[lang];
-        const pricing = PRICING[prodData.id];
         const licenseDetails = getLicenseDetails(prodData.id, lang);
         const hasLicenseDetails = licenseDetails && licenseDetails.length > 0;
-        const productUrl = PRODUCT_URLS[prodData.id];
-        const demoUrl = buildDemoUrl(prodData.id, lang);
+        const { productUrl, demoUrl, customerStoriesUrl } = getProductLinks(prodData.id, lang);
 
         return (
             <div className="max-w-6xl mx-auto bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-lg border border-slate-200 dark:border-slate-800 overflow-hidden opacity-100 transition-opacity duration-500">
@@ -86,7 +75,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                 href={productUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                title={`${localeProd.name} — microsoft.com`}
+                                title={`${prodData.name} — microsoft.com`}
                                 className={`p-5 rounded-[2rem] bg-white dark:bg-slate-900 shadow-md shrink-0 ${catData.theme.iconColor} transition-transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 ${catData.theme.ring}`}
                             >
                                 <ProductIcon size={56} strokeWidth={1.5} />
@@ -98,7 +87,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                         )}
                         <div>
                             <div className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold mb-4 bg-white/60 dark:bg-slate-900/60 shadow-sm backdrop-blur-sm ${catData.theme.text}`}>
-                                {getUI('partOf', lang)} {localeCat.name}
+                                {getUI('partOf', lang)} {catData.name}
                             </div>
                             <h1 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-slate-100 mb-4 leading-tight">
                                 {productUrl ? (
@@ -106,34 +95,95 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                         href={productUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        title={`${localeProd.name} — microsoft.com`}
+                                        title={`${prodData.name} — microsoft.com`}
                                         className={`inline-flex items-center gap-2 hover:underline decoration-2 underline-offset-4 ${catData.theme.text.replace('text-', 'hover:text-')} transition-colors`}
                                     >
-                                        <span>{localeProd.name}</span>
+                                        <span>{prodData.name}</span>
                                         <ExternalLink size={20} strokeWidth={2.25} className="opacity-60 shrink-0" />
                                     </a>
                                 ) : (
-                                    localeProd.name
+                                    prodData.name
                                 )}
                             </h1>
-                            <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-3xl leading-relaxed font-medium">{localeProd.shortDesc}</p>
-                            {demoUrl && (
-                                <a
-                                    href={demoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800 text-sm font-bold ${catData.theme.text} hover:shadow-md hover:scale-[1.02] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 ${catData.theme.ring}`}
-                                >
-                                    <PlayCircle size={18} strokeWidth={2.25} />
-                                    <span>{getUI('guidedTour', lang)}</span>
-                                    <ExternalLink size={14} strokeWidth={2.25} className="opacity-60" />
-                                </a>
+                            <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-3xl leading-relaxed font-medium">{prodData.shortDesc}</p>
+                            {(demoUrl || customerStoriesUrl) && (
+                                <div className="mt-5 flex flex-wrap gap-3">
+                                    {demoUrl && (
+                                        <a
+                                            href={demoUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800 text-sm font-bold ${catData.theme.text} hover:shadow-md hover:scale-[1.02] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 ${catData.theme.ring}`}
+                                        >
+                                            <PlayCircle size={18} strokeWidth={2.25} />
+                                            <span>{getUI('guidedTour', lang)}</span>
+                                            <ExternalLink size={14} strokeWidth={2.25} className="opacity-60" />
+                                        </a>
+                                    )}
+                                    {customerStoriesUrl && (
+                                        <a
+                                            href={customerStoriesUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800 text-sm font-bold ${catData.theme.text} hover:shadow-md hover:scale-[1.02] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 ${catData.theme.ring}`}
+                                        >
+                                            <Quote size={18} strokeWidth={2.25} />
+                                            <span>{getUI('customerStories', lang)}</span>
+                                            <ExternalLink size={14} strokeWidth={2.25} className="opacity-60" />
+                                        </a>
+                                    )}
+                                </div>
                             )}
                         </div>
                     </div>
                 </div>
 
                 <div className="p-8 md:p-12 space-y-10 bg-slate-50/30 dark:bg-slate-900/30">
+                    {hasTabs && (
+                        <div role="tablist" aria-label={prodData.name} className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 -mx-2 px-2">
+                            {[
+                                { id: 'business-value', label: getUI('tabBusinessValue', lang) },
+                                { id: 'features', label: getUI(isArchitecturalFoundation ? 'tabFeatures' : 'tabFeaturesPricing', lang) },
+                            ].map((t) => {
+                                const selected = activeTab === t.id;
+                                return (
+                                    <button
+                                        key={t.id}
+                                        type="button"
+                                        role="tab"
+                                        aria-selected={selected}
+                                        aria-controls={`product-tabpanel-${t.id}`}
+                                        id={`product-tab-${t.id}`}
+                                        tabIndex={selected ? 0 : -1}
+                                        onClick={() => setActiveTab(t.id)}
+                                        className={`relative px-4 py-2.5 -mb-px text-sm font-bold cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:outline-none rounded-t-lg border border-b-0 ${
+                                            selected
+                                                ? `${catData.theme.text} bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 ${catData.theme.ring.replace('ring-', 'after:bg-')}`
+                                                : 'text-slate-600 dark:text-slate-400 border-transparent bg-slate-50 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100'
+                                        }`}
+                                    >
+                                        {t.label}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    )}
+
+                    {hasTabs && activeTab === 'business-value' ? (
+                        <div
+                            role="tabpanel"
+                            id="product-tabpanel-business-value"
+                            aria-labelledby="product-tab-business-value"
+                        >
+                            <Suspense fallback={<Spinner />}>
+                                <BusinessValueComponent theme={catData.theme} lang={lang} />
+                            </Suspense>
+                        </div>
+                    ) : (
+                        <div
+                            {...(hasTabs ? { role: 'tabpanel', id: 'product-tabpanel-features', 'aria-labelledby': 'product-tab-features' } : {})}
+                            className="space-y-10"
+                        >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                         <div className="lg:col-span-8">
                             <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 flex items-center gap-3">
@@ -142,7 +192,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                             </h3>
                             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 text-start">
                                 <ul className="space-y-3">
-                                    {localeProd.capabilities.map((cap, i) => (
+                                    {prodData.capabilities.map((cap, i) => (
                                         <li key={i} className="flex items-start gap-2">
                                             <span className={`shrink-0 text-base leading-relaxed ${catData.theme.ring.replace('ring-', 'text-')}`}>•</span>
                                             <span className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-medium">{cap}</span>
@@ -159,23 +209,23 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                 </div>
                                 <h3 className={`text-lg font-bold ${catData.theme.text} mb-4`}>{getUI('targetAudience', lang)}</h3>
                                 <div className="flex flex-wrap gap-2">
-                                    {localeProd.targetAudience.split(/[,،、·]+/).map((persona, i) => (
+                                    {prodData.targetAudience.split(/[,،、·]+/).map((persona, i) => (
                                         <span key={i} className={`inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-bold bg-white/90 dark:bg-slate-900/70 text-slate-800 dark:text-slate-200 shadow-sm border border-white dark:border-slate-700`}>
                                             {persona.trim()}
                                         </span>
                                     ))}
                                 </div>
-                                {localeProd.architecture && (
+                                {prodData.architecture && (
                                     <div className="mt-5 pt-4 border-t border-white/50 dark:border-slate-700/50 relative z-10">
                                         <h4 className={`text-xs font-bold ${catData.theme.text} mb-2 uppercase tracking-wider`}>{getUI('architecture', lang)}</h4>
-                                        <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-medium">{localeProd.architecture}</p>
+                                        <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-medium">{prodData.architecture}</p>
                                     </div>
                                 )}
-                                {localeProd.integrations && (
+                                {prodData.integrations && (
                                     <div className="mt-5 pt-4 border-t border-white/50 dark:border-slate-700/50 relative z-10">
                                         <h4 className={`text-xs font-bold ${catData.theme.text} mb-3 uppercase tracking-wider`}>{getUI('integrations', lang)}</h4>
                                         <div className="flex flex-wrap gap-1.5">
-                                            {localeProd.integrations.split(/[,،、·]+/).map((intg, i) => (
+                                            {prodData.integrations.split(/[,،、·]+/).map((intg, i) => (
                                                 <span key={i} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-white/70 dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 border border-white/80 dark:border-slate-700/70">
                                                     <LinkIcon size={10} className="shrink-0" />
                                                     {intg.trim()}
@@ -192,7 +242,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                         <CdmSchemaVisual lang={lang} />
                     )}
 
-                    {PRICING[prodData.id] && (
+                    {!isArchitecturalFoundation && PRICING[prodData.id] && (
                         <section>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-3">
                                 <DollarSign className={catData.theme.iconColor} size={26} />
@@ -218,16 +268,13 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                         const renderTierCard = (tier, i) => {
                                             const tierUnit = tier.unit || PRICING[prodData.id].unit;
                                             const isSelected = selectedTier === i;
-                                            const interactiveProps = hasLicenseDetails
-                                                ? {
-                                                    role: 'button',
-                                                    tabIndex: 0,
-                                                    onClick: () => setSelectedTier(isSelected ? null : i),
-                                                    onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedTier(isSelected ? null : i); } }
-                                                }
+                                            const cardClassName = `w-full flex flex-col items-stretch justify-start bg-white dark:bg-slate-900 border rounded-2xl p-6 shadow-sm transition-all duration-200 text-start ${hasLicenseDetails ? 'cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:outline-none' : ''} ${isSelected ? 'border-2 ' + catData.theme.border + ' ring-2 ring-inset ' + catData.theme.ring + ' scale-[1.02] shadow-lg' : 'border-slate-200 dark:border-slate-800 hover:shadow-md'}`;
+                                            const CardEl = hasLicenseDetails ? 'button' : 'div';
+                                            const cardProps = hasLicenseDetails
+                                                ? { type: 'button', onClick: () => setSelectedTier(isSelected ? null : i), 'aria-pressed': isSelected }
                                                 : {};
                                             return (
-                                                <div key={i} {...interactiveProps} className={`bg-white dark:bg-slate-900 border rounded-2xl p-6 shadow-sm transition-all duration-200 text-start ${hasLicenseDetails ? 'cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:outline-none' : ''} ${isSelected ? 'border-2 ' + catData.theme.border + ' ring-2 ring-inset ' + catData.theme.ring + ' scale-[1.02] shadow-lg' : 'border-slate-200 dark:border-slate-800 hover:shadow-md'}`}>
+                                                <CardEl key={i} {...cardProps} className={cardClassName}>
                                                     <div className="flex items-center justify-between gap-2 mb-3">
                                                         <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{tier.name}</p>
                                                         {tier.sku && (
@@ -241,7 +288,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                                 return (
                                                                     <div>
                                                                         <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">{getUI('pricingBase', lang)}</span>
-                                                                        <p className="text-3xl font-black text-slate-900 dark:text-slate-100">
+                                                                        <p className="text-3xl font-black text-slate-900 dark:text-slate-100 text-start">
                                                                             <span className="text-lg align-top text-slate-500 dark:text-slate-400">{basePrice.symbol}</span>{basePrice.amount.toLocaleString()}
                                                                             <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">{getUI(tierUnit, lang)}</span>
                                                                         </p>
@@ -259,7 +306,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                                     {(() => {
                                                                         const attachPrice = getLocalizedPrice(tier.attachSku, tier.attach, lang);
                                                                         return (
-                                                                            <p className="text-2xl font-black text-emerald-700 dark:text-emerald-300">
+                                                                            <p className="text-2xl font-black text-emerald-700 dark:text-emerald-300 text-start">
                                                                                 <span className="text-base align-top text-emerald-600 dark:text-emerald-400">{attachPrice.symbol}</span>{attachPrice.amount.toLocaleString()}
                                                                                 <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{getUI(tierUnit, lang)}</span>
                                                                             </p>
@@ -267,7 +314,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                                     })()}
                                                                     {tier.attachQualifiers && (
                                                                         <div className="mt-3">
-                                                                            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">{getUI('attachQualifiers', lang)}</p>
+                                                                            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2 text-start">{getUI('attachQualifiers', lang)}</p>
                                                                             <div className="flex flex-wrap gap-0.5">
                                                                                     {tier.attachQualifiers.map((q, qi) => (
                                                                                         <span key={qi} className="inline-flex items-center px-1.5 py-px rounded text-[11px] font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
@@ -285,7 +332,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                             const standalonePrice = getLocalizedPrice(tier.sku, tier.price, lang);
                                                             return (
                                                                 <div>
-                                                                    <p className="text-3xl font-black text-slate-900 dark:text-slate-100">
+                                                                    <p className="text-3xl font-black text-slate-900 dark:text-slate-100 text-start">
                                                                         <span className="text-lg align-top text-slate-500 dark:text-slate-400">{standalonePrice.symbol}</span>{standalonePrice.amount.toLocaleString()}
                                                                         <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">{tier.label ? ` ${tier.label}` : getUI(tierUnit, lang)}</span>
                                                                     </p>
@@ -293,7 +340,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                             );
                                                         })()
                                                     )}
-                                                </div>
+                                                </CardEl>
                                             );
                                         };
 
@@ -432,6 +479,8 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                 </div>
                             )}
                         </section>
+                    )}
+                        </div>
                     )}
                 </div>
             </div>

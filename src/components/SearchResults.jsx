@@ -19,19 +19,15 @@ export default function SearchResults({ lang, searchQuery, mappedPortfolio, navi
             cat.products.map((p) => ({ ...p, category: cat }))
         );
 
-        const results = allProducts.filter((p) => {
-            const lp = p.locales[lang];
-            const lc = p.category.locales[lang];
-            return matchesAny(
-                term,
-                lp.name,
-                lp.shortDesc,
-                lc.name,
-                lp.capabilities,
-                lp.targetAudience,
-                lp.integrations
-            );
-        });
+        const results = allProducts.filter((p) => matchesAny(
+            term,
+            p.name,
+            p.shortDesc,
+            p.category.name,
+            p.capabilities,
+            p.targetAudience,
+            p.integrations
+        ));
 
         // AI Capabilities pillar (rendered by AgentsView, not as standard product
         // cards in mappedPortfolio). We surface its agents and the MCP extras
@@ -99,26 +95,22 @@ export default function SearchResults({ lang, searchQuery, mappedPortfolio, navi
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {results.map((product) => {
                             const ProductIcon = product.icon;
-                            const localeProd = product.locales[lang];
-                            const localeCat = product.category.locales[lang];
                             return (
-                                <div
+                                <button
                                     key={product.id}
-                                    role="button"
-                                    tabIndex={0}
+                                    type="button"
                                     onClick={() => navigateTo(product.category, product)}
-                                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigateTo(product.category, product); } }}
                                     className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all cursor-pointer group flex flex-col h-full text-start focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:outline-none"
                                 >
                                     <div className={`p-3.5 rounded-2xl inline-block mb-5 w-max ${product.category.theme.badgeBg} ${product.category.theme.iconColor}`}>
                                         <ProductIcon size={24} />
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">{localeProd.name}</h3>
-                                    <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-6 flex-grow font-medium">{localeProd.shortDesc}</p>
+                                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">{product.name}</h3>
+                                    <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-6 flex-grow font-medium">{product.shortDesc}</p>
                                     <div className={`mt-auto text-xs font-bold px-3 py-1.5 rounded-lg inline-block w-max ${product.category.theme.bg} ${product.category.theme.text}`}>
-                                        {getUI('partOf', lang)} {localeCat.name}
+                                        {getUI('partOf', lang)} {product.category.name}
                                     </div>
-                                </div>
+                                </button>
                             )
                         })}
                     </div>
@@ -127,18 +119,16 @@ export default function SearchResults({ lang, searchQuery, mappedPortfolio, navi
                 {aiResults.length > 0 && aiAgentsCategory && (
                     <div className={results.length > 0 ? 'mt-10' : ''}>
                         <h3 className="text-lg md:text-xl font-bold text-slate-800 dark:text-slate-200 mb-5 tracking-tight">
-                            {aiAgentsCategory.locales[lang].name}
+                            {aiAgentsCategory.name}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {aiResults.map((item) => {
                                 const ItemIcon = item.icon;
                                 return (
-                                    <div
+                                    <button
                                         key={item.kind + ':' + item.id}
-                                        role="button"
-                                        tabIndex={0}
+                                        type="button"
                                         onClick={() => navigateTo(aiAgentsCategory)}
-                                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigateTo(aiAgentsCategory); } }}
                                         className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all cursor-pointer group flex flex-col h-full text-start focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:outline-none"
                                     >
                                         <div className={`p-3.5 rounded-2xl inline-block mb-5 w-max ${aiAgentsCategory.theme.badgeBg} ${aiAgentsCategory.theme.iconColor}`}>
@@ -149,7 +139,7 @@ export default function SearchResults({ lang, searchQuery, mappedPortfolio, navi
                                         <div className={`mt-auto text-xs font-bold px-3 py-1.5 rounded-lg inline-block w-max ${aiAgentsCategory.theme.bg} ${aiAgentsCategory.theme.text}`}>
                                             {getUI('partOf', lang)} {item.productName}
                                         </div>
-                                    </div>
+                                    </button>
                                 );
                             })}
                         </div>

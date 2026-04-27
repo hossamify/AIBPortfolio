@@ -23,7 +23,14 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // Mirror varsIgnorePattern for function args so destructured props named
+      // with PascalCase (e.g. icon components like ChevronForward, ProductIcon)
+      // aren't flagged when they're only referenced from JSX, since this config
+      // doesn't load eslint-plugin-react's jsx-uses-vars rule.
+      'no-unused-vars': ['error', {
+        varsIgnorePattern: '^[A-Z_]',
+        argsIgnorePattern: '^[A-Z_]',
+      }],
     },
   },
 ])

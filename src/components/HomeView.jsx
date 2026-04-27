@@ -47,7 +47,7 @@ export default function HomeView({ lang, isRtl, mappedPortfolio, navigateTo, Che
                     </div>
                     <div className="hidden lg:flex w-72 shrink-0 justify-center items-center">
                         <div className="relative w-48 h-48">
-                            <div className="absolute inset-0 border-4 border-dashed border-white/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                            <div className="absolute inset-0 border-4 border-dashed border-white/20 rounded-full animate-[spin_20s_linear_infinite] motion-reduce:animate-none"></div>
                             <div className="absolute inset-4 bg-white/5 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
                                 <BrainCircuit size={64} className="text-blue-300" />
                             </div>
@@ -59,27 +59,24 @@ export default function HomeView({ lang, isRtl, mappedPortfolio, navigateTo, Che
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {mappedPortfolio.map((cat) => {
                     const CatIcon = cat.icon;
-                    const localeCat = cat.locales[lang];
                     return (
-                        <div
+                        <button
                             key={cat.id}
-                            role="button"
-                            tabIndex={0}
+                            type="button"
                             onClick={() => navigateTo(cat)}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigateTo(cat); } }}
-                            className={`group relative bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col h-full focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:outline-none`}
+                            className={`group relative bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col h-full text-start focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:outline-none`}
                         >
                             <div className={`absolute top-0 ${isRtl ? 'right-0 rounded-bl-full' : 'left-0 rounded-br-full'} w-32 h-32 opacity-[0.04] ${cat.theme.bg} transition-transform duration-500 group-hover:scale-125`}></div>
                             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shrink-0 ${cat.theme.bg} ${cat.theme.iconColor} shadow-inner relative z-10`}>
                                 <CatIcon size={28} strokeWidth={2} />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-tight relative z-10">{localeCat.name}</h3>
-                            <p className="text-slate-600 dark:text-slate-400 leading-snug mb-6 text-sm font-medium flex-grow relative z-10">{localeCat.description}</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-tight relative z-10">{cat.name}</h3>
+                            <p className="text-slate-600 dark:text-slate-400 leading-snug mb-6 text-sm font-medium flex-grow relative z-10">{cat.description}</p>
                             <div className={`flex items-center gap-2 text-sm font-bold mt-auto relative z-10 ${cat.theme.text} group-hover:gap-3 transition-all`}>
                                 <span>{getUI('exploreProducts', lang)}</span>
                                 <ChevronForward size={16} />
                             </div>
-                        </div>
+                        </button>
                     )
                 })}
             </div>

@@ -2,14 +2,14 @@ import React from 'react';
 import { Home } from 'lucide-react';
 import { getUI } from '../i18n/ui.js';
 
-export default function Sidebar({ lang, isRtl, activeCategory, activeProduct, searchQuery, mappedPortfolio, navigateTo }) {
+export default function Sidebar({ lang, isRtl, activeCategory, activeProduct, searchQuery, mappedPortfolio, navigateTo, prefetchCategory }) {
     return (
         <>
             <div className="p-6 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
                 <h1 className="font-black text-slate-900 dark:text-slate-100 flex items-center gap-2 whitespace-nowrap">
-                    <span className="flex items-center gap-1 shrink-0">
-                        <img src="./icons/Dynamics365_scalable.svg" alt="Dynamics 365" className="w-6 h-6" />
-                        <img src="./icons/PowerPlatform_scalable.svg" alt="Power Platform" className="w-6 h-6" />
+                    <span className="flex items-center gap-1 shrink-0" aria-hidden="true">
+                        <img src="./icons/Dynamics365_scalable.svg" alt="" className="w-6 h-6" />
+                        <img src="./icons/PowerPlatform_scalable.svg" alt="" className="w-6 h-6" />
                     </span>
                     <span className="leading-tight text-lg">{getUI('appTitle', lang)}</span>
                 </h1>
@@ -33,25 +33,26 @@ export default function Sidebar({ lang, isRtl, activeCategory, activeProduct, se
 
                 {mappedPortfolio.map((cat) => {
                     const CatIcon = cat.icon;
-                    const localeCat = cat.locales[lang];
                     return (
                         <button
                             key={cat.id}
                             onClick={() => navigateTo(cat)}
+                            onMouseEnter={prefetchCategory}
+                            onFocus={prefetchCategory}
                             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 text-start ${activeCategory?.id === cat.id && !activeProduct && !searchQuery
                                 ? cat.theme.bg + ' ' + cat.theme.text + ' font-bold shadow-sm ring-1 ring-inset ' + cat.theme.ring
                                 : 'hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm'
                                 }`}
                         >
                             <CatIcon aria-hidden="true" size={20} className={`shrink-0 ${activeCategory?.id === cat.id && !activeProduct && !searchQuery ? cat.theme.iconColor : 'text-slate-500 dark:text-slate-400'}`} />
-                            <span className="line-clamp-2 leading-tight">{localeCat.name}</span>
+                            <span className="line-clamp-2 leading-tight">{cat.name}</span>
                         </button>
                     )
                 })}
             </nav>
             <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
                 <p>
-                    Made by{' '}
+                    {getUI('madeBy', lang)}{' '}
                     <a
                         href="https://www.linkedin.com/in/hossamahmarrass/"
                         target="_blank"
@@ -61,7 +62,7 @@ export default function Sidebar({ lang, isRtl, activeCategory, activeProduct, se
                         Hossam Ahmar-Rass
                     </a>
                 </p>
-                <p className="mt-1">Updated for May 2026</p>
+                <p className="mt-1">{getUI('updatedFor', lang)}</p>
                 <p className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
                     {getUI('disclaimer', lang)}
                 </p>

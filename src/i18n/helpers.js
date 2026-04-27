@@ -1,33 +1,34 @@
 // Translation lookup helpers for the data (`D`) dictionary.
-// Each entry in D is an object keyed by language code with an array value:
-//   [Name, ShortDesc, Capabilities[], Audience, Integrations, Architecture?]
-// Architecture (slot 5) is optional and currently populated for English only.
+// Shape: D[lang][key] = [Name, ShortDesc, Capabilities[], Audience, Integrations, Architecture?]
+// Architecture (slot 5) is optional and currently populated for English only;
+// non-English locales fall back to the English entry. Integrations (slot 4)
+// are sourced from English on purpose so proper product names stay consistent.
 // Category entries only use [Name, Description].
 
 const EMPTY_PRODUCT = { n: "", d: "", c: [], a: "", i: "", arch: "" };
 const EMPTY_CATEGORY = { n: "", d: "" };
 
 export function getDict(dict, key, lang) {
-    if (!dict[key]) return EMPTY_PRODUCT;
-    const item = dict[key][lang] || dict[key].en || Object.values(dict[key])[0] || [];
-    // Architecture is currently English-only; fall back to the English entry
-    // so that non-English UIs still show the architecture text when available.
-    // Integrations are typically proper product names (Power BI, Teams, Dataverse, ...)
-    // and many existing localizations had drifted to generic phrases or dropped
-    // items, so we always source them from the English entry to stay accurate.
-    const enItem = dict[key].en || [];
+    const enDict = dict.en;
+    const langDict = dict[lang] || enDict;
+    const item = langDict?.[key] || enDict?.[key];
+    if (!item) return EMPTY_PRODUCT;
+    const enItem = enDict?.[key] || [];
     return {
         n: item[0] || "",
         d: item[1] || "",
         c: item[2] || [],
         a: item[3] || "",
+        // Integrations always come from English to keep product/brand names accurate.
         i: enItem[4] || item[4] || "",
+        // Architecture is English-only today; fall back gracefully for other locales.
         arch: item[5] || enItem[5] || ""
     };
 }
 
 export function getCat(dict, key, lang) {
-    if (!dict[key]) return EMPTY_CATEGORY;
-    const item = dict[key][lang] || dict[key].en || Object.values(dict[key])[0] || [];
+    const langDict = dict[lang] || dict.en;
+    const item = langDict?.[key] || dict.en?.[key];
+    if (!item) return EMPTY_CATEGORY;
     return { n: item[0] || "", d: item[1] || "" };
 }

@@ -3,8 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="An exhaustive, independent map of Microsoft Dynamics 365 and Power Platform business applications — capabilities, pricing, business value, and architecture." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
     <title>Business Applications Portfolio</title>
+    <!--
+      Pre-paint theme application: synchronously honour the persisted theme
+      preference on <html> *before* the React bundle parses, so dark-mode
+      users do not see a white flash on cold loads. Mirrors the logic in
+      usePersistedState + the App effect that toggles the .dark class.
+      Kept tiny on purpose: any failure (e.g. localStorage disabled) silently
+      falls through to the default light theme baked into the Tailwind base.
+    -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

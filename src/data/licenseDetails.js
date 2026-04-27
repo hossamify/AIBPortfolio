@@ -453,27 +453,51 @@ export const LICENSE_DETAILS = {
 // Per-language override maps. Each file exports a structure mirroring
 // LICENSE_DETAILS but only carries translated `label` and `features` fields
 // (tier names, SKUs and acronyms remain English on purpose).
-import { LICENSE_DETAILS_FR } from './licenseDetails.fr.js';
-import { LICENSE_DETAILS_ES } from './licenseDetails.es.js';
-import { LICENSE_DETAILS_DE } from './licenseDetails.de.js';
-import { LICENSE_DETAILS_IT } from './licenseDetails.it.js';
-import { LICENSE_DETAILS_NL } from './licenseDetails.nl.js';
-import { LICENSE_DETAILS_AR } from './licenseDetails.ar.js';
+//
+// The locale slices are loaded on demand via loadLicenseLanguage(lang) so the
+// ~30 KB-per-locale modules are not bundled into the initial ProductView
+// chunk. English visitors never download any of them; switching to e.g.
+// French triggers a single 30 KB fetch instead of the 175 KB combined blob
+// that the previous static-import setup shipped.
+const LOCALE_OVERRIDES = {};
 
-const LOCALE_OVERRIDES = {
-    fr: LICENSE_DETAILS_FR,
-    es: LICENSE_DETAILS_ES,
-    de: LICENSE_DETAILS_DE,
-    it: LICENSE_DETAILS_IT,
-    nl: LICENSE_DETAILS_NL,
-    ar: LICENSE_DETAILS_AR,
+const loaders = {
+    fr: () => import('./licenseDetails.fr.js').then((m) => m.LICENSE_DETAILS_FR),
+    es: () => import('./licenseDetails.es.js').then((m) => m.LICENSE_DETAILS_ES),
+    de: () => import('./licenseDetails.de.js').then((m) => m.LICENSE_DETAILS_DE),
+    it: () => import('./licenseDetails.it.js').then((m) => m.LICENSE_DETAILS_IT),
+    nl: () => import('./licenseDetails.nl.js').then((m) => m.LICENSE_DETAILS_NL),
+    ar: () => import('./licenseDetails.ar.js').then((m) => m.LICENSE_DETAILS_AR),
 };
+
+const inFlight = new Map();
+
+export function isLicenseLanguageLoaded(lang) {
+    return lang === 'en' || Boolean(LOCALE_OVERRIDES[lang]);
+}
+
+export function loadLicenseLanguage(lang) {
+    if (isLicenseLanguageLoaded(lang)) return Promise.resolve();
+    if (!loaders[lang]) return Promise.resolve();
+    let promise = inFlight.get(lang);
+    if (!promise) {
+        promise = loaders[lang]().then((overrides) => {
+            LOCALE_OVERRIDES[lang] = overrides;
+            inFlight.delete(lang);
+        });
+        inFlight.set(lang, promise);
+    }
+    return promise;
+}
 
 // Returns the license tier list for a product in the requested language.
 // Per-tier behavior:
 //   - tier name: always taken from English (intentional — official SKU name).
 //   - label & features: taken from the locale override when present,
 //     otherwise fall back to English so partial translations stay safe.
+//
+// Synchronous: callers that care about the localized version should await
+// loadLicenseLanguage(lang) first; otherwise the English fallback is returned.
 export function getLicenseDetails(productId, lang) {
     const base = LICENSE_DETAILS[productId];
     if (!base) return undefined;
