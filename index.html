@@ -3,12 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="An exhaustive, independent map of Microsoft Dynamics 365 and Power Platform business applications — capabilities, pricing, business value, and architecture." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
     <title>Business Applications Portfolio</title>
-    <script type="module" crossorigin src="./assets/index-JSQdVg7s.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DmFi_dBI.css">
+    <!--
+      Pre-paint theme application: synchronously honour the persisted theme
+      preference on <html> *before* the React bundle parses, so dark-mode
+      users do not see a white flash on cold loads. Mirrors the logic in
+      usePersistedState + the App effect that toggles the .dark class.
+      Kept tiny on purpose: any failure (e.g. localStorage disabled) silently
+      falls through to the default light theme baked into the Tailwind base.
+    -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-CN8Xq3NL.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-DF2fYuay.js">
+    <link rel="modulepreload" crossorigin href="./assets/data-licenses-DN9F8XDg.js">
+    <link rel="modulepreload" crossorigin href="./assets/data-agents-B0tbhDKa.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-react-NFtiJCYF.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-react-dom-CPB5ciqg.js">
+    <link rel="modulepreload" crossorigin href="./assets/Spinner-CF4hL-6l.js">
+    <link rel="modulepreload" crossorigin href="./assets/ui-BNlrCMy5.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-BAw0wTi8.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>

@@ -1,0 +1,1 @@
+var e={cat_agents:[`AI Capabilities`,`AI agents and Copilot capabilities embedded across the business applications stack.`]};export{e as D_EN_GB};
