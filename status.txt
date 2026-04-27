@@ -1,0 +1,4 @@
+﻿200 | https://www.microsoft.com/en-us/dynamics-365/products/sales | Dynamics 365 Sales | Microsoft Dynamics 365
+200 | https://www.microsoft.com/en-us/dynamics-365/products/sales | Dynamics 365 Sales | Microsoft Dynamics 365
+200 | https://www.microsoft.com/en-ie/ai/ | Microsoft AI Tools and Solutions | Microsoft AI
+200 | https://learn.microsoft.com/en-us/dynamics365/sales/overview | Welcome to Dynamics 365 Sales | Microsoft Learn
