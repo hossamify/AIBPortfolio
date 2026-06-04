@@ -43,7 +43,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
         // App.jsx renders <ProductView key={activeProduct.id} ... /> so React unmounts/remounts
         // this component when the user navigates to a different product. That makes a plain
         // useState the correct way to default the tab — no setState-in-render gymnastics needed.
-        const [activeTab, setActiveTab] = useState('business-value');
+        const [activeTab, setActiveTab] = useState('features');
         // The license-detail slices for non-English locales are code-split (~30 KB each)
         // and loaded on demand via loadLicenseLanguage. We bump a tick when the slice
         // resolves so the component re-renders and getLicenseDetails returns the
@@ -142,8 +142,8 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                     {hasTabs && (
                         <div role="tablist" aria-label={prodData.name} className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 -mx-2 px-2">
                             {[
-                                { id: 'business-value', label: getUI('tabBusinessValue', lang) },
                                 { id: 'features', label: getUI(isArchitecturalFoundation ? 'tabFeatures' : 'tabFeaturesPricing', lang) },
+                                { id: 'business-value', label: getUI('tabBusinessValue', lang) },
                             ].map((t) => {
                                 const selected = activeTab === t.id;
                                 return (

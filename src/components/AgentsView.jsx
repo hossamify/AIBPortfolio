@@ -104,12 +104,8 @@ export default function AgentsView({ lang, isRtl, activeCategory }) {
 
     if (!activeCategory) return null;
 
-    const categoryName = activeCategory.locales?.[lang]?.name
-        || activeCategory.locales?.en?.name
-        || 'Autonomous Agents';
-    const categoryDesc = activeCategory.locales?.[lang]?.description
-        || activeCategory.locales?.en?.description
-        || '';
+    const categoryName = activeCategory.name || 'Autonomous Agents';
+    const categoryDesc = activeCategory.description || '';
 
     return (
         <div className="max-w-7xl mx-auto opacity-100 transition-opacity duration-500 space-y-10">
