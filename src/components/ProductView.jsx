@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Users, Link as LinkIcon, CheckCircle, DollarSign, Tag, Info, ExternalLink, PlayCircle, Quote } from 'lucide-react';
+import { Users, Link as LinkIcon, CheckCircle, DollarSign, Tag, Info, ExternalLink, PlayCircle, Quote, Rocket } from 'lucide-react';
 import { getUI } from '../i18n/ui.js';
 import { PRICING, getLocalizedPrice } from '../data/pricing.js';
 import { getLicenseDetails, loadLicenseLanguage, isLicenseLanguageLoaded } from '../data/licenseDetails.js';
@@ -64,7 +64,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
         const ProductIcon = prodData.icon;
         const licenseDetails = getLicenseDetails(prodData.id, lang);
         const hasLicenseDetails = licenseDetails && licenseDetails.length > 0;
-        const { productUrl, demoUrl, customerStoriesUrl } = getProductLinks(prodData.id, lang);
+        const { productUrl, demoUrl, customerStoriesUrl, releasePlanLinks } = getProductLinks(prodData.id, lang);
 
         return (
             <div className="max-w-6xl mx-auto bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-lg border border-slate-200 dark:border-slate-800 overflow-hidden opacity-100 transition-opacity duration-500">
@@ -106,7 +106,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                 )}
                             </h1>
                             <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-3xl leading-relaxed font-medium">{prodData.shortDesc}</p>
-                            {(demoUrl || customerStoriesUrl) && (
+                            {(demoUrl || customerStoriesUrl || releasePlanLinks.length > 0) && (
                                 <div className="mt-5 flex flex-wrap gap-3">
                                     {demoUrl && (
                                         <a
@@ -131,6 +131,43 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                             <span>{getUI('customerStories', lang)}</span>
                                             <ExternalLink size={14} strokeWidth={2.25} className="opacity-60" />
                                         </a>
+                                    )}
+                                    {releasePlanLinks.length === 1 && (
+                                        <a
+                                            href={releasePlanLinks[0].url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800 text-sm font-bold ${catData.theme.text} hover:shadow-md hover:scale-[1.02] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 ${catData.theme.ring}`}
+                                        >
+                                            <Rocket size={18} strokeWidth={2.25} />
+                                            <span>{getUI('releasePlans', lang)}</span>
+                                            <ExternalLink size={14} strokeWidth={2.25} className="opacity-60" />
+                                        </a>
+                                    )}
+                                    {releasePlanLinks.length > 1 && (
+                                        <div
+                                            role="group"
+                                            aria-label={getUI('releasePlans', lang)}
+                                            className="inline-flex items-stretch rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+                                        >
+                                            <span className={`inline-flex items-center gap-2 ps-4 pe-3 py-2.5 text-sm font-bold ${catData.theme.text} ${catData.theme.bg}`}>
+                                                <Rocket size={18} strokeWidth={2.25} />
+                                                {getUI('releasePlans', lang)}
+                                            </span>
+                                            {releasePlanLinks.map((plan) => (
+                                                <a
+                                                    key={plan.url}
+                                                    href={plan.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={`${getUI('releasePlans', lang)}: ${plan.label}`}
+                                                    className={`inline-flex items-center gap-1.5 px-3.5 py-2.5 text-sm font-semibold border-s border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 ${catData.theme.text.replace('text-', 'hover:text-')} transition-colors focus:outline-none focus:ring-2 focus:ring-inset ${catData.theme.ring}`}
+                                                >
+                                                    <span>{plan.label}</span>
+                                                    <ExternalLink size={13} strokeWidth={2.25} className="opacity-60" />
+                                                </a>
+                                            ))}
+                                        </div>
                                     )}
                                 </div>
                             )}
@@ -289,7 +326,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                                     <div>
                                                                         <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">{getUI('pricingBase', lang)}</span>
                                                                         <p className="text-3xl font-black text-slate-900 dark:text-slate-100 text-start">
-                                                                            <span className="text-lg align-top text-slate-500 dark:text-slate-400">{basePrice.symbol}</span>{basePrice.amount.toLocaleString()}
+                                                                            {!basePrice.suffix && <span className="text-lg align-top text-slate-500 dark:text-slate-400">{basePrice.symbol}</span>}{basePrice.amount.toLocaleString()}{basePrice.suffix && <span className="text-lg text-slate-500 dark:text-slate-400">&nbsp;{basePrice.symbol}</span>}
                                                                             <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">{getUI(tierUnit, lang)}</span>
                                                                         </p>
                                                                     </div>
@@ -307,7 +344,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                                         const attachPrice = getLocalizedPrice(tier.attachSku, tier.attach, lang);
                                                                         return (
                                                                             <p className="text-2xl font-black text-emerald-700 dark:text-emerald-300 text-start">
-                                                                                <span className="text-base align-top text-emerald-600 dark:text-emerald-400">{attachPrice.symbol}</span>{attachPrice.amount.toLocaleString()}
+                                                                                {!attachPrice.suffix && <span className="text-base align-top text-emerald-600 dark:text-emerald-400">{attachPrice.symbol}</span>}{attachPrice.amount.toLocaleString()}{attachPrice.suffix && <span className="text-base text-emerald-600 dark:text-emerald-400">&nbsp;{attachPrice.symbol}</span>}
                                                                                 <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{getUI(tierUnit, lang)}</span>
                                                                             </p>
                                                                         );
@@ -333,7 +370,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                             return (
                                                                 <div>
                                                                     <p className="text-3xl font-black text-slate-900 dark:text-slate-100 text-start">
-                                                                        <span className="text-lg align-top text-slate-500 dark:text-slate-400">{standalonePrice.symbol}</span>{standalonePrice.amount.toLocaleString()}
+                                                                        {!standalonePrice.suffix && <span className="text-lg align-top text-slate-500 dark:text-slate-400">{standalonePrice.symbol}</span>}{standalonePrice.amount.toLocaleString()}{standalonePrice.suffix && <span className="text-lg text-slate-500 dark:text-slate-400">&nbsp;{standalonePrice.symbol}</span>}
                                                                         <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">{tier.label ? ` ${tier.label}` : getUI(tierUnit, lang)}</span>
                                                                     </p>
                                                                 </div>
@@ -463,7 +500,7 @@ export default function ProductView({ lang, isRtl, activeCategory, activeProduct
                                                                     const packPrice = getLocalizedPrice(t.sku, t.price, lang);
                                                                     return (
                                                                         <div className="flex items-baseline gap-1">
-                                                                            <span className="text-lg font-black text-slate-900 dark:text-slate-100">{packPrice.symbol}{packPrice.amount.toLocaleString('en-US')}</span>
+                                                                            <span className="text-lg font-black text-slate-900 dark:text-slate-100">{packPrice.suffix ? `${packPrice.amount.toLocaleString('en-US')}\u00a0${packPrice.symbol}` : `${packPrice.symbol}${packPrice.amount.toLocaleString('en-US')}`}</span>
                                                                             <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">{getUI(addOn.unit || PRICING[prodData.id].unit, lang)}</span>
                                                                         </div>
                                                                     );

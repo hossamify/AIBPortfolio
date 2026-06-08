@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Cloud for Sustainability — Productdocumentatie en disclosure-framework-mappings', note: 'Bron voor de ondersteunde scopes (1/2/3), het open datamodel op Dataverse / OneLake en de vooraf gemapte CSRD-, GRI-, TCFD-, CDP- en SBTi-disclosure-templates.' },
         ],
     },
+    sv: {
+        headline: 'Gör ditt net zero-löfte till ett operativt program.',
+        summary: 'Microsoft Sustainability Manager ersätter kvartalskalkylbladet för koldioxidredovisning med en kontinuerlig, granskningsbar datapipeline. Kopplingar hämtar aktivitetsdata från ditt ERP, energi-, rese- och leverantörssystem; en konfigurerbar motor tillämpar rätt emissionsfaktorer för Scope 1, 2 och 3; och förmappade ramverk (CSRD, GRI, TCFD, CDP, SBTi) gör dem till de upplysningar som tillsynsmyndigheter och kunder nu kräver.',
+        kpis: [
+            { value: '373 %', label: 'ROI över 3 år (Forrester TEI)', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−80 %', label: 'Tid på bearbetning av utsläppsdata', kind: 'efficiency' },
+            { value: 'Scope 1/2/3', label: 'Granskningsbar, faktorbaserad beräkning', kind: 'outcome' },
+            { value: 'CSRD / GRI / TCFD', label: 'Upplysningsklara dataset', kind: 'outcome' },
+        ],
+        bqPre: 'Att infria ditt offentliga net zero-löfte och fylla i den nya vågen av obligatoriska ESG-upplysningar (CSRD, SEC climate, ISSB) är i dag ett mandat på styrelsenivå, men din utsläppsinventering lever fortfarande i kalkylblad som ett litet team knåpar ihop en gång per år — utan tydlig härkomst från rå aktivitet till rapporterad siffra.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om din koldioxidredovisning förblir en manuell, årlig övning som revisorer inte kan spåra, ',
+        bqHighlight: 'hur ska du då försvara dina net zero-framsteg inför tillsynsmyndigheter, kunder och kapitalmarknader utan att exponentiellt skala upp din hållbarhetspersonal och dina konsultutgifter?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Microsoft Sustainability Manager.',
+        bridge: 'Så här svarar Sustainability Manager på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från analytikern som slipper jaga energifakturor till styrelsen som äntligen har ett försvarbart net zero-styrkort.',
+        rungs: [
+            { title: 'Sluta kämpa med kalkylblad', audience: 'Dina hållbarhetsanalytiker', what: 'Färdiga kopplingar och Copilot-stödd mappning läser in aktivitetsdata från ditt ERP, energi-, leverantörs- och resesystem — och ersätter kalkylbladsrodeon varje kvartal med en kontinuerlig datapipeline.', outcome: 'Du befriar dina hållbarhetsanalytiker från att jaga CSV-filer och låter dem ägna sin tid åt verklig reduktionsstrategi.', kpis: [{ label: '60–80 % mindre tid för att samla in och stämma av aktivitetsdata', kind: 'efficiency' }, { label: 'Kontinuerlig (i stället för årlig) insyn i utsläpp', kind: 'efficiency' }] },
+            { title: 'Granskningsbara beräkningar för Scope 1, 2 & 3', audience: 'Dina ESG-controllers och externa revisorer', what: 'En konfigurerbar beräkningsmotor tillämpar rätt emissionsfaktorer på varje aktivitet, med full härkomst från rått record → faktorbibliotek → beräknat utsläpp, redo för assurance.', outcome: 'Du förkortar drastiskt din årliga granskningscykel och behöver inte längre förklara metodval för revisorer varje år.', kpis: [{ label: 'Snabbare externa assurance-cykler för utsläppsdata', kind: 'efficiency' }, { label: '100 % spårbarhet från rå aktivitet till rapporterat utsläpp', kind: 'outcome' }] },
+            { title: 'En ESG-datamodell, styrd av IT', audience: 'Din CDO och företagsarkitektur', what: 'Sustainability Manager skriver till den öppna Microsoft Cloud for Sustainability-datamodellen på Dataverse och OneLake, så att dina ESG-data lever bredvid dina finans- och verksamhetsdata — under samma säkerhets- och livscykelkontroller.', outcome: 'Du eliminerar den parallella ESG-rapporteringsstacken och gör hållbarhet till en första klassens medborgare i ditt data estate.', kpis: [{ label: '100 % centraliserad, styrd ESG-datamodell', kind: 'outcome' }, { label: 'Återanvändning av befintliga Power BI / Fabric-verktyg för ESG-analys', kind: 'efficiency' }] },
+            { title: 'Upplysningsklar på dagar, inte kvartal', audience: 'Din CSO och chef för hållbarhetsrapportering', what: 'Förmappade ramverk (CSRD/ESRS, GRI, TCFD, CDP, SBTi) och spårning av reduktionsmål gör din råa inventering till de upplysningar som tillsynsmyndigheter och kunder nu kräver.', outcome: 'Du klarar nya regulatoriska tidsfrister utan att sätta in en armé av konsulter — och besvarar kund-ESG-frågeformulär på dagar i stället för kvartal.', kpis: [{ label: 'Betydande undvikande av externa konsultutgifter för årliga upplysningar', kind: 'outcome' }, { label: 'Snabbare svarstid på kund-ESG-/leverantörsfrågeformulär', kind: 'efficiency' }] },
+            { title: 'En mätbar väg till ditt net zero-löfte', audience: 'Din vd och styrelse', what: 'Reduktionsmål, scenariomodellering och arbetsflöden för leverantörsengagemang gör hållbarhetslöftet i din årsredovisning till ett operativt program med ägare och milstolpar.', outcome: 'Du sänker risken kring ditt net zero-löfte, skyddar din tillgång till ESG-kopplat kapital och gör hållbarhet till en KPI på styrelsenivå i stället för en rapporteringskostnad.', kpis: [{ label: '373 % ROI över 3 år (Forrester TEI Microsoft Cloud for Sustainability)', kind: 'outcome' }, { label: 'Försvarbara framsteg mot offentligt aviserade net zero-/SBTi-mål', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Cloud for Sustainability', note: 'Källa för 373 % ROI, återbetalning på under 6 månader och de kvantifierade besparingarna genom automatisering av koldioxidredovisning och undvikna externa konsultutgifter för upplysningar.' },
+            { title: 'Microsoft Cloud for Sustainability — Produktdokumentation och mappningar av upplysningsramverk', note: 'Källa för de stödda scopen (1/2/3), den öppna datamodellen på Dataverse / OneLake och de förmappade CSRD-, GRI-, TCFD-, CDP- och SBTi-upplysningsmallarna.' },
+        ],
+    },
 };
 
 export default function BusinessValueSustainabilityManager({ theme, lang = 'en' }) {

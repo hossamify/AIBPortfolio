@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Professional Services Automation Benchmarks — Copilot in Project Operations', note: 'Bron voor de productiviteitsverbeteringen bij uren- en kostenregistratie, projectplanning en AI-gedreven resource matching.' },
         ],
     },
+    sv: {
+        headline: 'Stoppa intäktsläckaget mellan försäljning, leverans och ekonomi.',
+        summary: 'Dynamics 365 Project Operations förenar hela din quote-to-cash-cykel, med AI för resursmatchning och Copilot för projektplanering och tidrapportering. Resultatet är högre debiterbar beläggning, snabbare fakturering och synligt starkare projektmarginaler — underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '100 %+', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '+5–10 %', label: 'Debiterbar beläggning', kind: 'outcome' },
+            { value: '−15–20 %', label: 'Administrativ overhead', kind: 'efficiency' },
+            { value: '−10 %', label: 'Eliminerat intäktsläckage', kind: 'outcome' },
+            { value: '↑', label: 'Bruttoprojektmarginaler', kind: 'outcome' },
+        ],
+        bqPre: 'Att maximera debiterbar beläggning och skydda projektmarginaler är ditt kärnuppdrag, men i dag låter frånkopplade system mellan leverans och ekonomi ',
+        bqPct: 'en betydande andel',
+        bqPost: ' av det debiterbara arbetet läcka ut eller förbli ofakturerat.',
+        bqLeadIn: 'Om dina team fortsätter att manuellt stämma av tid och projektstatus via fristående kalkylblad, ',
+        bqHighlight: 'hur ska du då skydda dina marginaler och förhindra att kritiska intäkter läcker ut ur företaget?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Project Operations.',
+        bridge: 'Så här svarar Dynamics 365 Project Operations på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda konsultens produktivitet hela vägen upp till finansiell påverkan på styrelsenivå.',
+        rungs: [
+            { title: 'Konsulter som levererar, inte jagar tidrapporter', audience: 'Dina konsulter och projektledare', what: 'Copilot skriver utkast till projektplaner på minuter, och dina konsulter rapporterar tid, skickar in utlägg och uppdaterar uppgiftsframsteg direkt i Microsoft Teams eller mobilt.', outcome: 'Du tar bort friktionen från administrativ rapportering och håller leveransteamen fokuserade på debiterbart kundarbete.', kpis: [{ label: '15–20 % lägre administrativ overhead', kind: 'efficiency' }, { label: 'Högre veckovis efterlevnad av tid- och utläggsrapportering', kind: 'efficiency' }] },
+            { title: 'Rätt personer, på rätt projekt, nu', audience: 'Dina resurschefer', what: 'AI-driven resursschemaläggning matchar direkt projektbehovet med rätt konsult utifrån tillgänglighet, specifik kompetens och kostnad.', outcome: 'Du eliminerar bench-flaskhalsar och bemannar nya projekt snabbare med den optimala talangmixen.', kpis: [{ label: 'Snabbare projektstarter', kind: 'efficiency' }, { label: 'Mätbar minskning av icke-tilldelad bench-tid', kind: 'efficiency' }] },
+            { title: 'Offerera, leverera, fakturera — på en plattform', audience: 'Din PMO-chef / ekonomi', what: 'Plattformen river silos mellan CRM (försäljning), PMO (leverans) och ERP (ekonomi) — offerter flödar direkt vidare till projektkontrakt och intäktsredovisning.', outcome: 'Du får en enda sanning i realtid som förhindrar scope creep och säkerställer att varje arbetad timme är redovisad.', kpis: [{ label: '100 % insyn i burn rates och Work in Progress (WIP) per projekt', kind: 'efficiency' }, { label: 'Avskaffande av manuell dataavstämning', kind: 'efficiency' }] },
+            { title: 'Inga fler intäkter som läcker ut bakvägen', audience: 'Din VP Professional Services', what: 'Insyn i projekthälsa i realtid låter chefer styra om tidigt på projekt som går dåligt, medan time-to-invoice-automatisering direkt ger korrekta fakturor.', outcome: 'Du stoppar intäktsläckage helt, fakturerar kunder snabbare och maximerar intäkterna från din konsultstyrka.', kpis: [{ label: '+5–10 % debiterbar beläggning', kind: 'outcome' }, { label: 'Betydande minskning av DSO och faktureringsfel', kind: 'outcome' }] },
+            { title: 'Tjänster som förutsägbar vinstmotor', audience: 'Din COO / Managing Partner', what: 'Din tjänsteorganisation går från en fragmenterad, reaktiv verksamhet till en starkt skalbar, förutsägbar vinstmotor med full kontroll över leveransekonomin.', outcome: 'Du skalar tjänsteverksamheten med absolut finansiell förutsägbarhet och synligt bredare projektmarginaler.', kpis: [{ label: 'Mer än 100 % ROI över 3 år', kind: 'outcome' }, { label: 'Mätbar breddning av de totala bruttoprojektmarginalerna', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 ERP', note: 'Källa för ROI-baslinjen på 100 %+ som observerats vid enhetliga Dynamics 365 ERP-implementeringar, inklusive projektorienterade organisationer.' },
+            { title: 'Microsoft Professional Services Automation Benchmarks — Copilot in Project Operations', note: 'Källa för produktivitetsförbättringarna inom tid- och utläggsrapportering, projektplanering och AI-driven resursmatchning.' },
+        ],
+    },
 };
 
 export default function BusinessValueProjectOperations({ theme, lang = 'en' }) {

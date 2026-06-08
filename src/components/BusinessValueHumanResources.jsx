@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Workforce Benchmarks — Copilot in Dynamics 365 HR en Microsoft Teams', note: 'Bron voor de productiviteitsverbeteringen in medewerker-self-service, onboarding-orkestratie en reductie van handmatige HR-administratie.' },
         ],
     },
+    sv: {
+        headline: 'Befria ditt HR-team från helpdesken — och rikta det mot talangstrategin.',
+        summary: 'Dynamics 365 Human Resources kombinerar Copilot i Microsoft Teams, heltäckande självbetjäning för medarbetare och en enhetlig datamodell för personalstyrkan. Resultatet är färre rutinärenden, snabbare onboarding och en mätbart starkare retention — underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '130 %+', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 12 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−40–50 %', label: 'Rutinmässiga HR-helpdeskärenden', kind: 'efficiency' },
+            { value: '−30 %', label: 'Onboardingtid för nyanställda', kind: 'efficiency' },
+            { value: '−10–15 %', label: 'Frivillig personalomsättning', kind: 'outcome' },
+        ],
+        bqPre: 'Att attrahera, utveckla och behålla topptalanger är ditt kärnuppdrag, men i dag lägger ditt HR-team upp till ',
+        bqPct: '60 %',
+        bqPost: ' av sin tid som en administrativ helpdesk som hanterar rutinfrågor och fristående system.',
+        bqLeadIn: 'Om dina HR-proffs fortsätter att agera som manuella datahanterare, ',
+        bqHighlight: 'hur ska du då genomföra de strategiska retention- och utvecklingsprogram som styrelsen förväntar sig utan att aggressivt utöka din HR-personalstyrka?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Human Resources.',
+        bridge: 'Så här svarar Dynamics 365 Human Resources på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda medarbetarupplevelsen hela vägen upp till talangstrategin på styrelsenivå.',
+        rungs: [
+            { title: 'Självbetjäning som verkligen fungerar', audience: 'Ditt HR-team och dina medarbetare', what: 'Copilot i Microsoft Teams låter dina medarbetare själva hantera ledighetssaldon, förmånsanmälningar och rutinfrågor, naturligt i sitt arbetsflöde.', outcome: 'Du tar bort den administrativa flaskhalsen — medarbetare får svar direkt och ditt HR-team får tillbaka veckan.', kpis: [{ label: '40–50 % färre rutinmässiga HR-helpdeskärenden', kind: 'efficiency' }, { label: 'Betydande minskning av timmar för manuell datainmatning', kind: 'efficiency' }] },
+            { title: 'Onboarding som gör dag ett betydelsefull', audience: 'Dina rekryterings- och HR-operationsteam', what: 'Automatiserade arbetsflöden orkestrerar hela medarbetarlivscykeln — från strömlinjeformade onboardinguppgifter till avdelningsövergripande offboarding-checklistor.', outcome: 'Du snabbar upp onboardingcykeln och låter ny talang bidra mycket snabbare.', kpis: [{ label: '30 % kortare onboardingtid för nyanställda', kind: 'efficiency' }, { label: 'Snabbare total time-to-productivity i nya roller', kind: 'efficiency' }] },
+            { title: 'En pålitlig bild av din personalstyrka', audience: 'Din VP HR / HRIS', what: 'Plattformen centraliserar all personaldata — kompetens, ersättning, frånvaro, prestation — i en säker miljö som kopplar nativt till Finance and Operations.', outcome: 'Du kartlägger kompetensglapp i realtid och anpassar personalstyrkan direkt efter företagets budgetar.', kpis: [{ label: '100 % enhetlig insyn i personalstyrkan', kind: 'efficiency' }, { label: 'Avskaffande av manuella avstämningsfel mellan lön och HR', kind: 'efficiency' }] },
+            { title: 'En arbetsplats där människor stannar', audience: 'Din CHRO', what: 'Medarbetare upplever en modern, friktionsfri arbetsplats där administrativa behov hanteras direkt, medan HR ägnar sin tid åt coaching, välmående och proaktiv retention.', outcome: 'Du gör HR till en strategisk retentionsmotor — höjer moralen och håller dina topptalanger engagerade.', kpis: [{ label: '10–15 % lägre frivillig personalomsättning', kind: 'outcome' }, { label: 'Högre Employee Net Promoter Score (eNPS)', kind: 'outcome' }] },
+            { title: 'HR som strategisk affärspartner', audience: 'Din CHRO, vd och styrelse', what: 'HR går från ett reaktivt, administrativt kostnadsställe till en strategisk partner som optimerar humankapitalet för organisatorisk smidighet.', outcome: 'Du sänker HR:s driftskostnader och ger styrelsen den smidiga, högpresterande personalstrategi som marknaden kräver.', kpis: [{ label: 'Mer än 130 % ROI över 3 år', kind: 'outcome' }, { label: 'Lägre total HR-administrationskostnad per medarbetare', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Human Resources', note: 'Källa för den mer än 130 % höga ROI:n, återbetalning på under 12 månader, minskning av HR-helpdeskärenden och förbättring av retention och onboarding.' },
+            { title: 'Microsoft Workforce Benchmarks — Copilot in Dynamics 365 HR och Microsoft Teams', note: 'Källa för produktivitetsförbättringarna inom självbetjäning för medarbetare, onboardingorkestrering och minskning av manuell HR-administration.' },
+        ],
+    },
 };
 
 export default function BusinessValueHumanResources({ theme, lang = 'en' }) {

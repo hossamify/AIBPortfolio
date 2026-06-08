@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Work Trend Index — Onderzoek naar AI en hoe we werken', note: 'Bron voor het sectorgemiddelde dat verkopers tot 66% van hun tijd aan administratieve/niet-verkoopactiviteiten besteden, waarbij AI alleen al ≈ 90 minuten per week aan CRM-updates terugwint.' },
         ],
     },
+    sv: {
+        headline: 'Sälj mer med teamet du redan har.',
+        summary: 'Dynamics 365 Sales med Copilot hjälper dina säljare att tillbringa mer av veckan med kunder och mindre i CRM-systemet. Resultatet är en mätbart snabbare pipeline, mer tillförlitliga prognoser och en högre vinstandel — underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '215 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '+15 %', label: 'Högre vinstandel', kind: 'outcome' },
+            { value: '−12 %', label: 'Kortare säljcykel', kind: 'efficiency' },
+            { value: '6 tim', label: 'Återvunnet per säljare / vecka', kind: 'efficiency' },
+        ],
+        bqPre: 'Att öka intäkterna kräver att man maximerar utbytet av det befintliga teamet, men i dag lägger säljare upp till ',
+        bqPct: '66 %',
+        bqPost: ' av sin dag på manuella CRM-uppdateringar och icke-säljande uppgifter, vilket bromsar pipelinens hastighet.',
+        bqLeadIn: 'Om dina dyraste resurser fortsätter att förlora mer än halva veckan till administrativt arbete, ',
+        bqHighlight: 'hur ska du då nå dina tillväxtmål utan att proportionellt blåsa upp din personalstyrka och kundanskaffningskostnad?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Sales.',
+        bridge: 'Så här svarar Dynamics 365 Sales på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda säljarens produktivitet hela vägen upp till finansiell påverkan på styrelsenivå.',
+        rungs: [
+            { title: 'Mer tid att sälja, mindre administration', audience: 'Dina account executives', what: 'Copilot skriver utkast till dina säljares mejl, sammanfattar möten och fångar CRM-aktivitet automatiskt.', outcome: 'Dina säljare får tillbaka timmar varje vecka för att fokusera på kunder i stället för pappersarbete.', kpis: [{ label: '15 % mindre tid på administrativa uppgifter', kind: 'efficiency' }, { label: '≈ 6 timmar sparade per säljare och vecka', kind: 'efficiency' }] },
+            { title: 'Snabbare, bättre prioriterad pipeline', audience: 'Dina försäljningschefer', what: 'AI-driven poängsättning av leads och affärsmöjligheter lyfter fram de affärer som mest sannolikt går i mål, medan automatiserade arbetsflöden håller farten uppe.', outcome: 'Du flyttar affärsmöjligheter märkbart snabbare genom pipelinen.', kpis: [{ label: '12 % kortare genomsnittlig säljcykel', kind: 'efficiency' }, { label: '30 % snabbare leadkvalificering', kind: 'efficiency' }] },
+            { title: 'Pålitliga data, trygga prognoser', audience: 'Din Sales Operations', what: 'Eftersom aktivitet fångas automatiskt närmar sig CRM-hygienen 100 % — utan att tjata på dina säljare.', outcome: 'Du upptäcker stillastående affärer tidigt och prognostiserar kvartalet med säkerhet i stället för gissningar.', kpis: [{ label: '50 % mindre tid för att förbereda pipeline- och prognosgenomgångar', kind: 'efficiency' }] },
+            { title: 'Mer intäkter från teamet du redan har', audience: 'Din VP Sales / CRO', what: 'Återvunnen säljtid, snabbare cykler och AI-styrd målinriktning förstärker varandra till högre konvertering.', outcome: 'Du ökar intäkterna per säljare utan att utöka personalstyrkan.', kpis: [{ label: '15 % relativ ökning av vinstandelen', kind: 'outcome' }, { label: '10 % högre genomsnittlig affärsstorlek', kind: 'outcome' }] },
+            { title: 'Förutsägbar, lönsam tillväxt', audience: 'Din vd och styrelse', what: 'Intäkterna växer snabbare än driftskostnaderna och förvandlar din säljmotor till en hållbar tillväxthävstång.', outcome: 'Du når dina intäktsmål samtidigt som du håller kostnaden per leverans i schack.', kpis: [{ label: '215 % ROI över 3 år', kind: 'outcome' }, { label: 'Återbetalning på mindre än 6 månader', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Sales', note: 'Källa för 215 % ROI, återbetalning på under 6 månader, 15 % minskad administrativ tid, 12 % snabbare säljcykler och 15 % högre vinstandel. TEI-sammanfattningen finns på den officiella produktsidan för Dynamics 365 Sales.' },
+            { title: 'Microsoft Work Trend Index — Forskning om AI och hur vi arbetar', note: 'Källa för branschgenomsnittet att säljare lägger upp till 66 % av sin tid på administrativa/icke-säljande aktiviteter, där AI återvinner ≈ 90 minuter per vecka enbart på CRM-uppdateringar.' },
+        ],
+    },
 };
 
 export default function BusinessValueSales({ theme, lang = 'en' }) {

@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Customer Experience Benchmarks — Self-Service Portals', note: 'Bron voor de 15–20% ticket-deflectionratio die organisaties bereiken wanneer ze geïntegreerde, op data aangesloten selfservice-portals voor externe stakeholders lanceren.' },
         ],
     },
+    sv: {
+        headline: 'Lansera säkra portaler på veckor, inte månader.',
+        summary: 'Power Pages demokratiserar extern webbutveckling. Copilot genererar layouter och formulär från naturligt språk, nativ Dataverse-integration ersätter anpassade API:er och identitet i företagsklass och WAF:er håller externa ytor säkra — så att dina kunder och partner kan självbetjäna sig medan ditt callcenter inte längre drunknar i rutinärenden.',
+        kpis: [
+            { value: '200 %+', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−50–70 %', label: 'Webbutvecklings- och designarbete', kind: 'efficiency' },
+            { value: '−15–20 %', label: 'Volym rutinmässiga supportsamtal', kind: 'outcome' },
+            { value: 'Veckor mot månader', label: 'Time-to-market för externa portaler', kind: 'efficiency' },
+        ],
+        bqPre: 'Att erbjuda sömlös, säker självbetjäning till dina kunder och partner är ditt kärnuppdrag, men traditionell webbutveckling kräver i dag månader av kod och komplexa integrationer enbart för att säkert exponera backend-data.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om ditt IT-team förblir flaskhalsen i anpassad portalutveckling, ',
+        bqHighlight: 'hur ska du då skala digitalt engagemang utan att aggressivt blåsa upp din webbudget och dina supportkostnader?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Microsoft Power Pages.',
+        bridge: 'Så här svarar Power Pages på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från skaparen som levererar en sida till en extern digital strategi på företagsnivå.',
+        rungs: [
+            { title: 'Bygg sidor genom att beskriva dem', audience: 'Dina webbskapare och utvecklare', what: 'Copilot låter skapare beskriva på naturligt språk vad de behöver och genererar direkt layouter, styling, formulär och text.', outcome: 'Du kringgår friktionen i att skriva HTML/CSS från grunden och sänker drastiskt dina webbutvecklingskostnader.', kpis: [{ label: '50–70 % mindre webbutvecklings- och designarbete', kind: 'efficiency' }, { label: 'Veckor i stället för månader för inledande prototypning', kind: 'efficiency' }] },
+            { title: 'Nativa data, inga anpassade API:er', audience: 'Din IT-ledning och PMO', what: 'Power Pages är nativt kopplat till Dataverse, vilket gör det onödigt att bygga anpassade API:er för att säkert koppla webbplatsen till backend-CRM/ERP-data.', outcome: 'Du rullar snabbt ut externa portaler som direkt går synkroniserat med din interna verksamhet.', kpis: [{ label: 'Time-to-market för externa portaler minskad från månader till veckor', kind: 'efficiency' }, { label: 'Eliminering av integrationstid för anpassade API:er', kind: 'efficiency' }] },
+            { title: 'Säkerhet i företagsklass, externt exponerad', audience: 'Din CISO och företagsarkitektur', what: 'Nativ Azure AD B2C-identitetshantering, Web Application Firewalls och strikt rollbaserad åtkomstkontroll håller externa ytor säkra.', outcome: 'Du öppnar nödvändig verksamhetsdata för externa användare med trygghet, utan att riskera efterlevnadsbrott eller dataläckage.', kpis: [{ label: '100 % centraliserad IT-styrning över externa webbplatser', kind: 'efficiency' }, { label: 'Noll datasynkroniseringsfel', kind: 'outcome' }] },
+            { title: 'Självbetjäning som verkligen fångar samtal', audience: 'Din VP CX och supportverksamhet', what: 'Kunder, leverantörer och partner loggar in på en säker portal för att kontrollera orderstatus, skicka in supportärenden, hantera konton och själva läsa FAQ:er.', outcome: 'Du minskar volymen av inkommande frågor så att dina agenter fokuserar på högvärdiga, komplexa ärenden.', kpis: [{ label: '15–20 % minskning av volymen rutinmässiga callcenter- och supportärenden', kind: 'outcome' }, { label: 'Högre kundnöjdhet (CSAT)', kind: 'outcome' }] },
+            { title: 'Ett modernt externt digitalt fotavtryck', audience: 'Din CIO, CDO och styrelse', what: 'Företaget går från stela, dyra äldre portaler till en smidig low-code-arkitektur som skalar externt engagemang effektivt.', outcome: 'Du tar farväl av den enorma TCO:n för anpassade äldre portaler och bygger en smidig digital närvaro som växer med verksamheten.', kpis: [{ label: 'Mer än 200 % ROI över 3 år', kind: 'outcome' }, { label: 'Betydande TCO-minskning för externa webbegendomar', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Power Pages', note: 'Källa för ROI:n på mer än 200 %, minskningen av time-to-market och den ekonomiska effekten av att undvika anpassad webbutveckling och tredjeparts hostingkostnader.' },
+            { title: 'Customer Experience Benchmarks — Self-Service Portals', note: 'Källa för den 15–20 % höga ärendeavledningsgrad som organisationer uppnår när de lanserar integrerade, datakopplade självbetjäningsportaler för externa intressenter.' },
+        ],
+    },
 };
 
 export default function BusinessValuePowerPages({ theme, lang = 'en' }) {

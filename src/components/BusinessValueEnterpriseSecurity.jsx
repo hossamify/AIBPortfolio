@@ -220,6 +220,37 @@ const STRINGS = {
             { title: 'Microsoft Security, Compliance & Identity — productdocumentatie (Microsoft Learn)', note: 'Bron voor Conditional Access, Privileged Identity Management, DLP-policies over omgevingen, Customer Lockbox, customer-managed keys en Microsoft Purview-integratie.' },
         ],
     },
+    sv: {
+        headline: 'Ett identitets-, hot- och dataskyddsplan för varje Power Platform- och Dynamics 365-arbetsbelastning.',
+        summary: 'Microsoft Entra ID, Microsoft Defender, Microsoft Sentinel och Microsoft Purview samlar identitet, hotskydd och datastyrning under ett tak — så att apparna dina skapare levererar och Dynamics 365-miljöerna din verksamhet körs på skyddas av samma kontroller, samma policyer och samma granskningsbara bevis som resten av ditt Microsoft-landskap.',
+        kpis: [
+            { value: '240 %', label: 'ROI över 3 år (Entra ID)', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−50 %', label: 'Identitetsrelaterad intrångsrisk', kind: 'outcome' },
+            { value: '−75 %', label: 'Identitetsrelaterade helpdeskärenden', kind: 'efficiency' },
+            { value: '1', label: 'Enhetligt kontrollplan', kind: 'outcome' },
+        ],
+        bqPre: 'Medborgarutveckling, AI-agenter och SaaS-spridning mångdubblar platserna där dina företagsdata lever — och varje ny identitet, app och integration förstorar ytan en angripare kan nå.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om varje ny app, agent och koppling tyst förstorar din attackyta, ',
+        bqHighlight: 'hur låter du då verksamheten röra sig snabbt framåt på Power Platform och Dynamics 365 — utan att ge upp kontrollen över identitet, data och granskningsbevis?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Enterprise Security-lagret.',
+        bridge: 'Så här svarar Microsofts säkerhetsstack på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från en friktionsfri inloggning för slutanvändare till en cyberriskposition som kan försvaras inför styrelsen.',
+        rungs: [
+            { title: 'En inloggning, överallt där dina medarbetare arbetar', audience: 'Dina medarbetare och partner', what: 'Microsoft Entra ID levererar single sign-on och självbetjäningsåterställning av lösenord över Power Platform, Dynamics 365, Microsoft 365 och tusentals SaaS-appar — med phishingresistent MFA ovanpå.', outcome: 'Dina användare slutar jonglera lösenord och återställer själva utelåsningar, medan din helpdesk inte längre absorberar kostnaderna för det.', kpis: [{ label: '~75 % färre identitetsrelaterade helpdeskärenden', kind: 'efficiency' }, { label: 'Single sign-on över Microsoft och mer än 1 000 SaaS-appar', kind: 'efficiency' }] },
+            { title: 'Rätt åtkomst, för rätt person, i rätt kontext', audience: 'Dina IT- och identitetsadministratörer', what: 'Villkorsstyrd åtkomst, RBAC och Privileged Identity Management låter dig ge minsta möjliga åtkomst utifrån användare, enhet, plats och risksignal — och återkalla den lika snabbt.', outcome: 'Du upprätthåller Zero Trust utan att bromsa verksamheten och slutar överförse permanenta administratörsrättigheter.', kpis: [{ label: 'Principer för villkorsstyrd åtkomst tillämpade vid varje inloggning', kind: 'outcome' }, { label: 'Just-in-time och tidsbegränsad elevering för privilegierade roller', kind: 'efficiency' }] },
+            { title: 'Se hot tidigt, begränsa dem snabbt', audience: 'Ditt SecOps-team', what: 'Microsoft Defender XDR och Sentinel korrelerar signaler från identiteter, slutpunkter, e-post, molnappar och ditt Power Platform / Dynamics 365-landskap i en AI-stödd undersökningsupplevelse.', outcome: 'Dina analytiker upptäcker lateral förflyttning och dataexfiltrering tidigare — och löser incidenter på en bråkdel av tiden.', kpis: [{ label: '88 % lägre sannolikhet för ett materiellt intrång (Forrester TEI)', kind: 'outcome' }, { label: 'Snabbare mean time to detect och respond över hela kill chain', kind: 'efficiency' }] },
+            { title: 'Data stannar där det hör hemma — och bara där', audience: 'Din CISO och efterlevnadsansvariga', what: 'DLP-principer över miljöer, kundhanterade nycklar, Customer Lockbox, klientisolering, geografisk dataplacering, granskningsloggning och Microsoft Purview-etiketter gäller enhetligt för varje Power App, flöde och Dynamics 365-miljö.', outcome: 'Du ger verksamheten friheten att bygga och håller reglerad och känslig data inom de gränser dina revisorer förväntar sig.', kpis: [{ label: 'Central DLP och etikettering för hela Power Platform / D365-landskapet', kind: 'outcome' }, { label: 'Lägre gransknings- och efterlevnadsbörda via ett kontrollplan', kind: 'efficiency' }] },
+            { title: 'En säkerhetsposition som kan försvaras inför styrelsen', audience: 'Din vd och styrelse', what: 'Identitet, slutpunkt, data och appsäkerhet samlas på en Microsoft-plattform — och ersätter en lång svans av punktprodukter och den tillhörande integrationsbördan.', outcome: 'Du sänker din cyberriskexponering och din säkerhets-TCO samtidigt, med siffror du kan försvara inför styrelsen.', kpis: [{ label: '240 % ROI över 3 år på Microsoft Entra ID', kind: 'outcome' }, { label: 'Återbetalningstid på mindre än 6 månader', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Entra ID', note: 'Källa för 240 % ROI, återbetalning på under 6 månader, ~75 % minskning av identitetsrelaterade helpdeskärenden och minskad identitetsrelaterad intrångsrisk.' },
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Defender XDR', note: 'Källa för fyndet att kunder hade 88 % lägre sannolikhet för ett materiellt intrång, med snabbare mean time to detect och respond.' },
+            { title: 'Microsoft Security, Compliance & Identity — produktdokumentation (Microsoft Learn)', note: 'Källa för villkorsstyrd åtkomst, Privileged Identity Management, DLP-principer över miljöer, Customer Lockbox, kundhanterade nycklar och Microsoft Purview-integration.' },
+        ],
+    },
 };
 
 const RUNG_META = [

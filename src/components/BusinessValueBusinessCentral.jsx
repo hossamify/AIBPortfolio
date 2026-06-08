@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft SMB Market Data — Unified, AI-assisted cloud ERP', note: 'Bron voor de productiviteitswinsten wanneer mid-market-organisaties legacy-tools consolideren in één AI-ondersteund cloud-ERP.' },
         ],
     },
+    sv: {
+        headline: 'Väx ur dina kalkylblad, inte ur ditt team.',
+        summary: 'Dynamics 365 Business Central förenar ekonomi, verksamhet, försäljning och leveranskedja i en molnplattform. Copilot automatiserar det rutinmässiga redovisnings- och verksamhetsarbetet så att ditt team inte längre fungerar som "mänskligt lim" mellan fristående appar — och du äntligen får den realtidsinsikt du behöver för att skala lönsamt.',
+        kpis: [
+            { value: '162 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 12 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−50 %+', label: 'Tid för månadsbokslut & rapportering', kind: 'efficiency' },
+            { value: '−15–20 %', label: 'Manuella redovisnings- och administrationsuppgifter', kind: 'efficiency' },
+            { value: '↓ DSO', label: 'Days Sales Outstanding', kind: 'outcome' },
+        ],
+        bqPre: 'Att skala lönsamt är ditt primära fokus, men i dag tvingar frånkopplade redovisnings- och verksamhetsverktyg ditt team till manuell datainmatning, vilket fördröjer din månadsslutsinsikt med veckor.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om ditt team tillbringar sin tid som mänskliga dataintegratörer, ',
+        bqHighlight: 'hur ska du då med trygghet skala intäkterna utan att ständigt anställa mer administrativ personal?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Business Central.',
+        bridge: 'Så här svarar Dynamics 365 Business Central på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från redovisaren som stänger böckerna snabbare till ägaren som beslutar att skala.',
+        rungs: [
+            { title: 'Sluta klistra ihop kalkylblad', audience: 'Dina redovisnings- och verksamhetsmedarbetare', what: 'Copilot automatiserar bankavstämningar, skriver utkast till kundmejl och genererar direkt produktbeskrivningar — timmar av repetitiv inmatning och korskontroller försvinner.', outcome: 'Du minskar drastiskt manuell datainmatning och vinner tillbaka timmar varje vecka för din backoffice.', kpis: [{ label: '15–20 % färre manuella redovisnings- och administrationsuppgifter', kind: 'efficiency' }] },
+            { title: 'Quote-to-cash, från början till slut', audience: 'Dina ekonomi- och verksamhetschefer', what: 'En enhetlig quote-to-cash-process omvandlar en godkänd offert direkt till en order, reserverar lager och genererar en faktura — utan dubbelinmatning.', outcome: 'Du snabbar upp ditt verksamhetstempo: order går ut snabbare och dina böcker stängs på dagar i stället för veckor.', kpis: [{ label: 'Mer än 50 % kortare tid för månadsbokslut och finansiell rapportering', kind: 'efficiency' }] },
+            { title: 'En pålitlig sanning för dina ledare', audience: 'Din CFO / verksamhetschef', what: 'Plattformen river murarna mellan försäljning, lager och ekonomi och matar AI-modeller som förutsäger kassaflödesglapp och föreslår åtgärder mot sena betalningar.', outcome: 'Du eliminerar blinda fläckar i kalkylblad och baserar varje affärsbeslut på prediktiv intelligens i realtid.', kpis: [{ label: '100 % enhetlig insyn över avdelningar', kind: 'efficiency' }, { label: 'Betydande förbättring av kassaflödesprognosens noggrannhet', kind: 'outcome' }] },
+            { title: 'Frigör kassaflödet din verksamhet sitter på', audience: 'Din CFO', what: 'AI-styrda lagerprognoser förhindrar överlager, medan automatiserad fakturering och kopplade inkassoflöden snabbar upp inkommande betalningar.', outcome: 'Du optimerar rörelsekapitalet, får in kassaflöde snabbare och sänker kostnaderna för överskottslager.', kpis: [{ label: '10 % lägre lagerhållningskostnader (carrying costs)', kind: 'outcome' }, { label: 'Mätbar minskning av Days Sales Outstanding (DSO)', kind: 'outcome' }] },
+            { title: 'Skala intäkter utan att skala personalstyrkan', audience: 'Din vd, styrelse och ägare', what: 'Verksamheten går från en reaktiv, kalkylbladsbunden drift till ett uppkopplat, skalbart företag som klarar avsevärt mer volym med samma team.', outcome: 'Du ökar topplinjen utan att linjärt utöka din backoffice-personal — och bevisar snabbt avkastningen på investeringen.', kpis: [{ label: '162 % ROI över 3 år', kind: 'outcome' }, { label: 'Undvik 1–2 netto nya administrativa anställningar per år', kind: 'outcome' }, { label: 'Återbetalningstid på mindre än 12 månader', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Business Central', note: 'Källa för 162 % ROI, återbetalning på under 12 månader, mer än 50 % minskning av rapporteringstiden och den ekonomiska effekten av undviken personalökning och operativ effektivitet.' },
+            { title: 'Microsoft SMB Market Data — Unified, AI-assisted cloud ERP', note: 'Källa för produktivitetsvinsterna när medelstora organisationer konsoliderar äldre verktyg i ett enda AI-stött moln-ERP.' },
+        ],
+    },
 };
 
 export default function BusinessValueBusinessCentral({ theme, lang = 'en' }) {

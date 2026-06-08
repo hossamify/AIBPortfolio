@@ -1,0 +1,424 @@
+// Swedish ('sv') source language slice. See src/data/translations/index.js for the loader.
+// Shape mirrors en.js exactly: D[key] = [Name, ShortDesc, Capabilities[], Audience, Integrations, Architecture?].
+// Brand/product names (Dynamics 365 Sales, Power Apps, Dataverse, etc.) stay in English by convention.
+export const D_SV = {
+  "cat_agents": [
+    "AI-funktioner",
+    "AI-agenter och Copilot-funktioner inbäddade i hela stacken för affärsapplikationer."
+  ],
+  "cat_arch": [
+    "Arkitektoniska grundstenar",
+    "Gemensamma datastrukturer och säkerhetsmodeller."
+  ],
+  "prod_dataverse": [
+    "Dataverse & CDM",
+    "Enhetlig och skalbar datagrund.",
+    [
+      "Centraliserad relationell datalagring med elastisk skalning.",
+      "Standardiserat metadataschema via Common Data Model (CDM).",
+      "REST/OData-API:er och SDK för programmatisk interoperabilitet.",
+      "Säkerhet på rad- och kolumnnivå med affärsenheter.",
+      "Beräknade fält och rollup-fält med affärsregler i realtid.",
+      "Elastiska tabeller för IoT- och telemetridata med hög volym.",
+      "Virtuella tabeller som ansluter externa data utan replikering.",
+      "Fullständig granskningslogg, ändringsspårning och datalagringsprinciper."
+    ],
+    "Professionella utvecklare, IT-administratörer, medborgarutvecklare",
+    "Power Platform, Dynamics 365, Synapse Link, Fabric",
+    "Molnskalig, API-först relationsdatabas på Azure med standardiserade Common Data Model-scheman."
+  ],
+  "prod_security": [
+    "Företagssäkerhet",
+    "Identitet, åtkomst och arbetsflöden mellan system.",
+    [
+      "Rollbaserad åtkomstkontroll (RBAC) med säkerhetsroller och team.",
+      "Entra ID Single Sign-On (SSO) och principer för villkorsstyrd åtkomst.",
+      "Integration med Microsoft Sentinel och Defender for Cloud Apps för SIEM/SOAR och avvikelsedetektering.",
+      "Principer för dataförlustskydd (DLP) i alla miljöer.",
+      "Kundhanterade krypteringsnycklar (CMK) och stöd för Lockbox.",
+      "Klientisolering, geografisk dataplacering och efterlevnadscertifieringar.",
+      "Granskningsloggning, aktivitetsövervakning och hotdetektering.",
+      "B2B-samarbete mellan klienter med externa identitetsleverantörer."
+    ],
+    "CISO:er, säkerhetsarkitekter",
+    "Entra, Logic Apps",
+    "Övergripande säkerhetslager som utnyttjar Microsoft Entra ID för identitet och Microsoft Defender/Sentinel för hotdetektering i alla Power Platform- och Dynamics 365-miljöer."
+  ],
+  "cat_cx": [
+    "Kundupplevelse",
+    "Centrala CRM-funktioner som stärker frontoffice-team."
+  ],
+  "prod_sales": [
+    "Dynamics 365 Sales",
+    "CRM för grundläggande lead-spårning och pipelineoptimering.",
+    [
+      "Livscykelhantering av konton, kontakter och leads.",
+      "Affärsmöjlighetspipeline med anpassningsbara försäljningssteg.",
+      "AI-drivna försäljningssekvenser och automatiserade uppföljningar.",
+      "Relationsanalys och hälsobedömning med LinkedIn.",
+      "Prognoser med AI-förutsägelser och manuella justeringar.",
+      "Produktkatalog, prislistor och rabatthantering.",
+      "Arbetsflöde från offert till order med godkännandehierarkier.",
+      "Konversationsintelligens med analys av samtalsinspelningar.",
+      "Sales Accelerator med prioriterade arbetsköer.",
+      "Mobiloptimerad upplevelse med offlinesynkronisering av data."
+    ],
+    "Säljare, försäljningschefer, säljoperations",
+    "Microsoft 365, Teams, SharePoint, LinkedIn Sales Navigator, Copilot for Sales",
+    "Modelldriven app som körs på Dataverse med CDM-tabeller (Accounts, Contacts, Opportunities)."
+  ],
+  "prod_cs": [
+    "Customer Service",
+    "Grundläggande ärendehantering och omnikanalsupport.",
+    [
+      "Skapande, klassificering och livscykelspårning av ärenden.",
+      "Kunskapsbasförfattande med AI-föreslagna artiklar.",
+      "Omnikanalsdirigering över chatt, röst, e-post och sociala medier.",
+      "SLA-efterlevnad med rättigheter och servicekalendrar.",
+      "Enhetligt agentskrivbord med inbäddad Copilot-assistans.",
+      "Sentimentanalys och spårning av kundens humör i realtid.",
+      "Proaktivt skapande av ärenden från IoT-signaler och Power Automate-utlösare.",
+      "Customer Voice-enkäter med återkoppling efter interaktion.",
+      "Köhantering med kompetensbaserad och prioritetsstyrd dirigering.",
+      "Analysinstrumentpaneler för chefer i historik och realtid."
+    ],
+    "Supportagenter, kundtjänstchefer, CX-team",
+    "Teams, Copilot Studio, CTI-leverantörer",
+    "Modelldriven app på Dataverse med omnikanalarkitektur för chatt- och röstdirigering i realtid."
+  ],
+  "prod_ci": [
+    "Customer Insights",
+    "CDP och marknadsföringsautomatisering.",
+    [
+      "Dataförening från flera källor till enhetliga profiler.",
+      "AI-driven kundsegmentering och prediktiv poängsättning.",
+      "Orkestrering av kundresor över e-post, SMS, push och webb.",
+      "Generativ Copilot-innehållsskapande för kampanjer.",
+      "Händelseutlösare i realtid och beteendespårning.",
+      "A/B-testning och optimering av flervariantsinnehåll.",
+      "Hantering av samtycke och preferenser för GDPR-efterlevnad.",
+      "Lead-poängmodeller med anpassningsbara ML-attribut.",
+      "Kampanjhantering över flera varumärken och geografier.",
+      "Integration med annonsnätverk för export av målgrupper."
+    ],
+    "Marknadsförare, dataanalytiker, CX-ansvariga",
+    "D365 Sales, D365 Service, Power BI, Google Analytics, Social Ads",
+    "Customer Data Platform på Azure Data Lake Storage med AI/ML för profilförening och orkestrering av kundresor."
+  ],
+  "prod_field": [
+    "Field Service",
+    "Optimerar serviceverksamhet på plats.",
+    [
+      "Skapande, utskick och livscykelhantering av arbetsorder.",
+      "Schemaläggningstavla för resurser med AI-optimerade tilldelningar.",
+      "Offline-först-mobilapp med fullständig CRUD och mediefångst.",
+      "IoT-enhetsövervakning med automatisk omvandling av varningar till arbetsorder.",
+      "Lager- och reservdelshantering för fordonslager.",
+      "Spårning av kundtillgångar med servicehistorik.",
+      "Inspektioner och checklistor med konfigurerbara mallar.",
+      "Ruttoptimering och uppskattning av restid.",
+      "Självbetjäningsportal för kundbokning.",
+      "Matchning av teknikerkompetens och certifieringsspårning."
+    ],
+    "Utskickare, fälttekniker, servicechefer",
+    "Azure IoT Central, D365 SCM, HoloLens",
+    "Modelldriven app på Dataverse med ett offline-först-mobilramverk byggt på Power Apps."
+  ],
+  "cat_erp": [
+    "ERP & backoffice",
+    "System för central global ekonomistyrning, leveranskedja och personal."
+  ],
+  "prod_finance": [
+    "Dynamics 365 Finance",
+    "Grundläggande global ekonomistyrning med AI-analys.",
+    [
+      "Huvudbok med stöd för flera enheter och flera valutor.",
+      "Automatisering av leverantörsreskontra med fakturahantering.",
+      "Kundreskontra med inkasso- och kredithantering.",
+      "Livscykelhantering av anläggningstillgångar och avskrivningar.",
+      "Prenumerationsfakturering och redovisning av återkommande intäkter.",
+      "AI-driven kassaflödesprognos och budgetförslag.",
+      "Finansiell konsolidering över juridiska enheter.",
+      "Regelefterlevnad med integration av global skattemotor.",
+      "Fångst av leverantörsfakturor med AI-OCR och trevägsmatchning.",
+      "Automatiserad bankavstämning med avancerade matchningsregler."
+    ],
+    "Ekonomichefer, controllers, redovisningsteam",
+    "Banksystem, D365 SCM, Power BI, Dual-Write",
+    "F&O-arkitektur för företag (X++) på Azure SQL med Dataverse Dual-Write till CRM-appar."
+  ],
+  "prod_scm": [
+    "Supply Chain Management",
+    "Lager, tillverkning och distribution.",
+    [
+      "Lagerhantering med synlighet och kostnadsberäkning i realtid.",
+      "Huvudplanering (MRP/MPS) med efterfrågeprognoser.",
+      "Avancerad lagerhantering (WMS) med vågbearbetning.",
+      "Tillverkningsutförande med verkstadsstyrning och integration av MES från tredje part.",
+      "Inköp med leverantörshantering och inköpsavtal.",
+      "Kvalitetshantering med inspektions- och karantänorder.",
+      "Transporthantering med jämförelse av fraktpriser.",
+      "Produktinformationshantering med tekniska ändringar.",
+      "Planeringsoptimering med AI-driven efterfrågeavkänning.",
+      "Tillgångshantering för förebyggande och avhjälpande underhåll."
+    ],
+    "Lagerchefer, tillverkning, leveranskedjechefer",
+    "D365 Finance, MES, logistikleverantörer, Azure IoT",
+    "Delar F&O-arkitekturen med D365 Finance och lägger till specialiserade mikrotjänster för planeringsoptimering och lagersynlighet."
+  ],
+  "prod_po": [
+    "Project Operations",
+    "Heltäckande projekthantering.",
+    [
+      "Projektestimering och offerter med arbetsnedbrytning (WBS).",
+      "Resursdirigering, schemaläggning och kapacitetsoptimering.",
+      "Tidrapportering och utläggshantering med mobilstöd.",
+      "Projektfakturering med flexibla pris- och faktureringsregler.",
+      "Intäktsredovisning och projektkostnadsredovisning.",
+      "Instrumentpaneler för flera projekt med earned value-analys.",
+      "Underleverantörshantering och integration av inköpsorder.",
+      "Uppgiftshantering med Gantt-scheman och Kanban-tavlor.",
+      "Integration med Microsoft Project for the Web.",
+      "Risk- och avvikelsespårning med eskaleringsarbetsflöden."
+    ],
+    "Projektledare, resursplanerare, faktureringsspecialister",
+    "Microsoft Project, Teams, D365 Finance",
+    "Hybrid: Dataverse-frontend för försäljning och projektplanering, F&O-backend för projektredovisning och utläggshantering."
+  ],
+  "prod_hr": [
+    "Human Resources",
+    "Central personalhantering sammanfogad med ekonomiinfrastrukturen.",
+    [
+      "Organisationshierarki och befattningshantering.",
+      "Arbetsflöden för ledighet, frånvaro och ledighetsansökningar.",
+      "Ersättningsplaner med fast och rörlig lön.",
+      "Förmånsanmälan med hantering av livshändelser.",
+      "Självbetjäningsportal för anställda med profilhantering.",
+      "Prestationshantering med målspårning och utvärderingar.",
+      "Hantering av introduktionsuppgifter med checklistor.",
+      "Efterlevnad av arbetsrättsliga regler och certifieringar.",
+      "Personalanalys och planering av personalstyrka.",
+      "Integration med löneleverantörer och skattemyndigheter."
+    ],
+    "HR-specialister, rekryterare, förmånsadministratörer",
+    "LinkedIn Talent, ADP, Entra ID",
+    "Sammanfogad med F&O-kärnan, delar databas med D365 Finance och exponeras brett via virtuella Dataverse-tabeller."
+  ],
+  "prod_commerce": [
+    "Commerce",
+    "Omnikanallösning för detaljhandel och webbutik.",
+    [
+      "Huvudlös commerce-arkitektur med komponerbara API:er.",
+      "Kassa (POS) med Store Commerce-appen.",
+      "Distribuerad orderhantering (DOM) med regelbaserad uppfyllelse.",
+      "Webbplatsbyggare för e-handel med innehållshantering.",
+      "AI-drivna produktrekommendationer.",
+      "Motor för prissättning och kampanjer med personalisering.",
+      "Lojalitetsprogram med nivåhantering och belöningar.",
+      "Clienteling för personliga upplevelser i butik.",
+      "Integration av betyg, recensioner och social handel.",
+      "Valfri integration med Microsoft Dynamics 365 Fraud Protection med adaptiv AI-riskbedömning."
+    ],
+    "Detaljhandlare, e-handelschefer, kassapersonal",
+    "Betalningsgateways, D365 SCM, Customer Insights",
+    "Huvudlös commerce med F&O-backend för prissättning/lager, Commerce Scale Units för transaktioner med hög volym och ett CMS för butiker."
+  ],
+  "cat_smb": [
+    "SMB-lösningar",
+    "Integrerade ERP-lösningar anpassade för små och medelstora företag."
+  ],
+  "prod_bc": [
+    "Business Central",
+    "Heltäckande SaaS-ERP för små och medelstora organisationer.",
+    [
+      "Central ekonomi med dimensionsredovisning och budgetering.",
+      "Leveranskedja med inköp, lager och lagerhantering.",
+      "Lätt tillverkning med materiallistor och operationsföljder.",
+      "Bankavstämning med automatisk matchning och AI-förslag.",
+      "CRM Lite med hantering av kontakter, affärsmöjligheter och offerter.",
+      "Projektkalkylering med tidrapporter och projektbudgetar.",
+      "Stöd för transaktioner mellan flera företag och koncerninternt.",
+      "Inbäddad Microsoft 365-upplevelse (Excel, Outlook, Teams).",
+      "Utökningsbarhet via AL-språket och AppSource-marknadsplatsen.",
+      "Inbyggd Copilot för utkast och analys av försäljningsdokument."
+    ],
+    "Ägare av små och medelstora företag, ekonomiteam",
+    "Microsoft 365, Outlook, Excel, Power BI, bankflöden, AppSource",
+    "Äldre Navision-arkitektur (NAV) med AL-språket på molnbaserad SQL, separat från Dataverse och F&O."
+  ],
+  "cat_pp": [
+    "Power Platform",
+    "Lågkodsutveckling av applikationer, automatisering och AI."
+  ],
+  "prod_apps": [
+    "Power Apps",
+    "Miljö för snabb applikationsutveckling.",
+    [
+      "Dataanslutning till över 1 000 externa källor via kopplingar.",
+      "Dra-och-släpp Canvas-appar med pixelperfekta layouter.",
+      "Metadatadrivna modelldrivna appar på Dataverse.",
+      "Responsiv design med mobiloptimerad rendering.",
+      "Copilot-assisterad apputveckling från naturligt språk.",
+      "Komponentramverk (PCF) för återanvändbara anpassade kontroller.",
+      "Offlineläge med automatisk datasynkronisering vid återanslutning.",
+      "Rollbaserad säkerhet och åtkomstkontroll på radnivå.",
+      "Application Lifecycle Management (ALM) med lösningspaketering.",
+      "Anpassade sidor som blandar Canvas-flexibilitet i modelldrivna appar."
+    ],
+    "Medborgarutvecklare, IT-proffs, professionella utvecklare",
+    "Över 1000 kopplingar, Salesforce, SAP, SQL, SharePoint",
+    "Canvas-appar för pixelperfekta gränssnitt mot valfri datakälla; modelldrivna appar genereras automatiskt från Dataverse-strukturen."
+  ],
+  "prod_automate": [
+    "Power Automate",
+    "Robotiserad processautomatisering (RPA) och molnarbetsflöden.",
+    [
+      "API-baserade molnflöden med över 1 000 kopplingar.",
+      "Skrivbords-RPA för automatisering av äldre UI-baserade system.",
+      "Process mining för att upptäcka och analysera flaskhalsar.",
+      "Task mining med skärminspelning och AI-analys.",
+      "AI-driven flödesskapande från beskrivningar i naturligt språk.",
+      "Affärsprocessflöden för guidade procedurer i flera steg (Dataverse-baserade).",
+      "Godkännandearbetsflöden med parallell och sekventiell dirigering.",
+      "Schemalagda, omedelbara och händelseutlösta flödestyper.",
+      "Anpassade kopplingar och HTTP-åtgärder för valfritt REST-API.",
+      "DLP-principer på miljönivå och flödesstyrning."
+    ],
+    "Slutanvändare, RPA-utvecklare, automatiseringsingenjörer",
+    "SaaS-kopplingar, skrivbordsappar, REST-API:er",
+    "Molnflöden på Azure Logic Apps-motorn plus skrivbordsflöden för UI-baserad RPA på äldre system."
+  ],
+  "prod_pages": [
+    "Power Pages",
+    "Säker lågkodsbyggare för företagswebbplatser.",
+    [
+      "Visuell designstudio med dra-och-släpp-sidbyggare.",
+      "Säker Dataverse-integration med tabellbehörigheter.",
+      "Externa identitetsleverantörer (Microsoft Entra External ID, OAuth, SAML).",
+      "Webbformulär i flera steg med villkorsstyrd förgreningslogik.",
+      "Liquid-mallar och anpassad CSS/JS för avancerad design.",
+      "Webb-API-åtkomst för anpassade interaktioner på klientsidan.",
+      "Stöd för progressiv webbapp (PWA) för mobil åtkomst.",
+      "Innehållsleveransnätverk (CDN) för global prestanda.",
+      "Webbapplikationsbrandvägg (WAF) och DDoS-skydd.",
+      "Webbplatshälsokontroll och verktyg för tillgänglighetsefterlevnad."
+    ],
+    "Webbutvecklare, medborgarutvecklare",
+    "Microsoft Entra External ID, Okta, Power Automate, Copilot Studio",
+    "Byggd direkt på Dataverse och exponerar data säkert för externa användare via webbsidor."
+  ],
+  "prod_copilot": [
+    "Copilot Studio",
+    "Plattform för konversations-AI med autonom agentorkestrering och MCP-stöd.",
+    [
+      "Grafiskt lågkodsförfattande av botar med dra-och-släpp-design av ämnen och dialoger.",
+      "Stöd för Model Context Protocol (MCP) för säker AI-agentåtkomst till externa verktyg och data.",
+      "Generativa svar grundade i uppladdade dokument, SharePoint-webbplatser och anpassade datakällor.",
+      "Autonom agentorkestrering med planering i flera steg och verktygsanrop.",
+      "Ramverk för plugin-utökningsbarhet som ansluter till Power Automate, anpassade API:er och Azure Functions.",
+      "Omnikanaldistribution över Teams, webbchatt, Facebook, SMS och anpassade kanaler.",
+      "Inbyggd analysinstrumentpanel med sessionsutskrifter, CSAT-spårning och ämnesprestanda.",
+      "Entitetsextrahering, slotfyllning och hantering av kontextvariabler över konversationsturer.",
+      "Rollbaserad åtkomstkontroll med styrning på miljönivå och tillämpning av DLP-principer.",
+      "Sömlös överlämning till liveagenter i Dynamics 365 Customer Service med full konversationskontext."
+    ],
+    "CX-team, AI-designers, utvecklare",
+    "Teams, Slack, Facebook Messenger, Power Automate",
+    "SaaS-plattform för konversations-AI driven av Azure OpenAI ovanpå Power Platforms kopplingsekosystem."
+  ],
+  "cat_sust": [
+    "Hållbarhet & styrning",
+    "Avancerad spårning av miljöindikatorer och företagsstyrning (ESG)."
+  ],
+  "prod_emissions": [
+    "Microsoft Sustainability Manager",
+    "Central motor för heltäckande miljömässig koldioxidredovisning.",
+    [
+      "Beräkning av direkta utsläpp i Scope 1 från egna anläggningar, fordonsflottor och förbränning på plats.",
+      "Spårning av indirekta utsläpp i Scope 2 från inköpt el, ånga, värme och kyla.",
+      "Värdekedjekartläggning i Scope 3 som omfattar leverantörer uppströms, affärsresor och distribution nedströms.",
+      "Förladdade bibliotek med emissionsfaktorer från EPA, DEFRA, IPCC och regionala tillsynsorgan.",
+      "Inläsning av aktivitetsdata från elräkningar, bränsleloggar, IoT-sensorer och manuella inmatningsformulär.",
+      "Konfiguration av organisatoriska och operativa gränser i linje med GHG Protocol-standarder.",
+      "Automatiserad enhetsomvandlingsmotor med stöd för metriska, imperiala och anpassade mätsystem.",
+      "Målsättning och spårning av minskningsmål med variansanalys år för år.",
+      "Spårning och avstämning av koldioxidkompensation och certifikat för förnybar energi (REC).",
+      "Mallar för regelrapportering för CDP, TCFD, CSRD, SEC och regionala upplysningsramverk."
+    ],
+    "Hållbarhetschefer (CSO), hållbarhetsansvariga",
+    "Energileverantörer, ERP-system, IoT-sensorer",
+    "Microsoft Sustainability Managers beräkningsmotor på Dataverse, som läser in aktivitetsdata via Power Automate och Azure IoT Hub mot förladdade bibliotek med emissionsfaktorer, med resultat som visas i Power BI-instrumentpaneler för hållbarhet."
+  ],
+  "prod_social": [
+    "Socialt & styrning",
+    "Heltäckande icke-miljömässiga ESG-företagsmått och styrningsspårning.",
+    [
+      "Kartläggning av regeltaxonomi för CSRD, SEC, GRI, SASB och regionala upplysningsramverk.",
+      "Mått för mångfald, jämlikhet och inkludering (DEI) med instrumentpaneler för personaldemografi.",
+      "Spårning av styrelsesammansättning och styrningsstruktur med oberoendebedömning.",
+      "Rapportering av hälso- och säkerhetsincidenter med efterlevnadsspårning för OSHA och ISO 45001.",
+      "Mätning av samhällsinvesteringar och social påverkan med ROI-analys av program.",
+      "Övervakning av arbetsförhållanden i leveranskedjan med riskflaggor för modernt slaveri och barnarbete.",
+      "Efterlevnadsspårning för antikorruption och affärsetik med hantering av visselblåsarärenden.",
+      "Automatiserad generering av ESG-granskningsloggar med versionshanterad bevisdokumentation."
+    ],
+    "Efterlevnadsansvariga, ESG-direktörer",
+    "HR-system, GRI, CSRD",
+    "Microsoft Sustainability Managers utökade ESG-datamodell på Dataverse med Power Apps-inmatningsformulär och Power BI-styrningsinstrumentpaneler, som integrerar HR-system via Azure Logic Apps och Microsoft Purview för bevarande av efterlevnadsbevis."
+  ],
+  "prod_ingestion": [
+    "Datainläsning",
+    "Automatiserade hållbarhetsdatapipelines för ESG-rapportering.",
+    [
+      "Färdiga energikopplingar för API:er från el-, gas-, vatten- och avfallsleverantörer.",
+      "Document AI-extrahering med OCR för elräkningar, fakturor och hållbarhetsrapporter.",
+      "Konfigurerbara datakvalitetsregler med validering, deduplicering och avvikelseflaggning.",
+      "Inläsning av IoT-sensordata för övervakning av energi, vatten och utsläpp i realtid.",
+      "Manuella inmatningsformulär med godkännandearbetsflöden och granskningslogg för offlinekällor.",
+      "Schemalagd och händelseutlöst pipelineorkestrering med återförsök och felhantering.",
+      "Stöd för flera dataformat inklusive CSV, Excel, JSON, XML och EDI-standarder.",
+      "Spårning av datahärkomst med fullständig proveniens från källa till ESG-beräkningsmotor."
+    ],
+    "Dataingenjörer, hållbarhetsanalytiker",
+    "Azure Data Factory, IoT Hub, Power Automate",
+    "Azure Data Factory och Power Automate orkestrerar inläsning från energi-API:er, Azure IoT Hub-strömmar och AI Builder/Document Intelligence-OCR till stagingtabeller i Dataverse, med Microsoft Purview-härkomstspårning från källa till ESG-beräkningsmotor."
+  ],
+  "prod_fabric": [
+    "ESG Lake & Fabric",
+    "Centraliserad ESG-analysinfrastruktur driven av Microsoft Fabric och OneLake.",
+    [
+      "OneLake-datasjöhus med medaljongarkitektur för råa, kurerade och rapporterande ESG-lager.",
+      "Färdiga semantiska ESG-modeller med standardiserade mått för koldioxid, vatten, avfall och energi.",
+      "Strömmande IoT-analys i realtid för kontinuerlig övervakning av utsläpp och resursförbrukning.",
+      "Tvärgående finans- och hållbarhetsanalys som kopplar ESG-mått till affärsresultat.",
+      "Maskininlärningsarbetsytor för utsläppsförutsägelse, avvikelsedetektering och trendprognoser.",
+      "Power BI ESG-instrumentpanelsmallar med detaljnedbrytning från ledningssammanfattning till anläggningsnivå.",
+      "Datastyrning med Microsoft Purview-integration för härkomstspårning och känslighetsmärkning.",
+      "Automatiserad datakvalitetspoängsättning med mått för fullständighet, noggrannhet och aktualitet per datakälla."
+    ],
+    "Dataarkitekter, hållbarhetsanalytiker",
+    "Power BI, OneLake, Microsoft Purview",
+    "Microsoft Fabric-arbetsyta förankrar ett OneLake-medaljongdatasjöhus (brons/silver/guld) för ESG-data, med Eventstream som läser in IoT-telemetri, Synapse-notebooks som kör ML för utsläppsprognoser, Power BI-semantiska modeller som matar lednings- och anläggningsinstrumentpaneler, och Microsoft Purview som styr härkomst och känslighetsmärkning från början till slut."
+  ],
+  "cat_ind": [
+    "Branschmoln",
+    "Molnpaket anpassade för specifika sektorer och branscher."
+  ],
+  "prod_ind": [
+    "Industry Clouds",
+    "Förkonfigurerade vertikala lösningar byggda på Dynamics 365 och Power Platform för reglerade branscher.",
+    [
+      "Healthcare Cloud med enhetliga patientresor, vårdsamordning och klinisk datainteroperabilitet via FHIR.",
+      "Financial Services Cloud med kundregistrering, låneutgivning och acceleratorer för regelefterlevnad.",
+      "Retail Cloud med enhetlig handel, clienteling, lagersynlighet i realtid och efterfrågeprognoser.",
+      "Manufacturing Cloud med uppkopplat fabriksgolv, digitala tvillingar och integration av prediktivt underhåll.",
+      "Cloud for Sovereignty med kontroller för dataplacering, suveräna landningszoner och efterlevnad för offentlig sektor.",
+      "Förkonfigurerade branschdatamodeller som utökar Common Data Model med sektorspecifika entiteter och relationer.",
+      "Branschspecifika Copilot-tillägg och AI-mallar anpassade till sektorns arbetsflöden och terminologi.",
+      "Efterlevnadsacceleratorer med förmappade regelverk för HIPAA, PCI-DSS, Basel III och sektorregler."
+    ],
+    "Bransch-CIO:er, lösningsarkitekter",
+    "Common Data Model, Azure, Dataverse",
+    "Varje Industry Cloud lägger ett Dataverse-branschdatamodellager som utökar Common Data Model, Dynamics 365 vertikala appar (Healthcare/FSI/Retail/Manufacturing), Azure suveräna landningszoner med Azure Policy-skyddsräcken, FHIR/Azure Health Data Services- eller Azure IoT/Digital Twins-kopplingar, Power Platform-lågkodstillägg och bransch-Copilot-färdigheter, samt Microsoft Purview Compliance Manager-mallar förmappade till HIPAA, PCI-DSS och Basel III."
+  ]
+};

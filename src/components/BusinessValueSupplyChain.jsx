@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Supply Chain Benchmarks — Copilot in Dynamics 365 Supply Chain', note: 'Bron voor de productiviteitsverbeteringen van 15–20% voor inkoop- en planningsteams die Copilot inzetten voor risicomitigatie en geautomatiseerde communicatie.' },
         ],
     },
+    sv: {
+        headline: 'Bygg en leveranskedja som böjer sig — och inte längre brister.',
+        summary: 'Dynamics 365 Supply Chain Management kombinerar AI-driven efterfrågeprognos, Copilot-stödd riskreducering och IoT-uppkopplad produktion till ett prediktivt, motståndskraftigt leveransnätverk. Resultatet är lägre lagerkostnader, snabbare planeringscykler och en starkare On-Time In-Full-andel — underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '90 %+', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 12 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−5–10 %', label: 'Lagerkostnader', kind: 'outcome' },
+            { value: '−30 %', label: 'Ledtid för planeringscykler', kind: 'efficiency' },
+            { value: '+1–3 %', label: 'OEE i produktionen', kind: 'outcome' },
+        ],
+        bqPre: 'Att leverera i tid med minsta möjliga rörelsekapital är ditt kärnuppdrag, men i dag tvingar datasilos ditt team att hålla ',
+        bqPct: 'överdrivet säkerhetslager',
+        bqPost: ' — och ändå drabbas du av lagerbrist vid störningar.',
+        bqLeadIn: 'Om dina planerare ständigt släcker bränder med bakåtblickande kalkylblad, ',
+        bqHighlight: 'hur ska du då bygga den motståndskraft som krävs för att hålla kundlöften utan att binda miljoner i överskottslager?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Supply Chain Management.',
+        bridge: 'Så här svarar Dynamics 365 Supply Chain Management på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda planerarens produktivitet hela vägen upp till finansiell påverkan på styrelsenivå.',
+        rungs: [
+            { title: 'Planerare som planerar, inte jagar leverantörer', audience: 'Dina planerare och inköp', what: 'Copilot flaggar proaktivt externa leveransrisker (väder, leverantörsförseningar), skriver utkast till leverantörskommunikation och automatiserar rutinmässiga ändringar av inköpsorder.', outcome: 'Dina planerare slutar släcka bränder och fokuserar på strategisk sourcing.', kpis: [{ label: '15–20 % mindre tid på manuell inköps- och planeringsadministration', kind: 'efficiency' }] },
+            { title: 'En snabbare, smartare S&OP-cykel', audience: 'Dina supply chain-chefer', what: 'AI-driven efterfrågeplanering och lagersynlighet i realtid över alla lager och kanaler snabbar upp Sales and Operations Planning-cykeln.', outcome: 'Du förkortar dina beslutsmoment och anpassar produktion och dirigering i realtid efter marknadsrörelser.', kpis: [{ label: '30 % snabbare planerings- och prognoscykler', kind: 'efficiency' }, { label: 'Snabbare lösningstid vid leveransstörningar', kind: 'efficiency' }] },
+            { title: 'En bild av leveranskedjan i realtid', audience: 'Din VP Supply Chain', what: 'Plattformen river silos mellan verkstadsgolv, lager och logistiknätverk — och ger dig en enda AI-analyserad bild av hela den globala leveranskedjan.', outcome: 'Du ersätter reaktivt gissande med prediktiv intelligens och anpassar tillgången efter den verkliga marknadsefterfrågan.', kpis: [{ label: '100 % global lagersynlighet i realtid', kind: 'efficiency' }, { label: 'Betydligt bättre noggrannhet i efterfrågeprognosen', kind: 'outcome' }] },
+            { title: 'Mindre kapital bundet, fler order uppfyllda', audience: 'Din CSCO / COO', what: 'Prediktiv planering förhindrar överköp, medan optimerad utförande i lager och produktion håller dina tillgångar på toppeffektivitet för att möta efterfrågan.', outcome: 'Du sänker lagerkostnaderna och förbättrar samtidigt orderuppfyllelsegraden.', kpis: [{ label: '5–10 % lägre lagerkostnader', kind: 'outcome' }, { label: '1–3 % förbättring av OEE och produktionsutbyte', kind: 'outcome' }] },
+            { title: 'Leveranskedjan som konkurrensfördel', audience: 'Din CSCO, vd och styrelse', what: 'Din leveranskedja går från en bräcklig, kapitalslukande börda till ett motståndskraftigt nätverk som pålitligt håller kundlöften.', outcome: 'Du når dina servicenivåavtal och gör verksamheten till en mätbar konkurrensfördel.', kpis: [{ label: 'Mer än 90 % ROI över 3 år', kind: 'outcome' }, { label: 'Återbetalning på mindre än 12 månader', kind: 'outcome' }, { label: 'Högre On-Time In-Full (OTIF)-leveransgrad', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Supply Chain Management', note: 'Källa för ~90 %+ ROI, återbetalning på under 12 månader, 5–10 % lägre lagerkostnader och effektivitetsvinster i produktionen.' },
+            { title: 'Microsoft Supply Chain Benchmarks — Copilot in Dynamics 365 Supply Chain', note: 'Källa för produktivitetsförbättringarna på 15–20 % för inköps- och planeringsteam som använder Copilot för riskreducering och automatiserad kommunikation.' },
+        ],
+    },
 };
 
 export default function BusinessValueSupplyChain({ theme, lang = 'en' }) {

@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Power Platform Benchmarks', note: 'Bron voor de drastische verkorting van de time-to-market — van maanden naar weken — en de frontline-productiviteitswinst door papier en Excel te vervangen door mobiele Power Apps.' },
         ],
     },
+    sv: {
+        headline: 'Beta av backloggen. Pensionera kalkylbladen.',
+        summary: 'Power Apps demokratiserar applikationsutveckling. Medborgarutvecklare levererar snabbt anpassade appar med AI Copilot, proffsutvecklare snabbar upp komplexa driftsättningar och IT behåller centraliserad styrning över allt som byggs — så att du äntligen kan pensionera papper, Excel och dyr shadow-IT-SaaS.',
+        kpis: [
+            { value: '140 %+', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−74 %', label: 'Kostnad för apputveckling', kind: 'efficiency' },
+            { value: 'Veckor mot månader', label: 'Time-to-market för interna verktyg', kind: 'efficiency' },
+            { value: '↓ shadow IT', label: '100 % IT-insyn & styrning', kind: 'outcome' },
+        ],
+        bqPre: 'Att digitalisera verksamheten för att uppnå effektivitet är ditt kärnuppdrag, men i dag tvingar en 18 månader lång IT-backlog affärsenheter att falla tillbaka på fragmenterade kalkylblad och dyr shadow IT.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om ditt IT-team saknar utvecklingskapaciteten för att beta av den backloggen, ',
+        bqHighlight: 'hur ska du då digitalisera företaget och minska den tekniska skulden utan att äventyra säkerheten eller blåsa upp din budget?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Microsoft Power Apps.',
+        bridge: 'Så här svarar Power Apps på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från medborgarutvecklaren som levererar sin första app till en digital strategi på företagsnivå.',
+        rungs: [
+            { title: 'Alla kan bygga appen de behöver', audience: 'Dina medborgarutvecklare och proffsutvecklare', what: 'Affärsanvändare bygger med intuitiv dra-och-släpp och AI Copilot, medan proffsutvecklare använder samma plattform för att snabbt scaffolda komplexa lösningar och integrera äldre API:er.', outcome: 'Du kringgår pro-code-flaskhalsen och låter verksamheten digitalisera sin egen manuella datainmatning och pappersprocesser.', kpis: [{ label: '74 % minskning av kostnaderna för apputveckling', kind: 'outcome' }, { label: 'Tusentals timmar sparade när frontlinjemedarbetare digitaliserar pappersuppgifter', kind: 'efficiency' }] },
+            { title: 'Beta av IT-backloggen', audience: 'Din IT-ledning och PMO', what: 'Lösningar som tidigare krävde 6–9 månader traditionell SDLC designas, byggs och rullas nu ut på veckor — eller dagar.', outcome: 'Du rör dig i marknadens takt och levererar verksamhetskritiska operativa verktyg på veckor i stället för månader.', kpis: [{ label: 'Veckor i stället för månader för appleverans', kind: 'efficiency' }, { label: 'Mer än 50 % minskning av time-to-market för interna verktyg', kind: 'efficiency' }] },
+            { title: 'Bygg decentraliserat, styr centralt', audience: 'Din CISO och företagsarkitektur', what: 'Appar byggs på Dataverse med strikt, IT-hanterad rollbaserad åtkomst, principer för dataförlustskydd och enhetlig Application Lifecycle Management.', outcome: 'Du decentraliserar utvecklingen säkert samtidigt som du behåller absolut central kontroll — shadow IT och dataläckage elimineras.', kpis: [{ label: '100 % IT-insyn i alla anpassade applikationer', kind: 'efficiency' }, { label: 'Inga fler ohanterade rogue-applikationer', kind: 'outcome' }] },
+            { title: 'Pensionera äldre SaaS, fixa frontlinjen', audience: 'Din COO och verksamhetsledare', what: 'Frontlinjemedarbetare fångar direkt in ren data via mobilappar, medan IT ersätter dyra nisch-SaaS-verktyg med low-code-interna appar som gör samma jobb — utan de återkommande licenskostnaderna.', outcome: 'Du minskar operativa fel, snabbar upp frontlinjeflöden och pensionerar systematiskt dyr äldre programvara.', kpis: [{ label: 'Betydande minskning av licenskostnader för tredjeparts-SaaS', kind: 'outcome' }, { label: 'Mätbar minskning av operativa datainmatningsfel', kind: 'outcome' }] },
+            { title: 'En digital-first driftsmodell', audience: 'Din CIO, vd och styrelse', what: 'Företaget går från en trög, äldre-bunden arkitektur till en mycket smidig, digital-first-kultur som kan innovera snabbt i stor skala.', outcome: 'Du sänker TCO för interna verktyg och bygger ett verkligt smidigt, digital-first-företag — med ROI:n som styrker det.', kpis: [{ label: 'Mer än 140 % ROI över 3 år', kind: 'outcome' }, { label: 'Återbetalningstid på mindre än 6 månader', kind: 'outcome' }, { label: 'Högre total digital smidighet i företaget', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Power Apps', note: 'Källa för den mer än 140 % höga ROI:n, den 74 % minskningen av apputvecklingskostnader och de ekonomiska besparingarna genom utfasning av äldre tredjepartsapplikationer och undvikna anställningar av proffsutvecklare.' },
+            { title: 'Microsoft Power Platform Benchmarks', note: 'Källa för den drastiska förkortningen av time-to-market — från månader till veckor — och frontlinjens produktivitetsvinst genom att ersätta papper och Excel med mobila Power Apps.' },
+        ],
+    },
 };
 
 export default function BusinessValuePowerApps({ theme, lang = 'en' }) {

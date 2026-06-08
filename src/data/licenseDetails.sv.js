@@ -1,0 +1,416 @@
+// Swedish overrides for LICENSE_DETAILS.
+// Only `label` and `features` are translated. `tier` stays English (official SKU name).
+// Array order and length must match licenseDetails.js exactly.
+
+export const LICENSE_DETAILS_SV = {
+    'd365-sales': [
+        {
+            label: 'Basnivå',
+            features: [
+                "Grundläggande sales force automation (SFA) för organisationer utan komplexa försäljningsprocesser.",
+                "Skapa, läsa, uppdatera och ta bort konton, kontakter och leads.",
+                "Hantera fakturor, order, offerter och prislistor.",
+                "Marknadsföringskampanjer och marknadsföringslistor.",
+                "Upp till 15 anpassade tabeller för applikationsanpassning.",
+                "Enligt Microsoft Dynamics 365 Licensing Guide: kunder som använder Sales Professional kan inte kombinera Sales Premium, Sales Enterprise eller Sales Insights inom samma miljöinstans."
+            ]
+        },
+        {
+            label: '+ Tillägg till Professional',
+            features: [
+                "Obegränsad anpassning — tar bort gränsen på 15 anpassade tabeller.",
+                "Inbäddad intelligens och manuell prognostisering.",
+                "Sales Premium-funktioner med begränsad kapacitet: Conversation Intelligence, Sales Accelerator (1 500 poster/miljö/månad), poängsättning av leads och affärsmöjligheter.",
+                "Copilot i Dynamics 365 Sales.",
+                "2 000 Customer Voice-svar per klient/månad."
+            ]
+        },
+        {
+            label: '+ Tillägg till Enterprise',
+            features: [
+                "Fullständig, obegränsad åtkomst till all Sales Insights-automatisering och AI.",
+                "Prediktiv prognostisering, relationsanalys och pipelineintelligens.",
+                "Assistant Studio, Connection Insights och Notes Analysis.",
+                "Visitkortsläsare (200 skanningar/användare/månad).",
+                "1 000 Copilot Credits per användare/månad för AI-agenter."
+            ]
+        }
+    ],
+    'd365-cs': [
+        {
+            label: 'Basnivå',
+            features: [
+                "Förenklade resurser för agenter som hanterar mindre komplexa scenarier.",
+                "Grundläggande ärendehantering och chatt mellan agent och team.",
+                "Självbetjäningswebbplats och kunskapsbas för kunder.",
+                "Upp till 15 anpassade tabeller för anpassning."
+            ]
+        },
+        {
+            label: '+ Tillägg till Professional',
+            features: [
+                "Avancerad schemaläggning, utskick, teamskapande och resurshantering via integration med Field Service och Project Operations.",
+                "Intelligent enhetlig dirigering (50 postdirigeringar/användare/månad).",
+                "Customer Service Insights: AI-driven analys, ämnesklustring och sentimentanalys.",
+                "Tar bort gränsen för anpassade tabeller för fullständig Dataverse-anpassning.",
+                "2 000 Customer Voice-svar per användare/månad."
+            ]
+        },
+        {
+            label: '+ Tillägg till Enterprise',
+            features: [
+                "Integrerad Copilot-först-kontaktcenter- och CRM-lösning driven av generativ AI.",
+                "Heltäckande kontaktcenterfunktioner (digitalt + röst).",
+                "1 000 Copilot Credits per användare/månad.",
+                "Obs! Uppgradering till Premium tar bort den Customer Voice-rättighet som finns i Enterprise."
+            ]
+        },
+        {
+            label: 'Oberoende licens',
+            features: [
+                "Allt-i-ett-kontaktcenter med både digitala kanaler och röst — inget Customer Service CRM krävs.",
+                "Digitalt engagemang: livechatt, SMS, e-post, sociala medier (Facebook, WhatsApp, LINE, Apple Messages for Business) och Microsoft Teams.",
+                "Inbyggd röst driven av Azure Communication Services (operatörs-/ACS-användning faktureras separat); stöder Azure Direct Routing för befintliga operatörer.",
+                "AI-först-dirigering: intelligent enhetlig dirigering, kompetensbaserad tilldelning och insikter för personalhantering.",
+                "Copilot-assisterat agentskrivbord med sammanfattningar i realtid, förslag på nästa bästa åtgärd och konversationsinsikter.",
+                "Självbetjäning: IVR, röstbotar och virtuella agenter drivna av generativ AI byggda i Copilot Studio.",
+                "Öppet och utökningsbart — integreras med befintliga CRM-system via API:er och adaptrar.",
+                "Kräver Copilot Credits (säljs separat) för generativa AI-scenarier; betalas årligen."
+            ]
+        },
+        {
+            label: 'Oberoende licens',
+            features: [
+                "Enbart digitalt kontaktcenter — meddelande- och chattkanaler utan inbyggd röst.",
+                "Livechatt, SMS, e-post, sociala medier (Facebook, WhatsApp, LINE, Apple Messages for Business) och Microsoft Teams-kanaler.",
+                "AI-först enhetlig dirigering med 50 postdirigeringar/användare/månad (exklusive chattar, samtal och textmeddelanden); kompetensbaserad tilldelning över digitala kanaler.",
+                "Copilot-assisterat agentskrivbord med konversationssammanfattningar och förslag på nästa bästa åtgärd.",
+                "Självbetjäningschattbotar och virtuella agenter byggda i Copilot Studio.",
+                "Meddelandekapacitet köps separat via Microsoft Copilot Studio.",
+                "Öppet och utökningsbart — integreras med befintliga CRM-system via API:er och adaptrar."
+            ]
+        },
+        {
+            label: 'Oberoende licens',
+            features: [
+                "Enbart röstkontaktcenter — inbyggd inkommande och utgående röst utan digitala meddelandekanaler.",
+                "Inbyggd röst driven av Azure Communication Services (operatörs-/ACS-användning faktureras separat); stöder Azure Direct Routing för befintliga operatörer.",
+                "Kapacitetsrättigheter: 2 000 Intelligent Voicebot-minuter (IVR)/användare/månad, 6 000 Call Intelligence-minuter/användare/månad och 35 GB Dataverse-fillagring.",
+                "AI-först-dirigering, kompetensbaserad tilldelning och insikter för personalhantering för röstarbetsbelastningar.",
+                "Copilot-assisterat agentskrivbord med transkribering i realtid, samtalssammanfattningar och förslag på nästa bästa åtgärd.",
+                "Självbetjänings-IVR och röstbotar byggda i Copilot Studio.",
+                "Öppet och utökningsbart — integreras med befintliga CRM-system via API:er och adaptrar."
+            ]
+        }
+    ],
+    'd365-field': [
+        {
+            label: 'Primär licens',
+            features: [
+                "Heltidsutskickare, schemaläggare och fälttekniker.",
+                "Fullständig livscykel för arbetsorder: skapande, schemaläggning, utskick, lager och returer.",
+                "Schemaläggningstavla, beredskap för Resource Scheduling Optimization och ruttplanering.",
+                "Tät integration med Customer Service-ärendehantering.",
+                "Inkluderar den senaste Field Service Mobile-applikationen.",
+                "Bing Maps Developer-licens ingår med begränsningar för debiterbara transaktioner (se Microsoft Bing Maps-licensiering).",
+                "Inkluderar rättighet till Dynamics 365 Guides och Remote Assist (till och med 31 december 2026).",
+                "2 000 Customer Voice-svar per klient/månad."
+            ]
+        },
+        {
+            label: 'Tilläggslicens',
+            features: [
+                "För tredjeparts-/deltidstekniker — tillhandahåller grundläggande funktioner för arbetsorderhantering för att skala fältverksamhet.",
+                "Utför och uppdatera arbetsorder som redan tilldelats dem; skapa ärenden med begränsad redigeringsmöjlighet (inga SLA:er/rättigheter/ärendedirigering).",
+                "Visa kundtillgångar, hantera egna resurser och egenschemalägga (endast egna resurser och manuell schemaläggning).",
+                "Inkluderar den senaste Field Service Mobile-applikationen.",
+                "Inkluderar inte utskick, schemaläggningsadministration eller lagerhantering.",
+                "Enligt Microsoft Dynamics 365 Licensing Guide: organisationer måste redan äga en Field Service-licens innan de kan köpa Field Service Contractor-licenser.",
+                "Field Service Contractor-SL:er inkluderar inga Dataverse-kapacitetsrättigheter."
+            ]
+        }
+    ],
+    'd365-ci': [
+        {
+            label: 'Klientlicens',
+            features: [
+                "Licensieras per klient; inkluderar rätt att installera både Customer Insights – Journeys (tidigare Marketing) och Customer Insights – Data (tidigare Customer Insights) i ett obegränsat antal produktions- eller sandlådemiljöer.",
+                "Customer Insights – Journeys: skapa och genomför personliga kundresor över e-post, SMS, push-aviseringar med mera.",
+                "Customer Insights – Data: förena och berika kunddata med Customer Data Platform (CDP) för djupa insikter i kundbeteende, preferenser och interaktioner.",
+                "Kärnkapacitet: 10 000 Interacted People (Journeys) och 100 000 Unified People (Data) per klient/månad.",
+                "Skala varje mätare oberoende med tilläggspaket för Interacted People och Unified People (volymnivåerna T1/T2/T3).",
+                "Attach-priset kräver minst 10 kvalificerande Dynamics 365-baslicenser: Customer Service, Sales, Field Service, Finance, Supply Chain Management eller Commerce."
+            ]
+        }
+    ],
+    'd365-finance': [
+        {
+            label: 'Basnivå',
+            features: [
+                "Intelligent, automatiserad och pålitlig central ekonomistyrning med djup data- och processintegration över Dynamics 365, Microsoft 365 och partnerapplikationer.",
+                "Huvudbok, leverantörs-/kundreskontra, anläggningstillgångar, budgetering, global kostnadsredovisning och skattemotor.",
+                "Konsolideringar för flera enheter, valutor och språk med landsspecifika lokaliseringar.",
+                "Skrivskyddad åtkomst till planering av affärsresultat (att skapa planer/budgetar/prognoser kräver Finance Premium).",
+                "Copilot-assistans för finansiella insikter, leverantörsfakturahantering och inkassoarbetsflöden.",
+                "Inkluderar 100 elektroniska fakturor och 100 fakturafångsttransaktioner per klient/månad."
+            ]
+        },
+        {
+            label: '+ Tillägg till Finance',
+            features: [
+                "Avancerade arbetsytor för affärsresultathantering för planering, budgetering och prognostisering.",
+                "Obligatorisk licens för användare som behöver skapa planer, budgetar, prognoser eller finansiella analysrapporter direkt.",
+                "Prenumerationsfakturering med modeller för återkommande intäkter och intäktsredovisning i linje med IFRS 15 / ASC 606.",
+                "Avancerade AI-scenarier som Copilot-assisterad variansanalys och kassaflödesprognoser.",
+                "Fördubblar kapaciteten till 200 elektroniska fakturor och 200 fakturafångsttransaktioner per klient/månad.",
+                "1 000 Copilot Credits per användare/månad."
+            ]
+        }
+    ],
+    'd365-scm': [
+        {
+            label: 'Basnivå',
+            features: [
+                "Synlighet och intelligens i realtid för tillverkare, distributörer och detaljhandlare — proaktiv verksamhet över orderuppfyllelse, planering, inköp, produktion, lager, lagerhantering och transport.",
+                "Avancerade moduler: tillgångshantering, kostnadsredovisning, hantering av tekniska ändringar och tillverkningsutförande.",
+                "Diskreta, process-, lean- och projektbaserade tillverkningslägen med integrerad kvalitetshantering.",
+                "Warehouse Management-mobilapp med handhållen skanning, våg-/pack-/lastbearbetning och lagerspårning med license plate.",
+                "Copilot-assistans för inköpsbeslut, insikter för efterfrågeprognoser och undantagshantering över leveranskedjan.",
+                "Standardklientkapacitet: 100 tillgångar, 100 elektroniska fakturatransaktioner, 100 fakturafångsttransaktioner och 1 000 orderrader per klient/månad."
+            ]
+        },
+        {
+            label: '+ Tillägg till SCM',
+            features: [
+                "Demand Planning med Copilot-driven prognosgenerering, segmentering och undantagshantering.",
+                "Obligatorisk licens för användare som behöver skapa planer, budgetar, prognoser eller efterfrågeanalysrapporter direkt.",
+                "Avancerad optimering av lager och påfyllning med flernivåplanering över platser och lager.",
+                "Inbäddad scenariosimulering och what-if-analys för balansering av tillgång/efterfrågan.",
+                "Fördubblar faktureringskapaciteten till 200 elektroniska fakturor och 200 fakturafångsttransaktioner per klient/månad (kapaciteten för tillgångar och orderrader är kvar på 100 och 1 000).",
+                "1 000 Copilot Credits per användare/månad."
+            ]
+        }
+    ],
+    'd365-hr': [
+        {
+            label: 'Primär licens',
+            features: [
+                "Fullständig hantering av ersättning, förmåner, ledighets-/frånvarospårning, regelefterlevnad och prestationsåterkoppling.",
+                "Hantering av standardiserade utbildningsprogram med kurskataloger, anmälningar och slutföranden.",
+                "Organisationshantering: befattningshierarkier, jobb, avdelningar och arbetsflöden för medarbetarlivscykeln (anställning till pension).",
+                "Centraliserad personaldata som kan utökas via Dataverse och Power Platform; integreras med lönepartnerlösningar.",
+                "Copilot-assistans för medarbetarförfrågningar, dokumentutkast och HR-analys.",
+                "2 000 Customer Voice-svar per klient/månad."
+            ]
+        },
+        {
+            label: 'Oberoende licens',
+            features: [
+                "Självbetjäning för anställda: uppdatera personlig information, anmäla sjukfrånvaro, visa förmåner, skicka in semesteransökningar och ladda ner lönebesked.",
+                "Självbetjäning för chefer: godkänna anställdas ledighet, visa rapporteringsinformation för teamet och få tillgång till grundläggande teamanalys.",
+                "Mobilanpassad åtkomst via Dynamics 365-/Power Apps-kompanjonsupplevelser.",
+                "Enligt Microsoft Dynamics 365 Licensing Guide: ger endast åtkomst till Human Resources, inte någon annan Dynamics 365-produkt.",
+                "Inkluderar inte fullständiga HR-användarrättigheter — tillhandahåller endast den självbetjäningsfunktionalitet som anställda och chefer vanligtvis behöver.",
+                "Utformad för den breda medarbetarbasen; fullständiga HR-specialister måste licensieras med Human Resources."
+            ]
+        }
+    ],
+    'd365-commerce': [
+        {
+            label: 'Basnivå',
+            features: [
+                "Enhetlig butik, backoffice och callcenter i en heltäckande detaljhandelsplattform.",
+                "Modern kassa (POS) på Windows, iOS och Android med offlinestöd och clienteling-verktyg.",
+                "Intelligent prognostisering, AI-drivna produktrekommendationer och personliga lojalitetsprogram.",
+                "Butiksdrift, kataloger, merchandising-strategi, pris-/rabattmotor och prenumerationsfakturering.",
+                "Omnikanal-orderhantering: BOPIS (köp online, hämta i butik), endless aisle och ship-from-store.",
+                "1 000 orderrader per klient/månad."
+            ]
+        },
+        {
+            label: '+ Tillägg till Commerce',
+            features: [
+                "Klientbaserade nivåer för fullständigt stöd för B2B- och B2C-butiker med AOV-baserade kapacitetsband.",
+                "Commerce Scale Unit – Cloud för verksamhetskritisk bearbetning vid efterfrågetoppar.",
+                "API-driven huvudlös commerce-motor för nya kanaler (sociala medier, marknadsplatser, IoT).",
+                "Inbyggt CMS med dra-och-släpp-författande, A/B-testning och SEO-optimering.",
+                "Inbyggda integrationer med betalningskopplingar, skattetjänster och betygs-/recensionsleverantörer.",
+                "Enligt Microsoft Dynamics 365 Licensing Guide: varje ytterligare e-handelsmiljö kräver en ytterligare e-Commerce Tier-licens."
+            ]
+        }
+    ],
+    'd365-po': [
+        {
+            label: 'Fullständig licens',
+            features: [
+                "Enhetlig plattform som kopplar samman försäljning, resurssättning, projekthantering och ekonomi i en enda produkt.",
+                "Affärsmöjlighet till betalning: projektbaserade offerter med arbetsnedbrytningsstruktur (WBS), kontrakt och fastpris-/löpande räkning-/milstolpsfakturering.",
+                "Projektplanering, schemaläggning och resurshantering: Gantt, beroenden, baslinjer, kompetensbaserade resursförfrågningar och kapacitetsplanering.",
+                "Hantering av tid, utlägg och underleverantörer med policydrivna godkännandearbetsflöden och trevägsmatchning mot projektbudgetar.",
+                "Projektredovisning: kostnadssatser, koncernintern prissättning och intäktsredovisning (färdigställandegrad / vid fakturering) i linje med IFRS 15 / ASC 606.",
+                "Portföljinstrumentpaneler för flera projekt med earned value (EV), CPI/SPI, marginalanalys och Copilot-assistans för statussammanfattningar och riskidentifiering."
+            ]
+        }
+    ],
+    'd365-bc': [
+        {
+            label: 'Basnivå',
+            features: [
+                "Ekonomistyrning: AI-stödd prognostisering, bankavstämning, periodiseringar och flera valutor.",
+                "Leveranskedja: grundläggande lager, direktleveranser, hantering av försäljnings-/inköpsorder och lagerdatafångst.",
+                "CRM-kampanjer, grundläggande personalhantering och projekthanteringsverktyg.",
+                "Brett utbud av drifts- och hanteringsfunktioner anpassade för små och medelstora företag."
+            ]
+        },
+        {
+            label: '+ Tillägg till Essentials',
+            features: [
+                "Serviceorderhantering: planering, utskick och hantering av servicekontrakt.",
+                "Tillverkning: agil tillverkning, grundläggande kapacitetsplanering, maskincenter och produktions-BOM:ar."
+            ]
+        }
+    ],
+    'power-apps': [
+        {
+            label: 'Fullständig licens',
+            features: [
+                "Skapa och kör ett obegränsat antal anpassade applikationer och skapa och få åtkomst till ett obegränsat antal Power Pages-webbplatser.",
+                "Fullständig Dataverse-åtkomst med obegränsat skapande av och åtkomst till anpassade tabeller.",
+                "Standard-, premium- och anpassade kopplingar samt dataöverföring lokalt och till molntjänster.",
+                "Dedikerad Dataverse-kapacitet: 250 MB databas och 2 GB fil som ackumuleras per användare (på klientnivå).",
+                "Power Automate-användningsrättigheter för molnflöden inom appkontexten (RPA kräver ett separat köp av Power Automate Premium).",
+                "Managed Environments för administration och styrning i stor skala.",
+                "Enligt Power Platform Licensing Guide april 2026: 20 USD per användare/månad, faktureras årligen."
+            ]
+        },
+        {
+            label: 'Volymlicens',
+            features: [
+                "Samma Power Apps Premium-rättigheter som standard-SKU:n på 20 USD/användare/månad.",
+                "Enligt Power Platform Licensing Guide april 2026: 12 USD per användare/månad vid 2 000+ nya licenser, faktureras årligen.",
+                "Riktar sig till storskaliga företagsutrullningar som standardiserar på Power Apps för tusentals användare.",
+                "Anskaffas via ditt Microsoft-kontoteam eller tillägg till Enterprise Agreement.",
+                "Alla andra funktioner (Dataverse-kapacitet, premiumkopplingar, Managed Environments) är identiska med standard-Premium-SKU:n."
+            ]
+        }
+    ],
+    'power-automate': [
+        {
+            label: 'Primär licens',
+            features: [
+                "Automatisera moderna applikationer via API-baserad digital processautomatisering (molnflöden: automatiserade, omedelbara, schemalagda).",
+                "Automatisera äldre applikationer via UI-baserad robotiserad processautomatisering (övervakade skrivbordsflöden / RPA).",
+                "Affärsprocessflöden för strukturerade, tillståndskänsliga, människointeraktiva arbetsflöden.",
+                "Process Mining: visualisera och analysera processer (ytterligare Process Mining-kapacitet finns som ett tillägg på 100 GB/klient/månad).",
+                "Standard-, premium- och anpassade kopplingar samt dataöverföring lokalt och till molntjänster.",
+                "Dataverse-användningsrättigheter: 250 MB databas och 2 GB fil som ackumuleras per användare (på klientnivå).",
+                "Managed Environments för administration och styrning i stor skala.",
+                "Enligt Power Platform Licensing Guide april 2026: 15 USD per användare/månad, faktureras årligen; en licens låter användaren (eller kapaciteten) använda Power Automate i valfri miljö i klienten."
+            ]
+        },
+        {
+            label: 'Oberoende licens',
+            features: [
+                "Licensierar en enda \"automatiserings\"-bot för obevakad robotiserad processautomatisering (körs oberoende av en användare) eller en kritisk affärsprocess via UI-baserad digital processautomatisering.",
+                "Kan alternativt licensiera en central, övergripande affärsprocess (t.ex. HR-introduktion) för organisationsövergripande åtkomst utan licensiering per användare.",
+                "Enligt Power Platform Licensing Guide april 2026: 150 USD per bot/månad (faktureras årligen) — per miljö/månad; en licens låter boten eller processen användas i en enda miljö, och en ytterligare licens krävs om samma bot eller process distribueras i en annan miljö.",
+                "Inkluderar Dataverse-användningsrättigheter: 50 MB databas och 200 MB fil som ackumuleras per licens."
+            ]
+        }
+    ],
+    'power-pages': [
+        {
+            label: 'Instegsnivå',
+            features: [
+                "Licensierar autentiserade besökare som loggar in via en identitetsleverantör (Microsoft Entra ID, sociala leverantörer, B2C, SAML, OpenID eller anpassad).",
+                "Varje paket täcker 100 inloggade användare per webbplats och månad.",
+                "Startnivå — inget minimiåtagande för paket.",
+                "Obegränsad användning av standard-, premium- och anpassade kopplingar.",
+                "Fullständig Dataverse-åtkomst (inklusive anpassade och komplexa tabeller); ackumulerar 2 GB databas + 16 GB filkapacitet per paket.",
+                "Managed Environments för administration och styrning i stor skala."
+            ]
+        },
+        {
+            label: 'Volymnivå',
+            features: [
+                "Samma rättigheter som Authenticated T1 (100 inloggade användare/webbplats/månad per paket) till ett reducerat pris per paket.",
+                "Minsta köp: 100 paket (= 10 000 autentiserade användare/webbplats/månad).",
+                "Typiskt användningsfall: medelstora till stora externa portaler med jämn autentiserad trafik."
+            ]
+        },
+        {
+            label: 'Högvolymsnivå',
+            features: [
+                "Samma rättigheter som Authenticated T1 till det lägsta priset per paket.",
+                "Minsta köp: 1 000 paket (= 100 000 autentiserade användare/webbplats/månad).",
+                "Typiskt användningsfall: externa portaler i företagsskala, partner-/kundcommunityn och B2B-marknadsplatser."
+            ]
+        },
+        {
+            label: 'Instegsnivå',
+            features: [
+                "Licensierar anonyma besökare som använder webbplatser utan att logga in.",
+                "Varje paket täcker 500 anonyma användare per webbplats och månad.",
+                "Startnivå — inget minimiåtagande för paket.",
+                "Obegränsad användning av standard-, premium- och anpassade kopplingar.",
+                "Fullständig Dataverse-åtkomst (inklusive anpassade och komplexa tabeller); ackumulerar 500 MB databas + 4 GB filkapacitet per paket.",
+                "Managed Environments för administration och styrning i stor skala."
+            ]
+        },
+        {
+            label: 'Volymnivå',
+            features: [
+                "Samma rättigheter som Anonymous T1 (500 anonyma användare/webbplats/månad per paket) till ett reducerat pris per paket.",
+                "Minsta köp: 20 paket (= 10 000 anonyma användare/webbplats/månad).",
+                "Typiskt användningsfall: marknadsföringswebbplatser, kunskapsbaser och publika portaler med måttlig trafik."
+            ]
+        },
+        {
+            label: 'Högvolymsnivå',
+            features: [
+                "Samma rättigheter som Anonymous T1 till det lägsta priset per paket.",
+                "Minsta köp: 200 paket (= 100 000 anonyma användare/webbplats/månad).",
+                "Typiskt användningsfall: publika webbplatser med hög trafik, självbetjäningsportaler och storskaliga externa landningssidor."
+            ]
+        }
+    ],
+    'copilot-studio': [
+        {
+            label: 'Klientlicens',
+            features: [
+                "Klientövergripande licens som säljs i kapacitetspaket om 25 000 Copilot Credits för 200 USD/paket/månad.",
+                "Varje agentåtgärd eller -svar förbrukar ett varierande antal Copilot Credits beroende på åtgärden.",
+                "Tillgänglig i två faktureringsmodeller med identiska produktfunktioner: förköpsplan (förbetalda Copilot Credit Commit Units som väljs i förväg, spara upp till 20 % jämfört med pay-as-you-go, automatisk pay-as-you-go-reserv när förbetalda krediter tar slut) och pay-as-you-go (inget förhandsåtagande, faktureras månadsvis för faktisk förbrukning).",
+                "Azure-prenumeration krävs för att koppla miljön till fakturering (särskilt för pay-as-you-go).",
+                "Fullständig rätt att bygga intelligenta agenter och botar med grafiskt lågkodsförfattande; publicera till externa kanaler (webbplatser, appar, sociala plattformar) och låta icke-licensierade användare använda dem.",
+                "Inkluderar Power Automate-molnflöden (automatiserade, omedelbara, schemalagda) med upp till 250 000 Power Platform-begäranden per dag på klientnivå.",
+                "Molnflöden förbrukar inte den primära Copilot Studio-meddelande-/kreditkapaciteten.",
+                "Fullständig åtkomst till standard-, premium- och anpassade kopplingar; dataöverföring lokalt och till molntjänster.",
+                "Fullständiga Dataverse-användningsrättigheter: 250 MB databas och 2 GB filkapacitet per licens.",
+                "Managed Environments för heltäckande administration och styrning i stor skala."
+            ]
+        }
+    ],
+    'sust-emissions': [
+        {
+            label: 'Basnivå',
+            features: [
+                "Grundläggande spårning av koldioxid (Scope 1 och 2), vatten och avfall med förbyggda datamodeller.",
+                "Läs in aktivitetsdata från lokala, moln- och IoT-källor via färdiga kopplingar.",
+                "Inbyggda bibliotek med emissionsfaktorer och automatiserade beräkningar i linje med GHG Protocol.",
+                "Interaktiv analys, styrkort och ESG-rapporteringsinstrumentpaneler.",
+                "Målsättning och framstegsspårning mot hållbarhetsmål."
+            ]
+        },
+        {
+            label: '+ Tillägg till Essentials',
+            features: [
+                "Avancerad spårning av Scope 3-utsläpp över hela värdekedjan (kategorier uppströms och nedströms).",
+                "Beräkning av produktkoldioxidavtryck (PCF) och delning med leverantörer och kunder.",
+                "Copilot i Sustainability Manager för insikter, rapportering och datakvalitetskontroller i naturligt språk.",
+                "Hantering av ESG-värdekedjan och arbetsflöden för leverantörsengagemang.",
+                "Utökad datainläsningskapacitet och avancerad analys för komplexa ESG-rapporteringskrav."
+            ]
+        }
+    ]
+};

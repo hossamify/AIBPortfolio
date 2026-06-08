@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Connected Operations Data — Copilot in Field Service', note: 'Bron voor de productiviteitswinst door administratieve ontlasting via AI/Copilot en de verschuiving naar voorspellend, IoT-gestuurd onderhoud.' },
         ],
     },
+    sv: {
+        headline: 'Stoppa marginalläckaget från andra besök.',
+        summary: 'Dynamics 365 Field Service kombinerar AI-planering, prediktiva IoT-aviseringar och Copilot på mobilen för att flytta din verksamhet från reaktiv till proaktiv — högre First-Time Fix Rate, kortare restid och tekniker som hinner mer per skift, underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '160 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '+15–20 %', label: 'First-Time Fix Rate', kind: 'outcome' },
+            { value: '−10–15 %', label: 'Restid & bränsle', kind: 'efficiency' },
+            { value: '−20 %', label: 'Teknikerns administrativa tid', kind: 'efficiency' },
+        ],
+        bqPre: 'Att maximera servicemarginaler och tillgångarnas drifttid är avgörande, men i dag kräver upp till ',
+        bqPct: '25 %',
+        bqPost: ' av utryckningarna ett andra besök eftersom tekniker anländer utan rätt diagnoskontext eller reservdelar på plats.',
+        bqLeadIn: 'Om dina planerare och tekniker förblir frånkopplade från tillgångsdata i realtid, ',
+        bqHighlight: 'hur ska du då skydda dina servicemarginaler mot de stigande kostnaderna för reaktiva, överflödiga utryckningar?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Field Service.',
+        bridge: 'Så här svarar Dynamics 365 Field Service på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda teknikerns produktivitet hela vägen upp till finansiell påverkan på styrelsenivå.',
+        rungs: [
+            { title: 'Mer tid vid utrustningen, mindre pappersarbete', audience: 'Dina fälttekniker', what: 'Copilot på mobilen sammanfattar komplexa arbetsorder på sekunder, vägleder genom diagnossteg och låter tekniker diktera avslutsanteckningar i stället för att skriva i bilen.', outcome: 'Dina tekniker ägnar dagen åt utrustningen — inte åt en surfplatta — och slutför fler jobb per skift.', kpis: [{ label: '20 % mindre administrativ tid för tekniker', kind: 'efficiency' }, { label: 'Fler slutförda arbetsorder per tekniker och dag', kind: 'efficiency' }] },
+            { title: 'Rutter som anpassar sig i realtid', audience: 'Dina planerare', what: 'AI-planering kopplar varje jobb till den tekniker som har rätt kompetens och lager och planerar dynamiskt om kring trafik och akutsamtal.', outcome: 'Du optimerar din fordonsflotta dagligen och hanterar brådskande samtal utan en dominoeffekt av förseningar.', kpis: [{ label: '10–15 % lägre restid och bränslekostnader', kind: 'efficiency' }, { label: '20 % mindre planerings- och utskicksarbete', kind: 'efficiency' }] },
+            { title: 'Från break/fix till prediktiv service', audience: 'Din servicechef', what: 'IoT-sensorer matar kontinuerligt tillgångarnas telemetri till plattformen, som automatiskt skapar prediktiva underhållsorder innan något kritiskt går sönder.', outcome: 'Du flyttar din driftsmodell från reaktiv till proaktiv — tillgångar repareras innan kunderna märker ett problem.', kpis: [{ label: 'Betydande minskning av akututryckningar', kind: 'efficiency' }, { label: 'Hög andel arbetsorder genererade via IoT i stället för kundkontakt', kind: 'efficiency' }] },
+            { title: 'Lös rätt på första försöket', audience: 'Din VP Service Operations', what: 'Tekniker anländer i tid, AI-briefade och med rätt reservdelar — jobben slutförs korrekt vid första försöket.', outcome: 'Du eliminerar det ekonomiska läckaget från andra besök och förbättrar märkbart kundupplevelsen.', kpis: [{ label: '15–20 % förbättring av First-Time Fix Rate (FTFR)', kind: 'outcome' }, { label: '10 % högre kundnöjdhet (CSAT)', kind: 'outcome' }] },
+            { title: 'Field service som vinstcenter', audience: 'Din COO och styrelse', what: 'Lägre leveranskostnader (bränsle, utskick, överflödiga utryckningar) plus mer kapacitet förvandlar field service: från en marginalurholkande nödvändighet till en marginalpositiv verksamhet.', outcome: 'Du hanterar fler arbetsorder utan fler fordon eller tekniker — och du breddar synligt dina servicemarginaler.', kpis: [{ label: '160 %+ ROI över 3 år', kind: 'outcome' }, { label: 'Återbetalning på mindre än 6 månader', kind: 'outcome' }, { label: 'Breddning av de totala servicemarginalerna', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Field Service', note: 'Källa för 160 %+ ROI, återbetalning på under 6 månader, minskad restid och planeringsarbete samt förbättringar i First-Time Fix Rate.' },
+            { title: 'Microsoft Connected Operations Data — Copilot in Field Service', note: 'Källa för produktivitetsvinsten genom administrativ avlastning via AI/Copilot och övergången till prediktivt, IoT-styrt underhåll.' },
+        ],
+    },
 };
 
 export default function BusinessValueFieldService({ theme, lang = 'en' }) {

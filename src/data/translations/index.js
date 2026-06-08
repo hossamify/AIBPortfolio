@@ -20,6 +20,7 @@ const loaders = {
     it: () => import('./it.js').then((m) => m.D_IT),
     nl: () => import('./nl.js').then((m) => m.D_NL),
     ar: () => import('./ar.js').then((m) => m.D_AR),
+    sv: () => import('./sv.js').then((m) => m.D_SV),
 };
 
 // Track in-flight loads so concurrent callers share the same promise.

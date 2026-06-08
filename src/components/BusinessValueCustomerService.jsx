@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Copilot for Service / Work Trend Index', note: 'Bron voor de verkorting van de wrap-up-tijd na het gesprek en de aanzienlijke afname van de tijd die agenten kwijt zijn aan het zoeken in de kennisbank.' },
         ],
     },
+    sv: {
+        headline: 'Leverera enastående service — utan att utöka ditt kontaktcenter.',
+        summary: 'Dynamics 365 Customer Service med Copilot förvandlar dina agenter från manuella informationssökare till AI-stödda problemlösare. Resultatet är kortare hanteringstider, högre first contact resolution och en mätbart starkare kundnöjdhet — underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '170 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−12 %', label: 'Lägre genomsnittlig hanteringstid', kind: 'efficiency' },
+            { value: '+15 %', label: 'First Contact Resolution', kind: 'outcome' },
+            { value: '+10–15 %', label: 'Högre CSAT & NPS', kind: 'outcome' },
+        ],
+        bqPre: 'Att leverera enastående upplevelser och samtidigt hålla nere kostnaderna är ditt kärnuppdrag, men i dag lägger agenter upp till ',
+        bqPct: '30 %',
+        bqPost: ' av sin tid på att söka i fristående system och manuellt sammanfatta ärenden, vilket driver upp den genomsnittliga hanteringstiden.',
+        bqLeadIn: 'Om dina agenter förblir fast som manuella informationssamlare, ',
+        bqHighlight: 'hur ska du då hantera växande servicevolymer utan att ständigt utöka kontaktcentrets bemanning?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Customer Service.',
+        bridge: 'Så här svarar Dynamics 365 Customer Service på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda agentens produktivitet hela vägen upp till finansiell påverkan på styrelsenivå.',
+        rungs: [
+            { title: 'Agenter som löser, inte söker', audience: 'Dina supportagenter', what: 'Copilot för in rätt kunskap i agentens arbetsflöde, skriver utkast till personliga e-post- och chattsvar och genererar automatiskt en ärendesammanfattning direkt efter interaktionen.', outcome: 'Dina agenter behöver inte längre rota i splittrade system och ägnar verkligen sin tid åt att lösa kundärenden.', kpis: [{ label: '12 % lägre genomsnittlig hanteringstid (AHT)', kind: 'efficiency' }, { label: '30 % kortare efterarbetstid efter samtalet', kind: 'efficiency' }] },
+            { title: 'Kortare köer, högre genomflöde', audience: 'Dina teamledare och handledare', what: 'Eftersom enskilda interaktioner hanteras snabbare minskar kötiderna. Enhetlig dirigering tilldelar varje ärende direkt till den lämpligaste agenten utifrån kapacitet och kompetens.', outcome: 'Ditt befintliga team hanterar avsevärt fler ärenden utan att du behöver utöka bemanningen.', kpis: [{ label: '15 % lägre eskaleringsandel', kind: 'efficiency' }, { label: 'Snabbare Average Speed to Answer (ASA)', kind: 'efficiency' }] },
+            { title: 'Renare data, mindre upprepad kontakt', audience: 'Din Customer Service-chef', what: 'AI kategoriserar ärenden automatiskt, fångar fullständiga ärendehistoriker felfritt och flaggar i realtid framväxande produktfel eller servicetoppar.', outcome: 'Dina kunder behöver inte upprepa sig och du känner igen systematiska problem innan de översvämmar kön.', kpis: [{ label: '15 % förbättring av First Contact Resolution (FCR)', kind: 'outcome' }] },
+            { title: 'Lojalitet, uppbyggd interaktion för interaktion', audience: 'Din VP Customer Support / CCO', what: 'Kunder upplever kortare väntetider, snabbare lösningar och mer exakta, empatiska svar redan vid första kontakten.', outcome: 'Du åtgärdar kundfriktion direkt och förvandlar rutinmässiga servicemoment till moment som bygger lojalitet.', kpis: [{ label: '10–15 % högre CSAT', kind: 'outcome' }, { label: '10–15 % högre Net Promoter Score (NPS)', kind: 'outcome' }] },
+            { title: 'Service som retentionsmotor', audience: 'Din CCO, COO och styrelse', what: 'Genom att höja FCR och sänka AHT hanterar samma bemanning mer volym — kontaktcentret går från kostnadsställe till en mätbar retentionsmotor.', outcome: 'Du når dina servicenivåmål och sänker samtidigt din totala kostnad per leverans.', kpis: [{ label: '170 % ROI över 3 år', kind: 'outcome' }, { label: 'Återbetalning på mindre än 6 månader', kind: 'outcome' }, { label: 'Minskning av total kostnad per leverans', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Customer Service', note: 'Källa för ~170 % ROI, återbetalning på under 6 månader, minskad AHT och förbättringar i FCR och CSAT.' },
+            { title: 'Microsoft Copilot for Service / Work Trend Index', note: 'Källa för förkortningen av efterarbetstiden efter samtalet och den avsevärda minskningen av tiden agenter lägger på att söka i kunskapsbasen.' },
+        ],
+    },
 };
 
 export default function BusinessValueCustomerService({ theme, lang = 'en' }) {

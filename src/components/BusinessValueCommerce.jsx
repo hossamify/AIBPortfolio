@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Retail Benchmarks — Copilot for Merchandising & Catalog Enrichment', note: 'Bron voor de productiviteitsverbeteringen tot 70% voor marketing- en merchandisingteams die Copilot inzetten om productcontent te genereren en catalogi te verrijken.' },
         ],
     },
+    sv: {
+        headline: 'Förena dina butiker. Vinn kundresan.',
+        summary: 'Dynamics 365 Commerce förenar dina digitala och fysiska butiker. Copilot automatiserar produktmerchandising, AI levererar hyperpersonaliserade rekommendationer och en enda lagermodell kopplar samman online- och butiksverksamhet — så att din AOV ökar, dina konverteringsgrader stiger och din time-to-market krymper.',
+        kpis: [
+            { value: '180 %+', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '+10–15 %', label: 'Genomsnittligt ordervärde (AOV)', kind: 'outcome' },
+            { value: '+5–10 %', label: 'Total konverteringsgrad', kind: 'outcome' },
+            { value: '−50–70 %', label: 'Tid på produktberikning / copy', kind: 'efficiency' },
+            { value: '↑ CLV', label: 'Customer Lifetime Value', kind: 'outcome' },
+        ],
+        bqPre: 'Att driva omnikanal-intäktstillväxt och maximera Customer Lifetime Value är ditt kärnuppdrag, men i dag orsakar fristående system mellan dina online- och fysiska butiker lokala lagerbrister, medan manuell merchandising bromsar din time-to-market.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om dina kanaler förblir frånkopplade och dina team fortsätter att sitta fast i manuell datainmatning, ',
+        bqHighlight: 'hur ska du då höja ditt genomsnittliga ordervärde och förhindra att kunder överger sin varukorg för smidigare konkurrenter?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Commerce.',
+        bridge: 'Så här svarar Dynamics 365 Commerce på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från merchandisern som publicerar en ny produkt till detaljhandelsstrategin på styrelsenivå.',
+        rungs: [
+            { title: 'Nya produkter live på timmar, inte veckor', audience: 'Dina merchandisers och butiksmedarbetare', what: 'Copilot genererar direkt rika, SEO-optimerade produktbeskrivningar för webbplatsen, medan den enhetliga kassan ger butiksmedarbetare direkt lagersynlighet över kanaler.', outcome: 'Du minskar drastiskt det manuella arbetet med att lansera nya produkter online och låter butikspersonalen besvara varje kundfråga med trygghet.', kpis: [{ label: '50–70 % mindre tid på produktberikning / copywriting', kind: 'efficiency' }, { label: 'Kortare väntetider för kunder i butik', kind: 'efficiency' }] },
+            { title: 'Köp var som helst, leverera varifrån som helst', audience: 'Dina store ops- och e-handelschefer', what: 'Ett enhetligt lager över digitalt, butik och lager möjliggör sömlös Click & Collect (BOPIS) och infinite aisle-funktioner — utan komplexa manuella kringgångar.', outcome: 'Du levererar order från den mest effektiva platsen och ser till att kunder aldrig kör fast på grund av en lokal lagerbrist.', kpis: [{ label: 'Snabbare ledtider för orderuppfyllelse', kind: 'efficiency' }, { label: 'Betydande minskning av förlorad intäkt på grund av slutförsäljning (OOS)', kind: 'outcome' }] },
+            { title: 'En kund, en profil, en upplevelse', audience: 'Din VP E-Commerce', what: 'Plattformen river murarna mellan onlinebeteende, köp i fysisk butik och lojalitetsprogram för att skapa en enda enhetlig kundprofil.', outcome: 'Du ersätter generiska butiker med en AI-motor som visar hyperpersonaliserade produktrekommendationer i exakt det ögonblick av köpavsikt.', kpis: [{ label: '100 % enhetlig synlighet över kanaler', kind: 'efficiency' }, { label: 'Högre klickfrekvens på automatiserade rekommendationer', kind: 'outcome' }] },
+            { title: 'Större varukorgar, fler konverteringar', audience: 'Din Chief Retail / Digital Officer', what: 'Friktionsfria, personaliserade kundresor — oavsett om kunden betalar online eller pratar med en medarbetare i butik — påverkar direkt köpbeteendet och återtar förlorad intäkt.', outcome: 'Du upp- och korsförsäljer till varje shoppare och maximerar intäkten från varje transaktion.', kpis: [{ label: '+10–15 % på det genomsnittliga ordervärdet (AOV)', kind: 'outcome' }, { label: '+5–10 % på den totala konverteringsgraden', kind: 'outcome' }] },
+            { title: 'En enhetlig omnikanal-motor', audience: 'Din Chief Retail Officer och styrelse', what: 'Verksamheten går från en fragmenterad samling säljkanaler till en enhetlig omnikanal-motor med hög marginal som odlar djup varumärkeslojalitet.', outcome: 'Du levererar den motståndskraftiga, moderna detaljhandelsupplevelse som konsumenter förväntar sig — och ökar livstidsvärdet för varje vunnen kund.', kpis: [{ label: 'Mer än 180 % ROI över 3 år', kind: 'outcome' }, { label: 'Mätbar ökning av Customer Lifetime Value (CLV)', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Commerce', note: 'Källa för den mer än 180 % höga ROI:n, konverteringsförbättringar och den ekonomiska effekten av enhetlig lagersynlighet som minskar förlorad intäkt.' },
+            { title: 'Microsoft Retail Benchmarks — Copilot for Merchandising & Catalog Enrichment', note: 'Källa för produktivitetsförbättringarna på upp till 70 % för marknads- och merchandisingteam som använder Copilot för att generera produktinnehåll och berika kataloger.' },
+        ],
+    },
 };
 
 export default function BusinessValueCommerce({ theme, lang = 'en' }) {

@@ -213,6 +213,36 @@ const STRINGS = {
             { title: 'Microsoft Dataverse — productdocumentatie (Microsoft Learn)', note: 'Bron voor de platformcapaciteiten: Common Data Model, rolgebaseerde beveiliging, virtual tables, dataflows en native Microsoft Fabric-integratie.' },
         ],
     },
+    sv: {
+        headline: 'En styrd datagrund för varje app, automatisering och Copilot du bygger.',
+        summary: 'Microsoft Dataverse är den hanterade, säkra, AI-redo dataplattformen bakom Power Apps, Power Automate, Copilot Studio och Dynamics 365. Den ersätter egenbyggda databaser, anpassad integrationskod och shadow-IT-datalager med en gemensam datamodell — så att dina skapare levererar snabbare och ditt säkerhetsteam behåller kontrollen.',
+        kpis: [
+            { value: '140 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−75 %', label: 'Tid att bygga nya appar', kind: 'efficiency' },
+            { value: '−50 %', label: 'Dataintegrationskostnader', kind: 'efficiency' },
+            { value: '1', label: 'Styrd datagrund', kind: 'outcome' },
+        ],
+        bqPre: 'Varje ny affärsapp kräver i dag en egen databas, egna integrationer, en egen säkerhetsmodell och ett eget AI-rörmokeri — och kostnaden för den fragmenteringen staplas på med varje projekt.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om varje app på din färdplan bygger om samma data-, säkerhets- och integrationsrörmokeri från grunden, ',
+        bqHighlight: 'hur ska du då hålla jämna steg med verksamhetens efterfrågan — och förbli AI-redo — utan att ditt IT-landskap blir ohanterligt?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Microsoft Dataverse.',
+        bridge: 'Så här svarar Microsoft Dataverse på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från enskild skaparproduktivitet till finansiell påverkan och AI-mognad på styrelsenivå.',
+        rungs: [
+            { title: 'Bygg appar på dagar, inte kvartal', audience: 'Dina App Makers och proffsutvecklare', what: 'Dataverse levererar ett hanterat schema, relationer, affärsregler och en low-code-modelleringsupplevelse — skapare slutar bygga databaser manuellt och börjar komponera på en färdig plattform.', outcome: 'Du levererar nya verksamhetsappar på en bråkdel av tiden, med en konsekvent datamodell i grunden.', kpis: [{ label: '75 % minskad tid att bygga nya appar', kind: 'efficiency' }, { label: 'En Common Data Model över Power Apps, Power Automate och Dynamics 365', kind: 'efficiency' }] },
+            { title: 'Sluta betala integrationsskatten', audience: 'Dina integrations- och dataarkitekter', what: 'Hundratals färdiga kopplingar, virtuella tabeller, dataflöden och Microsoft Fabric-integration ersätter skräddarsydda ETL-pipelines och point-to-point-limkod.', outcome: 'Dina affärsappar delar data med ditt ERP, ditt CRM och ditt lakehouse — utan att varje gång finansiera ett anpassat integrationsprojekt.', kpis: [{ label: '50 % lägre dataintegrationskostnader', kind: 'efficiency' }, { label: 'Nativ Microsoft Fabric-länk — analys utan att exportera data', kind: 'efficiency' }] },
+            { title: 'Förtroende, säkerhet och efterlevnad inbyggt', audience: 'Din CISO och efterlevnadsansvariga', what: 'Rollbaserad säkerhet, rad- och kolumnkontroller, kundhanterade nycklar, granskningsloggar, DLP-principer och Microsoft Purview-integration ingår i plattformen — inget projekt att bygga in i efterhand.', outcome: 'Du ger medborgarutvecklare en sandlåda och ditt säkerhetsteam ett granskningsbart kontrollplan.', kpis: [{ label: 'Styrning i företagsklass för medborgarutvecklade appar', kind: 'outcome' }, { label: 'Lägre gransknings- och efterlevnadsbörda genom centraliserade kontroller', kind: 'efficiency' }] },
+            { title: 'En plattform, mindre vildvuxenhet', audience: 'Din CIO och CDO', what: 'En hanterad dataplattform bär Power Apps, Power Automate, Copilot Studio och Dynamics 365 — och ersätter en lång svans av SharePoint-listor, Access-databaser och shadow-IT-kalkylblad.', outcome: 'Du konsoliderar ditt applikationslandskap, tar farväl av äldre databaser och minskar den operativa yta ditt team måste underhålla.', kpis: [{ label: 'Utfasade äldre verksamhetsdatabaser konsoliderade på Dataverse', kind: 'outcome' }, { label: 'Lägre TCO än att själv bygga och driva ett anpassat datalager', kind: 'outcome' }] },
+            { title: 'En hållbar grund för AI', audience: 'Din vd och styrelse', what: 'Eftersom Copilot i Dynamics 365 och Microsoft 365 resonerar över Dataverse är varje app du bygger på den automatiskt AI-redo — utan separat dataprojekt.', outcome: 'Dina investeringar staplas på varandra: varje ny Dataverse-app gör ditt företag mer automatiserbart och bättre utnyttjat för AI, i stället för att öka din dataskuld.', kpis: [{ label: '140 % ROI över 3 år på Microsoft Dataverse', kind: 'outcome' }, { label: 'Återbetalningstid på mindre än 6 månader', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dataverse', note: 'Källa för 140 % ROI, återbetalning på under 6 månader, 75 % minskad app-byggtid och 50 % minskade dataintegrationskostnader.' },
+            { title: 'Microsoft Dataverse — produktdokumentation (Microsoft Learn)', note: 'Källa för plattformsfunktionerna: Common Data Model, rollbaserad säkerhet, virtuella tabeller, dataflöden och nativ Microsoft Fabric-integration.' },
+        ],
+    },
 };
 
 const RUNG_META = [

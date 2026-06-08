@@ -7,5 +7,6 @@ export const languageOptionsList = [
     { code: 'es', label: 'Español' },
     { code: 'it', label: 'Italiano' },
     { code: 'ar', label: 'العربية' },
-    { code: 'nl', label: 'Nederlands' }
+    { code: 'nl', label: 'Nederlands' },
+    { code: 'sv', label: 'Svenska' }
 ];

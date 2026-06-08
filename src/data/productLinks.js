@@ -86,6 +86,47 @@ const CUSTOMER_STORIES_LOCALES = {
     ar: 'ar',
 };
 
+// Microsoft Release Planner apps per product id. Each product maps to one or
+// more plans; `app` is the official Release Planner filter value (spaces become
+// `+` when the URL is built) and the optional `label` distinguishes plans when a
+// product has more than one (kept in English as a Microsoft product/feature
+// name). Products without a Release Planner app (Dataverse, Enterprise Security,
+// Sustainability modules) are omitted so the button is hidden for them.
+const RELEASE_PLAN_APPS = {
+    'd365-sales': [{ app: 'Sales' }],
+    'd365-cs': [
+        { app: 'Customer Service', label: 'Customer Service' },
+        { app: 'Contact Center', label: 'Contact Center' },
+    ],
+    'd365-ci': [
+        { app: 'Customer Insights - Data', label: 'Data' },
+        { app: 'Customer Insights - Journeys', label: 'Journeys' },
+    ],
+    'd365-field': [{ app: 'Field Service' }],
+    'd365-finance': [{ app: 'Finance' }],
+    'd365-scm': [{ app: 'Supply Chain Management' }],
+    'd365-po': [{ app: 'Project Operations' }],
+    'd365-hr': [{ app: 'Dynamics 365 Human Resources' }],
+    'd365-commerce': [{ app: 'Commerce' }],
+    'd365-bc': [{ app: 'Business Central' }],
+    'copilot-studio': [{ app: 'Microsoft Copilot Studio' }],
+    'power-apps': [{ app: 'Power Apps' }],
+    'power-automate': [{ app: 'Power Automate' }],
+    'power-pages': [{ app: 'Power Pages' }],
+};
+
+// Release Planner locale segment per app language. Languages the Release Planner
+// does not publish (en-GB, ar) fall back to en-US.
+const RELEASE_PLAN_LOCALES = {
+    en: 'en-US',
+    fr: 'fr-FR',
+    de: 'de-DE',
+    es: 'es-ES',
+    it: 'it-IT',
+    nl: 'nl-NL',
+    sv: 'sv-SE',
+};
+
 const buildDemoUrl = (productId, lang) => {
     const path = DEMO_PATHS[productId];
     if (!path) return null;
@@ -100,10 +141,26 @@ const buildCustomerStoriesUrl = (productId, lang) => {
     return `https://www.microsoft.com/${locale}/customers/search?filters=product%3A${encodeURIComponent(slug)}`;
 };
 
+// Returns the list of Release Planner links for a product. Each entry is
+// `{ url, label }`; `label` is null when the product has a single plan (so the
+// button shows just "Release Plans") and is the plan name when there are several
+// (so each button reads e.g. "Release Plans: Contact Center").
+const buildReleasePlanLinks = (productId, lang) => {
+    const plans = RELEASE_PLAN_APPS[productId];
+    if (!plans || plans.length === 0) return [];
+    const locale = RELEASE_PLAN_LOCALES[lang] || 'en-US';
+    const single = plans.length === 1;
+    return plans.map(({ app, label }) => ({
+        url: `https://releaseplans.microsoft.com/${locale}/?app=${encodeURIComponent(app).replace(/%20/g, '+')}`,
+        label: single ? null : (label ?? app),
+    }));
+};
+
 export function getProductLinks(productId, lang) {
     return {
         productUrl: PRODUCT_URLS[productId] || null,
         demoUrl: buildDemoUrl(productId, lang),
         customerStoriesUrl: buildCustomerStoriesUrl(productId, lang),
+        releasePlanLinks: buildReleasePlanLinks(productId, lang),
     };
 }

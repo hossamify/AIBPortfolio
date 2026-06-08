@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft AI in Finance Benchmarks — Copilot in Dynamics 365 Finance', note: 'Bron voor de productiviteitsverbeteringen van 15–20% voor finance-professionals die Copilot gebruiken voor variantie-analyse, automatisering van collections en reconciliatie.' },
         ],
     },
+    sv: {
+        headline: 'Kliv ur backspegeln — och styr ekonomin i realtid.',
+        summary: 'Dynamics 365 Finance med Copilot automatiserar de avstämningar, konsolideringar och inkassoflöden som håller ditt ekonomiteam fast i kalkylblad. Resultatet är ett snabbare bokslut, skarpare prognoser, ett accelererat kassaflöde och en ekonomiorganisation som faktiskt kan styra verksamheten — underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '122 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 12 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−40–50 %', label: 'Ledtid för månadsbokslut', kind: 'efficiency' },
+            { value: '−10–15 %', label: 'Days Sales Outstanding (DSO)', kind: 'outcome' },
+            { value: '+15–20 %', label: 'Ekonomiteamets produktivitet', kind: 'efficiency' },
+        ],
+        bqPre: 'Att leverera finansiell smidighet i realtid för att skydda marginalerna är ditt kärnuppdrag, men i dag lägger ditt team upp till ',
+        bqPct: '70 %',
+        bqPost: ' av sin tid på att manuellt sammanfoga data — vilket leder till ett fördröjt månadsbokslut och bakåtblickande rapportering.',
+        bqLeadIn: 'Om dina välbetalda ekonomiproffs fortsätter att agera som manuella datakonsoliderare, ',
+        bqHighlight: 'hur ska du då ge styrelsen den finansiella smidighet i realtid som krävs för att navigera genom marknadsvolatilitet?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Finance.',
+        bridge: 'Så här svarar Dynamics 365 Finance på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda analytikerns produktivitet hela vägen upp till finansiell påverkan på styrelsenivå.',
+        rungs: [
+            { title: 'Analytiker som analyserar, inte aggregerar', audience: 'Dina finansanalytiker och redovisare', what: 'Copilot automatiserar rutinmässig variansanalys, skriver utkast till inkassokommunikation och matchar fakturor och betalningar automatiskt — hundratals timmar av manuell avstämning i kalkylblad försvinner.', outcome: 'Ditt ekonomiteam lämnar mödosam datainmatning och fokuserar åter på högvärdig analys.', kpis: [{ label: '15–20 % mindre tid på manuell datahantering', kind: 'efficiency' }, { label: 'Hundratals timmar sparade per år och heltidstjänst', kind: 'efficiency' }] },
+            { title: 'Ett månadsbokslut på dagar, inte veckor', audience: 'Din koncerncontroller', what: 'Att automatisera den globala huvudboken, konsolidera enheter i realtid och direkt lösa varianser med AI undanröjer den traditionella rapporteringsflaskhalsen.', outcome: 'Du snabbar upp dina rapporteringscykler och tar din finansiella data ur backspegeln.', kpis: [{ label: '40–50 % mindre tid för att slutföra månadsbokslutet', kind: 'efficiency' }] },
+            { title: 'En sanning i realtid', audience: 'Din VP Finance / FP&A', what: 'Ett enhetligt ERP river regionala och funktionella silos och ger dig AI-styrda prognosmodeller i stället för bräckliga, felbenägna kalkylblad.', outcome: 'Du prognostiserar kassaflöde med trygghet, upptäcker risker tidigt och fattar proaktiva beslut baserade på prediktiv intelligens — inte historiska gissningar.', kpis: [{ label: '100 % global synlighet i realtid', kind: 'efficiency' }, { label: 'Betydande förbättring av prognosens variansnoggrannhet', kind: 'outcome' }] },
+            { title: 'Frigjort kassaflöde, skyddade marginaler', audience: 'Din CFO', what: 'AI-styrd inkasso prioriterar riskfyllda konton och automatiserar rutinmässig kontakt, medan utgifts- och budgetkontroller i realtid förhindrar överskridanden innan de uppstår.', outcome: 'Du snabbar upp kassakonverteringen, frigör bundet rörelsekapital och försvarar aktivt dina rörelsemarginaler.', kpis: [{ label: '10–15 % minskning av Days Sales Outstanding (DSO)', kind: 'outcome' }, { label: 'Mätbar minskning av nedskrivningar av osäkra fordringar', kind: 'outcome' }] },
+            { title: 'Ekonomi som strategisk tillväxtpartner', audience: 'Din CFO, vd och styrelse', what: 'Ekonomi går från ett bakåtblickande compliance-kostnadsställe till en framåtblickande partner som aktivt driver verksamhetens lönsamhet.', outcome: 'Du avskaffar de höga kostnaderna för splittrade äldre ERP-system och ger styrelsen den smidighet i realtid som krävs.', kpis: [{ label: 'Mer än 122 % ROI över 3 år', kind: 'outcome' }, { label: 'Minskning av Total Cost of Ownership (TCO) för äldre ERP', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Finance', note: 'Källa för den mer än 122 % höga ROI:n, den betydande minskningen av månadsbokslutsprocessen och sänkningen av kostnaderna för äldre ERP.' },
+            { title: 'Microsoft AI in Finance Benchmarks — Copilot in Dynamics 365 Finance', note: 'Källa för produktivitetsförbättringarna på 15–20 % för ekonomiproffs som använder Copilot för variansanalys, automatisering av inkasso och avstämning.' },
+        ],
+    },
 };
 
 export default function BusinessValueFinance({ theme, lang = 'en' }) {

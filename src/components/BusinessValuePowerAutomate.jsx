@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft Process Mining & Automation Data', note: 'Bron voor de verkorte cyclustijden en de strategische capaciteit om met natuurlijke taal / Copilot zowel API- als UI-gebaseerde automatiseringen sneller op te bouwen.' },
         ],
     },
+    sv: {
+        headline: 'Lyft dina medarbetare ur swivel chair-stolen.',
+        summary: 'Power Automate ger dig AI-stödda molnflöden, skrivbords-RPA och process mining på en plattform — din verksamhets intelligenta bindväv. Automatiseringar körs i maskinhastighet, dygnet runt, med botar som aldrig gör ett stavfel, medan Copilot låter dina medarbetare bygga egna flöden på naturligt språk.',
+        kpis: [
+            { value: '199 %+', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−27,4 %', label: 'Fel och omarbete', kind: 'efficiency' },
+            { value: '+50 %', label: 'Snabbare totala processtider', kind: 'efficiency' },
+            { value: 'Tiotusentals timmar', label: 'Sparade på företagsnivå', kind: 'efficiency' },
+        ],
+        bqPre: 'Att driva operativ effektivitet och skala genomflödet är ditt kärnuppdrag, men i dag lägger dina medarbetare upp till 30 % av sin tid som "human middleware" för att manuellt flytta data mellan system.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om ditt team fortsätter att bygga manuella databryggor, ',
+        bqHighlight: 'hur ska du då skala verksamheten och skydda dina marginaler utan att linjärt blåsa upp din personalstyrka?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Microsoft Power Automate.',
+        bridge: 'Så här svarar Power Automate på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från medarbetaren som vinner tillbaka timmar till en hyperautomatiseringsstrategi på företagsnivå.',
+        rungs: [
+            { title: 'Sluta vara human middleware', audience: 'Dina slutanvändare och uppgiftsarbetare', what: 'Copilot låter användare bygga automatiseringar på naturligt språk och rullar ut moln- och skrivbordsflöden som direkt hanterar e-postdirigering, godkännanden och dataextrahering från äldre gränssnitt.', outcome: 'Du eliminerar repetitiva "swivel chair"-uppgifter och vinner tillbaka tusentals timmar kapacitet för din personal.', kpis: [{ label: 'Tiotusentals timmar sparade per år på företagsnivå', kind: 'efficiency' }, { label: '15–30 % mindre tid på manuella uppgifter per användare', kind: 'efficiency' }] },
+            { title: 'Bearbeta i maskinhastighet, dygnet runt', audience: 'Din IT och automation CoE', what: 'Heltäckande arbetsflöden — fakturahantering, medarbetar-onboarding, godkännanden — körs kontinuerligt i bakgrunden, helt oberoende av mänskliga arbetstider.', outcome: 'Du förkortar drastiskt operativa cykeltider och utför kritiska affärsprocesser direkt och utan dröjsmål.', kpis: [{ label: '50 %+ snabbare totala processledtider', kind: 'efficiency' }, { label: 'Ingen processfördröjning mer på grund av mänskliga flaskhalsar', kind: 'efficiency' }] },
+            { title: 'Botar gör inga stavfel', audience: 'Din VP Operations och Compliance', what: 'Automatiserade botar gör inga stavfel, hoppar inte över steg och glömmer inga efterlevnadskontroller. Process Mining analyserar arbetsflöden kontinuerligt och blottlägger dolda friktionspunkter.', outcome: 'Du utrotar dyra mänskliga fel och omarbete och garanterar felfria granskningsloggar och stram operativ efterlevnad.', kpis: [{ label: '27,4 % minskning av felfrekvens och omarbete', kind: 'outcome' }, { label: '100 % efterlevnad i automatiserade transaktionssteg', kind: 'outcome' }] },
+            { title: 'Fånga tillväxt utan att absorbera personal', audience: 'Din COO och chef för shared services', what: 'Företaget bearbetar avsevärt fler transaktioner, fakturor eller kundförfrågningar med befintlig personal — och absorberar tillväxttoppar utan ansträngning.', outcome: 'Du frikopplar operativ tillväxt från personaltillväxt och skalar verksamheten effektivt.', kpis: [{ label: 'Undvikande av netto nya administrativa anställningar', kind: 'outcome' }, { label: 'Högre transaktionsgenomflöde per heltidstjänst', kind: 'outcome' }] },
+            { title: 'En driftsmodell för hyperautomatisering', audience: 'Din COO, CIO och styrelse', what: 'Företaget går från en manuell, arbetsintensiv driftsmodell till en hyperautomatiserad, högavkastande digital arkitektur som maximerar livslängden på befintliga tech-investeringar.', outcome: 'Du förändrar företagets kostnadsstruktur och höjer din rörelsemarginal.', kpis: [{ label: 'Mer än 199 % ROI över 3 år', kind: 'outcome' }, { label: 'Återbetalningstid på mindre än 6 månader', kind: 'outcome' }, { label: 'Högre total rörelsemarginal', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Power Automate', note: 'Källa för ROI:n på ~199 %, återbetalning på under 6 månader, den 27,4 % minskningen av fel och omfattningen av timmar som sparas i hela företaget.' },
+            { title: 'Microsoft Process Mining & Automation Data', note: 'Källa för de förkortade cykeltiderna och den strategiska förmågan att med naturligt språk / Copilot snabbare bygga både API- och UI-baserade automatiseringar.' },
+        ],
+    },
 };
 
 export default function BusinessValuePowerAutomate({ theme, lang = 'en' }) {

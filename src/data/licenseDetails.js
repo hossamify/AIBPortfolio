@@ -468,6 +468,7 @@ const loaders = {
     it: () => import('./licenseDetails.it.js').then((m) => m.LICENSE_DETAILS_IT),
     nl: () => import('./licenseDetails.nl.js').then((m) => m.LICENSE_DETAILS_NL),
     ar: () => import('./licenseDetails.ar.js').then((m) => m.LICENSE_DETAILS_AR),
+    sv: () => import('./licenseDetails.sv.js').then((m) => m.LICENSE_DETAILS_SV),
 };
 
 const inFlight = new Map();

@@ -226,6 +226,38 @@ const STRINGS = {
             { title: 'Microsoft AI Benchmarks — Copilot in Dynamics 365 Customer Insights', note: 'Bron voor de 50%-reductie in tijd die nodig is om segmenten te bouwen, journeys te ontwerpen en marketingcontent te genereren.' },
         ],
     },
+    sv: {
+        headline: 'Förvandla splittrad kunddata till en förutsägbar tillväxtmotor.',
+        summary: 'Dynamics 365 Customer Insights med Copilot förenar din kunddata till 360°-profiler i realtid och gör att dina marknadsförare kan agera på avsikt i samma stund den uppstår — för högre konverteringsgrad, bättre Return on Ad Spend och ett hållbart Customer Lifetime Value, underbyggt av oberoende validerade branschriktvärden.',
+        kpis: [
+            { value: '210 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: '< 6 mån', label: 'Återbetalningstid', kind: 'outcome' },
+            { value: '−50 %', label: 'Tid att sätta upp kampanjer', kind: 'efficiency' },
+            { value: '+15–20 %', label: 'Högre konverteringsgrad', kind: 'outcome' },
+            { value: '+10–15 %', label: 'Return on Ad Spend (ROAS)', kind: 'outcome' },
+        ],
+        bqPre: 'Att maximera Customer Lifetime Value och optimera marknadsföringsutgifterna är ditt kärnuppdrag, men i dag tvingar datasilos ditt team att lägga ',
+        bqPct1: 'veckor',
+        bqMid: ' på att manuellt sätta samman segment — vilket leder till fördröjda kampanjer och upp till ',
+        bqPct2: '20 %',
+        bqPost: ' bortslösad annonsbudget.',
+        bqLeadIn: 'Om dina team fortsätter att agera som manuella datapysslare i stället för att direkt dra nytta av köpsignaler i realtid, ',
+        bqHighlight: 'hur ska du då förbättra din Return on Ad Spend och förhindra kundbortfall?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Dynamics 365 Customer Insights.',
+        bridge: 'Så här svarar Dynamics 365 Customer Insights på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från den enskilda marknadsförarens produktivitet hela vägen upp till finansiell påverkan på styrelsenivå.',
+        rungs: [
+            { title: 'Marknadsförare som rör sig i avsiktens takt', audience: 'Dina marknadsförare och dataanalytiker', what: 'Med Copilot frågar ditt team kunddata på naturligt språk, bygger komplexa segment och skriver personligt innehåll — utan att behöva skicka in ett ärende för en SQL-fråga.', outcome: 'Du tar bort IT-flaskhalsen och låter ditt marknadsteam agera självständigt på möjligheter.', kpis: [{ label: '50 % mindre tid för att bygga målgruppssegment och lansera kampanjer', kind: 'efficiency' }] },
+            { title: 'Kundresor i realtid i stället för veckovisa batchar', audience: 'Dina marknadschefer', what: 'Orkestrering av kundresor i realtid utlöser personliga kontaktpunkter utifrån direkt beteende — webbplatsbesök, övergivna kundvagnar, avsiktssignaler — i stället för att vänta på nästa batch.', outcome: 'Du når kunder i exakt det ögonblick av hög avsikt och snabbar upp din time-to-market.', kpis: [{ label: 'Minskad kampanjexekveringstid från dagar till minuter', kind: 'efficiency' }, { label: 'Aktivering av realtidsutlösare över alla kanaler', kind: 'efficiency' }] },
+            { title: 'En pålitlig bild av varje kund', audience: 'Din VP Marketing / CDO', what: 'Plattformen läser automatiskt in isolerad data, löser samman och berikar den till en enda 360°-profil och tillämpar sedan AI för att förutsäga churn-risk, lifetime value och nästa bästa åtgärder.', outcome: 'Du slutar gissa och börjar med kirurgiskt precis målinriktning baserad på prediktiv, enhetlig data.', kpis: [{ label: '95 %+ föreningsgrad för kundprofiler', kind: 'efficiency' }, { label: '20 % förbättring av målinriktningens noggrannhet och matchningsgrad', kind: 'outcome' }] },
+            { title: 'Varje marknadsföringskrona arbetar hårdare', audience: 'Din CMO / CRO', what: 'Hyperpersonaliserade, läglig kampanjer baserade på prediktiv AI ökar engagemanget och förhindrar utgifter på kunder med låg köpbenägenhet eller som redan konverterat.', outcome: 'Du maximerar avkastningen på varje marknadsföringskrona och omvandlar engagemang till mätbar pipeline och intäkt.', kpis: [{ label: '15–20 % högre kampanjkonverteringsgrad', kind: 'outcome' }, { label: '10–15 % förbättring av Return on Ad Spend (ROAS)', kind: 'outcome' }] },
+            { title: 'Marknadsföring som prediktiv tillväxtmotor', audience: 'Din CMO, vd och styrelse', what: 'Marknadsföring går från ett kostnadsställe med svårbevisad attribution till en prediktiv motor som systematiskt ökar värdet av din befintliga kundbas.', outcome: 'Du når dina intäktsmål och ökar samtidigt mätbart Customer Lifetime Value.', kpis: [{ label: '210 % ROI över 3 år', kind: 'outcome' }, { label: 'Återbetalning på mindre än 6 månader', kind: 'outcome' }, { label: 'Mätbar ökning av Customer Lifetime Value (CLV)', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Total Economic Impact™ of Microsoft Dynamics 365 Customer Insights', note: 'Källa för ~210 % ROI, återbetalning på under 6 månader, ROAS-förbättring på över 15 % och ökningen av konverteringsgraden.' },
+            { title: 'Microsoft AI Benchmarks — Copilot in Dynamics 365 Customer Insights', note: 'Källa för 50 %-minskningen av tiden som krävs för att bygga segment, designa kundresor och generera marknadsföringsinnehåll.' },
+        ],
+    },
 };
 
 export default function BusinessValueCustomerInsights({ theme, lang = 'en' }) {

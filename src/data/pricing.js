@@ -217,14 +217,37 @@ export const GBP_PRICES = {
     'R0U-00001': 9227.58
 };
 
-// Returns { amount, symbol } for the given sku/lang. Falls back to USD when the
-// language has no localized currency or when the SKU has no localized price configured.
+// Swedish Krona pricing for sv. Keys are SKUs; values are SEK amounts.
+export const SEK_PRICES = {
+    'NCR-00001': 621.31, 'SDG-00001': 191.17, 'DGP-00003': 1003.65, 'SAT-00001': 191.17,
+    '41F-00007': 1433.79, 'MET-00001': 477.93, 'SCV-00001': 191.17, 'DDW-00003': 1003.65,
+    'SCC-00001': 191.17, 'EP2-18786': 1863.93, 'EP2-18774': 1051.44, 'EP2-18777': 908.07,
+    'EP2-18782': 908.07, '16A-00001': 16249.57, '16B-00001': 9558.57, '6BL-00001': 2389.65,
+    '6BS-00001': 2867.57, '8J3-00001': 4779.29, '8KS-00001': 19117.14, '8KT-00001': 14337.86,
+    '8KU-00001': 9558.57, 'DEH-00003': 1003.65, 'SCN-00001': 191.17, '1R5-00002': 477.93,
+    'SFV-00001': 2007.3, 'SAJ-00001': 286.76, 'EP2-00018': 2867.57, 'S2R-00001': 2007.3,
+    'SAM-00001': 286.76, 'EP2-04446': 2867.57, '1S7-00015': 1290.4, '1SD-00014': 286.76,
+    'UUF-00001': 1290.4, 'UUH-00001': 286.76, 'UUP-00001': 38.24, 'GZJ-00001': 2007.3,
+    'SAQ-00001': 286.76, 'B1I-00001': 38234.29, '1OT-00001': 764.68, '1OR-00001': 1051.44,
+    'YFI-00001': 1911.72, 'SEJ-00002': 191.17, 'SEJ-00016': 114.7, '1O4-00001': 143.38,
+    '8F5-00001': 1433.79, 'VQQ-00002': 1911.72, 'WEA-00001': 716.89, 'WES-00001': 477.93,
+    'VQN-00002': 716.89, 'WE3-00001': 358.45, 'WEK-00001': 238.96, 'L2B-00001': 38234.29,
+    'R0U-00001': 114702.86
+};
+
+// Returns { amount, symbol, suffix } for the given sku/lang. `suffix` is true when
+// the currency symbol follows the amount (e.g. Swedish "621 kr") instead of preceding
+// it. Falls back to USD when the language has no localized currency or when the SKU
+// has no localized price configured.
 export function getLocalizedPrice(sku, usdAmount, lang) {
     if (sku && lang === 'en-GB' && GBP_PRICES[sku] != null) {
-        return { amount: GBP_PRICES[sku], symbol: '£' };
+        return { amount: GBP_PRICES[sku], symbol: '£', suffix: false };
+    }
+    if (sku && lang === 'sv' && SEK_PRICES[sku] != null) {
+        return { amount: SEK_PRICES[sku], symbol: 'kr', suffix: true };
     }
     if (sku && EUR_LANGS.has(lang) && EUR_PRICES[sku] != null) {
-        return { amount: EUR_PRICES[sku], symbol: '€' };
+        return { amount: EUR_PRICES[sku], symbol: '€', suffix: false };
     }
-    return { amount: usdAmount, symbol: '$' };
+    return { amount: usdAmount, symbol: '$', suffix: false };
 }

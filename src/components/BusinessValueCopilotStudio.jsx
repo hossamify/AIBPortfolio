@@ -212,6 +212,36 @@ const STRINGS = {
             { title: 'Microsoft AI / Low-Code Benchmarks', note: 'Bron voor de drastische verkorting van de ontwikkelcyclus — van maanden naar dagen — bij de overstap van traditionele pro-code-AI naar het bouwen van low-code-agents in natuurlijke taal.' },
         ],
     },
+    sv: {
+        headline: 'Demokratisera AI. Utan att tappa kontrollen.',
+        summary: 'Copilot Studio gör att fusion teams av affärsanvändare och IT snabbt kan bygga, testa och publicera säkra, skräddarsydda AI-agenter på naturligt språk. Du bryter upp IT-backloggen, eliminerar "shadow AI", tar bort rutinarbete inom HR/IT/CX och ger varje avdelning ett styrt sätt att skala AI.',
+        kpis: [
+            { value: '106–314 %', label: 'ROI över 3 år', kind: 'outcome' },
+            { value: 'Dagar mot månader', label: 'Tid att rulla ut anpassade AI-agenter', kind: 'efficiency' },
+            { value: '+15–25 %', label: 'Snabbare onboarding av nyanställda', kind: 'efficiency' },
+            { value: '−0,6–1,0 %', label: 'Totala driftskostnader', kind: 'outcome' },
+            { value: '↓ shadow AI', label: 'Centraliserad AI-styrning', kind: 'outcome' },
+        ],
+        bqPre: 'Att snabbt skala säker AI för att uppnå effektivitet är ditt kärnuppdrag, men i dag kräver traditionell AI-utveckling månader av kodning, vilket skapar en enorm IT-backlog och uppmuntrar riskfylld "shadow AI"-användning.',
+        bqPct: '',
+        bqPost: '',
+        bqLeadIn: 'Om dina affärsenheter måste vänta i månader på att rulla ut grundläggande automatiseringar, ',
+        bqHighlight: 'hur ska du då skala AI i hela företaget utan att låta dina utvecklingskostnader skena eller äventyra datasäkerheten?',
+        figcaption: 'Strategisk fråga som ramar in affärsnyttan för Microsoft Copilot Studio.',
+        bridge: 'Så här svarar Copilot Studio på den',
+        outcomesIntro: 'Varje steg förstärker värdet av det föregående — från medborgarutvecklaren som levererar sin första agent till en AI-strategi på företagsnivå.',
+        rungs: [
+            { title: 'Bygg AI-agenter på vanligt språk', audience: 'Dina medborgarutvecklare och proffsutvecklare', what: 'Domänexperter och affärsanvändare bygger, förfinar och driftsätter skräddarsydda konversationsagenter med naturligt språk — utan att skriva komplex kod.', outcome: 'Du kringgår den klassiska kodningsflaskhalsen och låter de som står närmast problemet bygga lösningen.', kpis: [{ label: 'Dagar i stället för månader att bygga och lansera anpassade konversationsagenter', kind: 'efficiency' }] },
+            { title: 'Fånga rutinarbete, dygnet runt', audience: 'Dina IT-, HR- och kundtjänstteam', what: 'Anpassade agenter hanterar de repetitiva frågorna — lösenordsåterställningar, förmåns-FAQ:er, onboardingflöden, kundfrågor — direkt och dygnet runt.', outcome: 'Du minskar drastiskt antalet inkommande förfrågningar till dina mänskliga team och ger varje medarbetare svar direkt.', kpis: [{ label: 'Betydande minskning av ärendevolymen till IT-/HR-helpdeskar', kind: 'efficiency' }, { label: '15–25 % snabbare onboardingtid för nyanställda', kind: 'efficiency' }] },
+            { title: 'Styrd AI förankrad i dina data', audience: 'Din CIO och IT-säkerhet', what: 'Agenter är nativt förankrade i dina företagsdata (SharePoint, Dynamics, API:er) under Microsofts efterlevnadsparaply, med centraliserade IT-kontroller.', outcome: 'Du eliminerar risken för "shadow AI" och dataläckage — varje AI-utdata är korrekt, säker och fullt styrd.', kpis: [{ label: '100 % centraliserad insyn i alla anpassade AI-driftsättningar', kind: 'efficiency' }, { label: 'Eliminering av obehörig användning av publika LLM:er', kind: 'outcome' }] },
+            { title: 'Sänk kostnad per leverans, höj säljkapaciteten', audience: 'Din VP Operations / CX', what: 'Att fånga rutinfrågor sänker kostnaden per leverans, medan anpassade sälj- och marknadsföringsagenter hjälper till att kvalificera leads och stödjer säljare med att skriva offerter.', outcome: 'Du sänker driftskostnaderna och frigör kapacitet i ditt team för högvärdiga, komplexa mänskliga interaktioner.', kpis: [{ label: '0,6–1,0 % minskning av de totala driftskostnaderna', kind: 'outcome' }, { label: 'Mätbar förbättring av leadkvalificering och vinstandelar', kind: 'outcome' }] },
+            { title: 'Skala AI i hela företaget — säkert', audience: 'Din CIO, vd och styrelse', what: 'Organisationen går från en igenproppad IT-avdelning till en kultur av styrd, företagsövergripande digital innovation.', outcome: 'Du realiserar en projicerad ROI på upp till 314 % och minskar drastiskt beroendet av externa utvecklingspartner.', kpis: [{ label: '106 % till 314 % ROI över 3 år', kind: 'outcome' }, { label: 'Kraftig minskning av beroendet av externa utvecklingspartner', kind: 'outcome' }] },
+        ],
+        references: [
+            { title: 'Forrester Consulting — The Projected Total Economic Impact™ of Microsoft Copilot Studio', note: 'Källa för ROI:n från 106 % baslinje till 314 % uppsida, den 15–25 % snabbare onboardingen och den kvantifierbara minskningen av de totala driftskostnaderna.' },
+            { title: 'Microsoft AI / Low-Code Benchmarks', note: 'Källa för den drastiska förkortningen av utvecklingscykeln — från månader till dagar — vid övergången från traditionell pro-code-AI till att bygga low-code-agenter på naturligt språk.' },
+        ],
+    },
 };
 
 export default function BusinessValueCopilotStudio({ theme, lang = 'en' }) {
